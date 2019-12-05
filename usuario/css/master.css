@@ -1,0 +1,75 @@
+/*GENERALES*/
+body{
+  background-color: #e8e8e8;
+}
+h1{
+  text-align: center;
+  color: black;
+  /* border-bottom: 2px solid #4182E7;
+  padding-bottom: 15px; */
+}
+.contenedor{
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+img{
+  display: block;
+  margin: 0 auto;
+}
+.uso{
+  display: flex;
+  justify-content: center;
+}
+.hide{
+  display: none!important;
+}
+/**/
+a{
+  font-size: 2rem;
+  color: black  ;
+  background-color: #4D92DF;
+  padding: 20px 60px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px
+}
+/*FORMULARIOS*/
+form{
+  background: white;
+  padding: 20px;
+  border: 1px solid ;
+  font-size: 18px;
+}
+label{
+  color: black;
+}
+/* input{
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: white;
+} */
+.form-group {
+  width: calc(50% - 2rem);
+  /* flex-grow: 1 !important; */
+}
+.columna-2 .form-group {
+  width: calc(100%/3 - 1rem);
+}
+.columna-3 .form-group {
+  width: 100%;
+}
+textarea{
+  border-radius: 5px;
+  width: 100%!important;
+  height: 20rem!important;
+  background-color: white;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error{
+  border: 1px solid red;
+}

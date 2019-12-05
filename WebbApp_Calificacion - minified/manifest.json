@@ -1,0 +1,24 @@
+{
+    "name": "Sistema de calificacion de reportes",
+    "short_name": "Calificacion",
+    "description": "Aplicacion para calificar la atencion brindada por soporte tecnico al atender los reportes de incidencias",
+    "background_color": "#FFF",
+    "theme_color": "#e9d8bd",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url":"./index.php?utm_source=launcher",
+    "scope": "./",
+    "lang": "es-MX",
+    "icons": [
+        {
+            "src": "./img/icono 1024X1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": ".img/favicon.png",
+            "sizes": "64x44",
+            "type": "image/png"
+        }
+    ]
+}

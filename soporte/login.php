@@ -24,10 +24,12 @@
                         <div class="col">
                           <input type="text"class="form-control col-5" id="usuario" name="usuario" required>
                             </div>
+                            <br>
                     <label for="contraseña">CONTRASEÑA: </label>
                   <div class="col align-self-end">
               <input type="password" class="form-control col-5" id="contraseña" name="contraseña" required>
             </div>
+            <br>
       <button type="submit" class="btn btn-primary" value="entrar">ENTRAR</button>
           </form>
           </div>

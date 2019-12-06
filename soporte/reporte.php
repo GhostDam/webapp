@@ -2,9 +2,10 @@
     @session_start();
     if(!isset($_SESSION["usuario"])) header("location: login.php");
 ?>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
   <script src="https://code.jquery.com/jquery-3.4.0.js"integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
@@ -67,11 +68,18 @@
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <div id="historial">
             </div>
-            
+
+
             <div class="">
-              <ul class="paginacion" id='pages'>
-              </ul>
+              <nav aria-label="Page navigation example">
+                <ul class="paginacion pagination justify-content-center" id='pages'>
+
+                </ul>
+              </nav>
             </div>
+
+
+
           </div>
           <div class="tab-pane fade" id="section-4" role="tabpanel" aria-labelledby="index-4">
             <div class="col-5">

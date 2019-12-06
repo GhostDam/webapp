@@ -9,15 +9,15 @@
 
 /* #ea8b04 */
 }
-*, *:before, *:after {
+/***, *:before, *:after {
   box-sizing: inherit;
-}
+}**/
 body{
   font-family: 'Poppins', sans-serif;
   background: var(--bgc) no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+ background-attachment: fixed;
   height: 100%;
   margin: 0;
   color:var(--texto);
@@ -34,29 +34,29 @@ i.icon-trash-o{
 i{
   color:var(--i);
 }
-/*header*/
+/*header Barra Principal*/
 header{
   position: fixed;
   /**background:var(--img1);**/
-  width: 100%;
+  width: 100%;/**Barra principal**/
   height: 10vh;
   background-color: var(--head);
-  font-size: 24px;
+  font-size: 25px;
   color: white;
   z-index: 2;
 }
 nav.session{
   list-style:none;
   display: flex;
-  margin: 0 10%;
+  margin: 2 20%;
   justify-content: space-between;
   padding-top: 10px;
 }
 
 header:after{
   content: '';
-  /**border-bottom: 3px solid var(--texto);**/
-  margin: 0 auto;
+ /*border-bottom: 3px solid var(--texto);**/
+   margin: 0 auto;
   height: 2px;
   width: 80%;
   display: block;
@@ -65,10 +65,11 @@ nav.session a{
   color: white;
   text-decoration: none;
 }
+
 /*header*/
 h2{
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem!important;
 }
 /* h2::after{
@@ -79,6 +80,7 @@ h2{
   display: block;
   font-family: 'Rubik', sans-serif;
 } */
+/***barra principal login**/
 h1{
   margin-top: 10px;
   margin-bottom: 0;
@@ -101,7 +103,7 @@ h1{
   flex-wrap: wrap;
   justify-content: space-between;
   width: 300px;
-  /* height: 90px;
+  /** height: 90px;
   opacity: .8;
   padding: 10px 60px 60px 60px;
   border-radius: 15px;
@@ -115,7 +117,7 @@ h1{
   grid-template-columns:repeat(2, 1fr);
   grid-gap: 10px;
   max-width: 300px;
-  background-color: var(--bsd);
+ background-color: var(--bsd);
   padding: 20px;
   border-radius: 10px;
 }
@@ -139,7 +141,7 @@ h1{
 }
 /**/
 section{
-  padding-top: 10vh;
+  padding: 10vh 10vh 0;
   max-width: 80%;
   margin: 0 auto;
 }
@@ -152,8 +154,11 @@ section{
   height: 100vh;
   background: var(--bsd);
   /**border-top-right-radius: 10px;**/
+  overflow-y: hidden;
 }
-
+nav.navbar{
+  padding: 0!important;
+}
 .navbar .list-navbar {
   list-style: none;
 }
@@ -171,7 +176,7 @@ section{
 .list-navbar > li > a{
   font-weight: 700;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 18px;
 }
 .list-navbar > .inv > ul{
   list-style:none;
@@ -212,7 +217,7 @@ section{
 .notes:hover{
   height: 100%;
 }**/
-.stick{
+/**.stick{
   margin-bottom: 5px;
   border: 1px solid gray;
   border-radius: 10px;
@@ -222,10 +227,10 @@ section{
 }
 /*notes*/
 /*panel-display*/
-.buscador{
+/**.buscador{
   margin: 0 auto;
-}
-.respuesta{
+}**/
+/**.respuesta{
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -383,7 +388,7 @@ option{
 }
 .btn{
   grid-area: bt;
-  padding: 20px;
+  padding: 10px;
 }
 .edicion{
   max-width: 100%;
@@ -417,9 +422,6 @@ legend{
 .historial span{
   font-weight: bold;
   margin-top: 10px;
-}
-.now{
-  background-color: var(--active);
 }
 /*historial*/
 .eq{

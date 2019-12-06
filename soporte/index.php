@@ -47,8 +47,8 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
 
-        <div class="form-group">
-            <label for="nombre" class="col-sm-2 col-form-label">Usuario:</label>
+        <div class="form-group alert alert-primary">
+            <label for="nombre" class="col-sm-6 col-form-label">Ingresa el usuario que reporta:</label>
             <input type="text" class="form-control col-6" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
         </div>
 

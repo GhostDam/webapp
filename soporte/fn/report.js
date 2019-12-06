@@ -13,7 +13,7 @@
   })
 /*cargar pendients*/
 /*enviar a attend*/
-  $(document).on("click", ".reporte .atender", function(){
+  $(document).on("click", ".atender", function(){
     var id = $(this).prop('value');
     //swal
     swal({
@@ -36,7 +36,7 @@
   })
 /*enviar a attend*/
 /*Enviar a firma reportes por firmar*/
-$(document).on("click", ".reporte .firmar", function(){
+$(document).on("click", ".firmar", function(){
   var url = 'http://localhost/JCF/imjuve/sistema%20soporte/soporte/signature.php'
   var id = $(this).prop('value');
   var redir = `${url}#${id}`
@@ -154,16 +154,28 @@ function carga(){
     nums = load/10;
     nums = Math.ceil(nums)
     for (var i = 1; i <= nums; i++) {
-      $('#pages').append(`<li class=${i-1}>${i}</li>`)
+      // $('#pages').append(`<li class=${i-1} page-item>${i}</li>`)
+      $('#pages').append(`<li class='${i-1} page-item'><a class="page-link" href="#">${i}</a></li>`)
+
+//
+
     }
-    $("#pages li:first").addClass("now")
+    $("#pages li:first").addClass("active")
   })
 }
+
+// <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+//   <div class="btn-group mr-2" role="group" aria-label="First group">
+//     <button type="button" class="btn btn-secondary">1</button>
+//     <button type="button" class="btn btn-secondary">2</button>
+//     <button type="button" class="btn btn-secondary">3</button>
+//     <button type="button" class="btn btn-secondary">4</button>
+//   </div>
 //carga de total
 //vista
 $(document).on('click', '#pages li', function(){
-  $("#pages li").removeClass("now");
-  $(this).addClass("now")
+  $("#pages li").removeClass("active");
+  $(this).addClass("active")
   var where = $(this).attr('class');
   var where = parseInt(where)
   vista(where*10);

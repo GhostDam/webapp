@@ -1,7 +1,7 @@
+
 <?php
 session_start();
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){
-
 
   include 'connect.php';
 
@@ -11,38 +11,44 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC  ";
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
-                  $salida.="";
+                  $salida.="<table class='table table-hover'>
+                              <thead class='thead thead-dark'>
+                                <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Asunto</th>
+                                <th>Id</th>
+                                <th>Area</th>
+                                <th>Reporta</th>
+                                <th>Descripcion</th>
+                                <th>Actividad</th>
+                                <th>Status</th>
+                              </tr>
+                              </thead>
+                              </tbody>
+                                  ";
                 while ($fila= $resultado->fetch_assoc()) {
-                     $salida.="
-                     <div class='reporte'>
-                      <div class='atnh'>
-                      <span>Fecha: ".$fila['fecha']."</span>
-                      <span>Hora: ".$fila['hora']."</span>
-                      <span>Asunto: ".$fila['asunto']."</span>
-                      <span>ID Reporte: ".$fila['id_reporte']."</span>
-                      </div>
+                     $salida.="<tbody>
+                                <tr>
 
-                      <div class='atn2'>
-                      <span>Area: ".$fila['area']."</span>
-                      <span>Persona que reporta: ".$fila['nombre']."</span>
-                      </div>
-
-                      <div class='atn2'>
-                      <span>Descripcion: ".$fila['descripcion']."</span>
-                      </div>
-
-                      <div class='atn3'>
-                      <span>Actividad: ".$fila['actividad']."</span>
-                      </div>
-
-                      <div class='atn4'>
-                      <span>".$fila['status']."</span>
-                      <button class='atender' value ='".$fila['id_reporte']."'>Atender </button>
-                      <button class='firmar' value ='".$fila['id_reporte']."'>Firmar </button>
-                      </div>
-
-                      </div>";
+                      <td>".$fila['fecha']."</td>
+                      <td>".$fila['hora']."</td>
+                      <td>".$fila['asunto']."</td>
+                      <td>".$fila['id_reporte']."</td>
+                      <td>".$fila['area']."</td>
+                      <td>".$fila['nombre']."</td>
+                      <td>".$fila['descripcion']."</td>
+                      <td>".$fila['actividad']."</td>
+                      <td>".$fila['status']."</td>
+                      <td>
+                      <button class='atender btn btn-dark' value ='".$fila['id_reporte']."'>Atender </button>
+                      <button class='firmar btn btn-dark' value ='".$fila['id_reporte']."'>Firmar </button>
+                      </td>
+                      </tr>";
                       }
+                $salida.="</tbody>
+                      </table>";
+
                     }else {
                     $salida.="No Hay reportes pendientes";
                   }
@@ -139,8 +145,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <Legend>Status: </Legend>
                <span>".$fila['status']."</span>
                </fieldset>
-               <button id='btnEdit' type='submit'>Guardar: </button>
           </form>
+          <button id='btnEdit' type='submit' class='btn btn-primary'>Guardar: </button>
           ";
             }
             echo $salida;
@@ -233,8 +239,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            $paginacion.="<table class='table table-hover'>
                           <thead>
                             <tr>
+                            <th scope='col'>#</th>
                             <th scope='col'>Fecha</th>
-                              <th scope='col'>Número reporte</th>
                               <th scope='col'>Persona que reportó</th>
                               <th scope='col'>Área</th>
                               <th scope='col'>Asunto</th>
@@ -243,13 +249,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                           </thead>";
            while ($rep = $resultado->fetch_assoc()) {
              $paginacion.="<tr>
+                            <td scope='row'>".$rep['id_reporte']."</td>
                               <td scope='row'>".$rep['fecha']."</td>
-                              <td scope='row'>".$rep['id_reporte']."</td>
                               <td scope='row'>".$rep['nombre']."</td>
                               <td scope='row'>".$rep['area']."</td>
                               <td scope='row'>".$rep['asunto']."</td>
                               <td scope='row'>".$rep['status']."</td>
-                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles'>detalles</button></td>
+                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-dark'>detalles</button></td>
                           </tr>";
            }
           $paginacion.="</tbody></table>";

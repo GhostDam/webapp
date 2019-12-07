@@ -29,14 +29,13 @@ file_put_contents("../../soporte/firmas/"."firma.$id".'.png',base64_decode(explo
                                 firma='$direccion', fecha_cierre='$fecha', hora_cierre='$hora', status='$status' WHERE id_reporte ='$id' ";
    $resultado=$conexion->query($sql);
    if ($resultado) {
-     // $response['mensaje']='Se guardo Correctamente';
-     $response['img'] = $_POST['img'];
+     $response['mensaje']='Se guardo Correctamente';
    }else{
      $response['error']= $conexion->error;
    }
+   echo json_encode(print_r($resultado));
 
 
    $response['img'] = $_POST['img'];
 
-echo json_encode(print_r($_POST));
 ?>

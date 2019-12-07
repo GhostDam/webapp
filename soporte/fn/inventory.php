@@ -31,13 +31,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
           $usuarios.="<table class='table table-hover's>
                         <thead>
                           <tr>
-                            <th scope='col'>Area</th>
+                            <th scope='col'>Área</th>
                             <th scope='col'>Equipo</th>
                             <th scope='col'>Tipo</th>
                             <th scope='col'>Usuarios</th>
-                            <th scope='col'>Id Equipo</th>
+                            <th scope='col'>ID equipo</th>
                             <th scope='col'>Comentarios</th>
-                            <th scope='col' class='total'></th>
+                            <th scope='col' class='Total:'></th>
                           </tr>
                         </thead>
                         <tbody>";
@@ -50,7 +50,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                   <td scope='row'>".$row2['GROUP_CONCAT(nombre_usuario separator "<br>")']."</td>
                   <td scope='row' class='items'>".$row2['id_equipo']."</td>
                   <td scope='row'><span>+</span>".$row2['comentarios']."</td>
-                  <td scope='row'><button class='detalles' value='".$row2['id_equipo']."'>detalles</button></td>
+                  <td scope='row'><button class='detalles' value='".$row2['id_equipo']."'>Detalles</button></td>
               <tr>";
             }
           $usuarios.="</tbody></table";
@@ -79,61 +79,61 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                     while ($row2 = $resultado->fetch_assoc()) {
                       $detalles.=
                           "<fieldset class='eq'>
-                            <legend>Informacion del equipo</legend>
-                              <span>ID Equipo: </span>".$row2['idEquipo']."
-                            <p>Nombre Equipo ".$row2['nombre_equipo']."</p>
-                            <p>caracteristicas: ".$row2['caracteristicas']."</p>
+                            <legend>Información del equipo</legend>
+                              <span>ID equipo: </span>".$row2['idEquipo']."
+                            <p>Nombre equipo ".$row2['nombre_equipo']."</p>
+                            <p>Caracteristicas: ".$row2['caracteristicas']."</p>
                             <p>Tipo: ".$row2['tipo']."</p>
-                            <p>Ram: ".$row2['ram']."</p>
+                            <p>RAM: ".$row2['ram']."</p>
                           </fieldset>
 
                           <fieldset class='cp'>
                           <legend>CPU</legend>
                             <p>Marca: ".$row2['marca']."</p>
                             <p>Modelo: ".$row2['modelo']."</p>
-                            <p>Num Serie: ".$row2['num_serie']."</p>
+                            <p>Número de serie: ".$row2['num_serie']."</p>
                           </fieldset>
 
                           <fieldset class='b'>
                           <legend>Bocinas</legend>
-                            <p>".$row2['marca_b']."</p>
-                            <p>".$row2['modelo_b']."</p>
-                            <p>".$row2['num_serie_b']."</p>
+                            <p>Marca: ".$row2['marca_b']."</p>
+                            <p>Modelo: ".$row2['modelo_b']."</p>
+                            <p>Número de serie: ".$row2['num_serie_b']."</p>
                           </fieldset>
 
                           <fieldset class='m'>
                           <legend>Mouse</legend>
-                            <p>".$row2['marca_m']."</p>
-                            <p>".$row2['modelo_m']."</p>
-                            <p>".$row2['num_serie_m']."</p>
+                            <p>Marca: ".$row2['marca_m']."</p>
+                            <p>Modelo: ".$row2['modelo_m']."</p>
+                            <p>Número de serie: ".$row2['num_serie_m']."</p>
                           </fieldset>
 
                           <fieldset class='mn'>
                           <legend>Monitor</legend>
-                            <p>".$row2['marca_mn']."</p>
-                            <p>".$row2['modelo_mn']."</p>
-                            <p>".$row2['num_serie_mn']."</p>
+                            <p>Marca: ".$row2['marca_mn']."</p>
+                            <p>Modelo: ".$row2['modelo_mn']."</p>
+                            <p>Número de serie:".$row2['num_serie_mn']."</p>
                           </fieldset>
 
                           <fieldset class='t'>
                           <legend>Teclado</legend>
-                            <p>".$row2['marca_t']."</p>
-                            <p>".$row2['modelo_t']."</p>
-                            <p>".$row2['num_serie_t']."</p>
+                            <p>Marca: ".$row2['marca_t']."</p>
+                            <p>Modelo: ".$row2['modelo_t']."</p>
+                            <p>Número de serie: ".$row2['num_serie_t']."</p>
                           </fieldset>
 
                           <fieldset class='nb'>
-                          <legend>No Brake</legend>
-                            <p>".$row2['marca_nb']."</p>
-                            <p>".$row2['modelo_nb']."</p>
-                            <p>".$row2['num_serie_nb']."</p>
+                          <legend>No Break</legend>
+                            <p>Marca: ".$row2['marca_nb']."</p>
+                            <p>Modelo: ".$row2['modelo_nb']."</p>
+                            <p>Número de serie:".$row2['num_serie_nb']."</p>
                           </fieldset>
 
                           <fieldset class='c'>
-                          <legend>cargador</legend>
-                            <p>".$row2['marca_c']."</p>
-                            <p>".$row2['modelo_c']."</p>
-                            <p>".$row2['num_serie_c']."</p>
+                          <legend>Cargador</legend>
+                            <p>Marca: ".$row2['marca_c']."</p>
+                            <p>Modelo: ".$row2['modelo_c']."</p>
+                            <p>Número de serie: ".$row2['num_serie_c']."</p>
                           </fieldset>
 
                       ";
@@ -173,7 +173,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                         VALUES('$id_equipo', '$caracteristicas', '$ram', '$tipo_cpu', '$marca_cpu', '$modelo_cpu', '$serie_cpu')";
         $nuevo_cpu=mysqli_query($conectar, $sql_cpu);
         if ($nuevo_cpu) {
-          echo "cpu agregado <br>";
+          echo "CPU agregado <br>";
         }else {
           echo mysqli_error($conectar);
         }
@@ -186,7 +186,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                    VALUES('$id_equipo', '$marca_b', '$modelo_b', '$numserie_b')";
             $nueva_bocina=mysqli_query($conectar, $sql_bocina);
               if ($nueva_bocina) {
-                echo "bocina agregada <br>";
+                echo "Bocina agregada <br>";
               }else {
                 echo mysqli_error($conectar);
               }
@@ -200,7 +200,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_m', '$modelo_m', '$numserie_m')";
           $nueva_mouse=mysqli_query($conectar, $sql_mouse);
             if ($nueva_mouse) {
-              echo "mouse agregado <br>";
+              echo "Mouse agregado <br>";
             }else {
               echo mysqli_error($conectar);
             }
@@ -214,7 +214,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_mn', '$modelo_mn', '$numserie_mn')";
           $nueva_monitor=mysqli_query($conectar, $sql_monitor);
             if ($nueva_monitor) {
-              echo "monitor agregado <br>";
+              echo "Monitor agregado <br>";
             }else {
               echo mysqli_error($conectar);
             }
@@ -228,7 +228,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                VALUES('$id_equipo', '$marca_t', '$modelo_t', '$numserie_t')";
         $nueva_teclado=mysqli_query($conectar, $sql_teclado);
           if ($nueva_teclado) {
-            echo "teclado agregado <br>";
+            echo "Teclado agregado <br>";
           }else {
             echo mysqli_error($conectar);
           }
@@ -242,7 +242,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                VALUES('$id_equipo', '$marca_nb', '$modelo_nb', '$numserie_nb')";
         $nueva_nobreake=mysqli_query($conectar, $sql_nobreake);
           if ($nueva_nobreake) {
-            echo "nobreake agregado <br>";
+            echo "No Break agregado <br>";
           }else {
             echo mysqli_error($conectar);
           }
@@ -257,7 +257,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_c', '$modelo_c', '$numserie_c')";
           $nueva_cargador=mysqli_query($conectar, $sql_cargador);
             if ($nueva_cargador) {
-              echo "cargador agregado <br>";
+              echo "Cargador agregado <br>";
             }else {
               echo mysqli_error($conectar);
             }

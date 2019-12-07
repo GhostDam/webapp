@@ -15,6 +15,7 @@
     <title>Calificacion de Reporte</title>
     <link rel="shortcut icon" type="image/png" href="img/imjuve/Logo.png">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">

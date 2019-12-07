@@ -47,13 +47,13 @@
               $usuarios.="<table class='table table-hover'>
                             <thead>
                               <tr>
-                                <th scope='col'>Area</th>
-                                <th scope='col'>Id</th>
+                                <th scope='col'>Área</th>
+                                <th scope='col'>ID</th>
                                 <th scope='col'>Usuario</th>
                                 <th scope='col'>Responsable</th>
                                 <th scope='col'>Equipo</th>
                                 <th scope='col'>Eliminar</th>
-                                <th scope='col' class='total'></th>
+                                <th scope='col' class='Total:'></th>
                               </tr>
                             </thead>
                           <tbody>";
@@ -62,7 +62,7 @@
                             "<tr>
                                 <td scope='row'>".$row2['area']."</td>
                                 <td scope='row'>".$row2['id_usuario']."</td>
-                                <td  scope='row' class='usr'>".$row2['nombre_usuario']."</td>
+                                <td scope='row' class='usr'>".$row2['nombre_usuario']."</td>
                                 <td scope='row'>".$row2['nombre_responsable']."</td>
                                 <td scope='row'>".$row2['nombre_equipo']."</td>
                                 <td scope='row'><button class='delete' value ='".$row2['id_usuario']."' name='2'><i class='icon-trash-o'></i></button></td>
@@ -88,7 +88,7 @@
                     "<option value='".$row2['id_equipo']."'>".$row2['nombre_equipo']."</option>";
                   }
                 }else {
-              $equipos.= "<option value=''>El area no cuenta con equipos</option>";
+              $equipos.= "<option value=''>El área no cuenta con equipos</option>";
               }
             echo $equipos;
          break;
@@ -104,7 +104,7 @@
           if(!$ejecutar){
               echo "No se pudo agregar usuario";
             }else{
-              echo 'usuario agregado correctamente';
+              echo 'Usuario agregado correctamente';
               // record($quien, $action, $id_user, $hora);
             }
          break;
@@ -124,7 +124,7 @@
                   $datos=$row1;
                   }
               }else {
-                $datos='No Existe el id ingresado';
+                $datos='No existe el ID ingresado';
               }
               echo json_encode($datos);
 

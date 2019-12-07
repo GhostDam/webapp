@@ -13,31 +13,9 @@
                   $direcciones[]=$row;
                 }
              }else {
-            $direcciones='no hay datos';
+            $direcciones='No hay datos';
           }
           echo json_encode($direcciones);
-
-          // $tarjeta = array(0 => $lista,);
-          // $tarjeta = array_merge($tarjeta);
-          // $result = $direcciones = array('subdireccion de sistemas' => $area = array(0 => 'sistemas',
-          //                                                                            1 => 'soporte'),
-          //                                       'direccion general' => $area = array(0 => 'adjunta',
-          //                                                                            1 => 'general',
-          //                                                                            2 => 'tercera',
-          //                                                                            3 => $empleados = array(0 => 'luis',
-          //                                                                                                    1 => 'Diana'
-          //                                                                                                   )
-          //                                                                             ),
-          //                                       'Direccion' => $area = array('area1' => $empleados = array('luis' => 'becario',
-          //                                                                                                   'sarquis' =>'p' ),
-          //                                                                    'area2' => 'area2',
-          //                                                                    'area3' => 'area3',
-          //                                                                    'area4' => $empleados = array(0 => 'luis',
-          //                                                                                                  1 => 'Diana'
-          //                                                                                                   )
-          //                                                                   )
-          //                                 );
-          // echo json_encode($result);
          break;
       case 'area': //cargado de areas
             $q = $_POST['area'];
@@ -64,7 +42,7 @@
                                           <tr>
                                 <td scope='col'>Nombre del personal</td>
                                 <td scope='col'>Tipo</td>
-                                <td scope='col'>id</td>
+                                <td scope='col'>ID</td>
                                 <td scope='col'>Borrar</td>
                                 <td scope='col'>Editar</td>
                                   <tr>
@@ -73,14 +51,14 @@
                       while ($row=$cargaem->fetch_assoc()) {
                         $empleados.="<tr>
                               <td scope='row'>".$row['nombre_personal']."</td>
-                                <td scope='row'>".$row['tipo_personal']."</td>
-                                <td scope='row'>".$row['id']."</td>
-                            <td scope='row'><button class='delete' value ='".$row['id']."'><i class='icon-trash-o'></i></button></td>
-                                      <td scope='row'><button class='editar icon-pencil-square' value ='".$row['id']."'></button></td>
-                                    </tr>";
+                              <td scope='row'>".$row['tipo_personal']."</td>
+                              <td scope='row'>".$row['id']."</td>
+                              <td scope='row'><button class='delete' value ='".$row['id']."'><i class='icon-trash-o'></i></button></td>
+                              <td scope='row'><button class='editar icon-pencil-square' value ='".$row['id']."'></button></td>
+                            </tr>";
                                }
                       }else {
-                        $empleados='<div>no hay datos<div>';
+                        $empleados='<div>No hay datos<div>';
                       }
             $lista = array(0 => $areas,
                             1 => $empleados);
@@ -98,7 +76,7 @@
             if ($insercion) {
                 $respuesta.='Personal agregado correctamente';
                   }else {
-                    $respuesta='hubo algun error al ingresar el personal'. mysqli_error($conectar);
+                    $respuesta='Hubo algún error al ingresar el personal'. mysqli_error($conectar);
                   }
            //actualizacion de encargado
             if ($tipo== 'encargado') {
@@ -124,7 +102,7 @@
                 }
                 echo json_encode($response);
               }else {
-                echo json_encode("Id de personal no econtrado");
+                echo json_encode("ID de personal no econtrado");
               }
 
         break;
@@ -140,7 +118,7 @@
               if ($edicion) {
                   $respuesta.='Personal editado correctamente';
                     }else {
-                      $respuesta='hubo algun error al ingresar el personal'. mysqli_error($conectar);
+                      $respuesta='Hubo algún error al ingresar el personal'. mysqli_error($conectar);
                     }
              //actualizacion de encargado
               if ($edit_tipo== 'encargado') {
@@ -158,7 +136,7 @@
             $sql="DELETE FROM personal WHERE id='$id'";
             $eliminar=mysqli_query($conectar, $sql);
             if ($eliminar) {
-              echo "Personal Eliminado";
+              echo "Personal eliminado";
             }else {
               echo mysqli_error($conectar);
             }

@@ -15,7 +15,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
        $resultado=$conexion->query($sql);
 
        if($resultado->num_rows > 0){
-          $response['mensaje'] = "Reporte encontrado";
+          $response['mensaje'] = "Reporte ya firmado";
           $response['id'] = $id_reporte;
           while ($fila=$resultado->fetch_assoc()){
                 $response['firma'] = $fila['firma'];

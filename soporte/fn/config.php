@@ -37,7 +37,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                 <td scope='row'>".$rest["usuario"]."</td>
                                 <td scope='row'>".$rest["nombre"]."</td>
                                 <td scope='row'>".$rest["tipo_admin"]."</td>
-                                <td scope='row'><button name='".$rest["id"]."' class='delete'>Delete</button></td>
+                                <td scope='row'><button name='".$rest["id"]."' class='delete'><i class='icon-trash-o'></i></button></td>
                               </tr>
                     ";
                     }
@@ -51,10 +51,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             $pass = $_POST['pass'];
             $hashedpass= password_hash($pass, PASSWORD_DEFAULT);
             $rankadm = $_POST['rankadm'];
-            $insert = "INSERT INTO login (id, usuario, pass, nombre, tipo_admin, tema) VALUES (NULL, '$useradm', '$hashedpass', '$nameadm', '$rankadm', '')";
+            $insert = "INSERT INTO login (id, usuario, pass, nombre, tipo_admin) VALUES (NULL, '$useradm', '$hashedpass', '$nameadm', '$rankadm')";
             $ejecutar=mysqli_query($conectar, $insert);
               if (!$ejecutar) {
                   echo 'hubo algun error';
+                  print_r($conectar);
                 }else {
                   echo "Administrador agregado correctamente";
                 }

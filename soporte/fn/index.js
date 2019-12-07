@@ -12,7 +12,7 @@ $(document).on("change", "#usr", function(){
       .done(function(response){
         //clear
         swal({
-          title: 'Datos encontrados!',
+          title: 'Datos encontrados',
           text: 'Autollenando formulario',
           icon:'success',
           timer: 1500,
@@ -21,7 +21,7 @@ $(document).on("change", "#usr", function(){
         $("form").find(".error").removeClass("error")
         if (response==="Usuario no econtrado") {
           swal({
-            title:'datos Incorrectos',
+            title:'Datos incorrectos',
             text: response,
             icon: 'error',
           })
@@ -84,8 +84,8 @@ function vald(){
     vald();
     if ($(".error:visible").length>0) {
       swal({
-        title:"verifica el formulario por favor",
-        text:"El formulario esta vacío o contiene carácteres no válidos",
+        title:"Verifica el formulario",
+        text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
         icon:"error",
       })
       $($(".error:visible")).focus();
@@ -93,12 +93,12 @@ function vald(){
     }
     form = $("form#n_reporte")
     swal({
-      title: "Crear Reporte",
+      title: "Crear reporte",
       text: `¿Agregar nuevo reporte?`,
       icon: "info",
       buttons: [
-        'cancelar',
-        'Si!'
+        'Cancelar',
+        'Aceptar'
       ],
     }).then(
       function (valid) {
@@ -131,7 +131,7 @@ $(document).on("click", "#nota", function(){
   vald();
   if ($(".error:visible").length>0) {
     swal({
-      text:"Campos vacíos o contienen carácteres no válidos",
+      text:"Hay campos vacíos, incompletos o contienen carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();

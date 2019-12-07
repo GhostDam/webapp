@@ -48,8 +48,8 @@
       <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
 
         <div class="form-group alert alert-primary">
-            <label for="nombre" class="col-sm-6 col-form-label">Ingresa el usuario que reporta:</label>
-            <input type="text" class="form-control col-6" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
+            <label for="nombre" class="col-sm-12 col-form-label">Ingrese el usuario que reporta:</label>
+            <input type="text" class="form-control col-12" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
         </div>
 
         <form action='fn/fnindex.php'  id="n_reporte" autocomplete="off">
@@ -86,10 +86,10 @@
               <div class="form-group col-md-6">
                 <label for="tservicio">Tipo de servicio: </label>
                 <select name='tservicio' class="form-control" required>
-                  <option value="" selected>Selecciona</option>
+                  <option value="" selected>Seleccione una opción</option>
                   <option value="Hardware">Hardware</option>
                   <option value="software">Software</option>
-                  <option value="telefonia">Telefonia</option>
+                  <option value="telefonia">Telefonía</option>
                 </select>
               </div>
             </div>
@@ -112,8 +112,8 @@
               <div class="form-group col-md-6">
                 <label for="provedor">Proveedor de servicio: </label>
                 <select name='provedor' class="form-control" required>
-                  <option value="" selected>Tipo de proveedor</option>
-                  <option value="imjuve">Imjuve</option>
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="imjuve">IMJUVE</option>
                   <option value="externo">Externo</option>
                 </select>
               </div>
@@ -131,7 +131,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="no_serie">Serie: </label>
+              <label for="no_serie">Número de serie: </label>
               <input type="text"  id="no_serie" name="serie" class="form-control" placeholder="Autollenado" readonly required>
             </div>
             <div class="form-group col-md-6">

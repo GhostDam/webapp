@@ -55,13 +55,13 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
             <form id="n_personal">
             <label for="dirList">A que dirección se agregará</label>
               <select class="dirList" name='direccion'>
-                <option value="">Selecciona la dirección</option>
+                <option value="">Seleccione una opción</option>
               </select> <br>
               <label for="nuevo_empleado">Nombre del personal</label>
               <input type="text" name="nuevo_empleado"> <br>
-              <label for="tipo_empleado">tipo de personal</label>
+              <label for="tipo_empleado">Tipo de personal</label>
               <select class="tipo_empleado" name="tipo_empleado">
-                <option value="">selecciona el tipo</option>
+                <option value="">Seleccione una opción</option>
                 <option value="base">Base</option>
                 <option value="becario">Becario</option>
                 <option value="encargado">Encargado</option>
@@ -69,7 +69,7 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
               <div class="nuevo_responsable hide">
                 <label for="areas">De que área sera responsable</label>
                 <select class="areaList" name="nuevo_responsable">
-                  <option value="">selecciona el área</option>
+                  <option value="">Seleccione una opción</option>
                 </select>
 
               </div>
@@ -78,25 +78,25 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
           </form>          </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <form id="edit_personal">
-              <label for="id">Id de personal</label>
+              <label for="id">ID de personal</label>
               <input type="text" name="id_editar" value=""> <button type="button" id="carga_edicion">Buscar</button> <br>
               <label for="dirList">A que dirección se agregará</label>
                 <select class="dirList" name='direccion'>
-                  <option value="">Selecciona la dirección</option>
+                  <option value="">Seleccione una opción</option>
                 </select> <br>
                 <label for="edit_empleado">Nombre del personal</label>
                 <input type="text" name="edit_empleado"> <br>
-                <label for="edit_tipo">tipo de personal</label>
+                <label for="edit_tipo">Tipo de personal</label>
                 <select class="tipo_empleado" name="edit_tipo">
-                  <option value="">selecciona el tipo</option>
-                  <option value="base">base</option>
-                  <option value="becario">becario</option>
-                  <option value="encargado">encargado</option>
+                  <option value="">Seleccione una opción</option>
+                  <option value="base">Base</option>
+                  <option value="becario">Becario</option>
+                  <option value="encargado">Encargado</option>
                 </select>
                   <div class="nuevo_responsable hide">
                       <label for="areas">De que área sera responsable</label>
                       <select class="areaList" name="nuevo_responsable">
-                        <option value="">selecciona el área</option>
+                        <option value="">Seleccione una opción</option>
                       </select>
                   </div>
                 <br>

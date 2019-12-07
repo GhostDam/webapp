@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
-        <label for="detail">Busca por ID de Equipo para ver detalladamente</label>
+        <label for="detail">Buscar equipo por ID´para consultar su información</label>
         <input type="text" name="detail" id="search">
         <input type="button" value="Buscar" id="detailed">
       <div id="componentes">
@@ -78,7 +78,7 @@
           <legend>Formulario para la adición de equipos</legend>
             <label for="area">Área a la que se agregara el equipo</label> <br>
               <select class="invList"  name="area">
-                <option value="">Selecciona el área</option>
+                <option value="">Seleccione una opción</option>
               </select>
               <br>
               <label for="nombre_equipo">Nombre del equipo</label>
@@ -91,25 +91,25 @@
             <label for="caracteristicas">Caracteristicas</label>
             <input type="text" name="caracteristicas" value="">
             <br>
-            <label for="tipo_cpu">Ram</label>
+            <label for="tipo_cpu">RAM</label>
             <input type="text" name="ram" value="">
             <br>
             <label for="tipo">Tipo</label>
             <select name="tipo_cpu">
-                <option selected value="">Selecciona el tipo</option>
+                <option selected value="">Seleccione una opción</option>
                 <option value="mpc">mpc - Desktop</option>
                 <option value="ml">ml - Laptop</option>
                 <option value="mao">mao - All In One</option>
                 <option value="mac">Mac</option>
             </select>
             <br>
-            <label for="marca_cpu">marca</label>
+            <label for="marca_cpu">Marca</label>
             <input type="text" name="marca_cpu" value="">
             <br>
-            <label for="modelo_cpu">modelo</label>
+            <label for="modelo_cpu">Modelo</label>
             <input type="text" name="modelo_cpu" value="">
             <br>
-            <label for="serie_cpu">serie</label>
+            <label for="serie_cpu">Número de serie</label>
             <input type="text" name="serie_cpu" value="">
           </fieldset>
 
@@ -142,7 +142,7 @@
             <label for="modelo_m">Modelo mouse</label>
             <input type="text" name="modelo_m" value="">
             <br>
-            <label for="num_serie_m">Serie mouse</label>
+            <label for="num_serie_m">Número de serie mouse</label>
             <input type="text" name="num_serie_m" value="">
             <br>
           </fieldset>
@@ -160,7 +160,7 @@
             <label for="modelo_b">Modelo bocina</label>
             <input type="text" name="modelo_b" value="">
             <br>
-            <label for="num_serie_b">Serie bocina</label>
+            <label for="num_serie_b">Número de serie bocina</label>
             <input type="text" name="num_serie_b" value="">
           </fieldset>
 
@@ -176,30 +176,30 @@
             <label for="modelo_t">Modelo teclado</label>
             <input type="text" name="modelo_t" value="">
             <br>
-            <label for="num_serie_t">Serie teclado</label>
+            <label for="num_serie_t">Número de serie teclado</label>
             <input type="text" name="num_serie_t" value="">
             <br>
           </fieldset>
 
           <fieldset disabled class="nb">
-            <legend>No Brake <label class="switch">
+            <legend>No Break <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                               </label>
             </legend>
-            <label for="marca_nb">Marca Nobrake</label>
+            <label for="marca_nb">Marca No break</label>
             <input type="text" name="marca_nb" value="">
             <br>
-            <label for="modelo_nb">Modelo Nobrake</label>
+            <label for="modelo_nb">Modelo No Brake</label>
             <input type="text" name="modelo_nb" value="">
             <br>
-            <label for="num_serie_nb">Serie Nobrake</label>
+            <label for="num_serie_nb">Número de serie No Brake</label>
             <input type="text" name="num_serie_nb" value="">
             <br>
           </fieldset>
 
           <fieldset disabled class="c">
-            <legend>cargador <label class="switch">
+            <legend>Cargador <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                               </label>
@@ -210,12 +210,12 @@
             <label for="modelo_c">Modelo cargador</label>
             <input type="text" name="modelo_c" value="">
             <br>
-            <label for="num_serie_c">Serie cargador</label>
+            <label for="num_serie_c">Número de serie cargador</label>
             <input type="text" name="num_serie_c" value="">
             <br>
           </fieldset>
 
-          <input id="crear_equipo" type="button" value="crear">
+          <input id="crear_equipo" type="button" value="Crear">
         </form>
 
       </div>

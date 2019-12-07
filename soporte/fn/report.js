@@ -1,16 +1,65 @@
 //==================================Pendientes====================================
 /*cargar pendients*/
-  $(document).ready(function cargar_reporte(){
-    $.ajax({
-      url:'fn/report.php',
-      type:'POST',
-      dataType:'html',
-      data:{to:'vrep'}
-    })
-    .done(function(vrep){
-      $("#mostrar").html(vrep)
-    })
+  // $(document).ready(function cargar_reporte(){
+  //   $.ajax({
+  //     url:'fn/report.php',
+  //     type:'POST',
+  //     dataType:'html',
+  //     data:{to:'vrep'}
+  //   })
+  //   .done(function(vrep){
+  //     $("#mostrar").html(vrep)
+  //   })
+  // })
+/*paginar pendients*/
+// carga();//total registros
+// vista(0);//vista registros
+
+$(document).ready(function cargar_reporte(){
+  $.ajax({
+    url:'fn/report.php',
+    type:'POST',
+    dataType:'html',
+    data:{to:'vrep'}
   })
+  .done(function(vrep){
+    pend = vrep/10;
+    pend = Math.ceil(pend)
+    $("#mostrar").html(vrep)
+  })
+})
+// for (var i = 1; i <= nums; i++) {
+//   // $('#pages').append(`<li class=${i-1} page-item>${i}</li>`)
+//   $('#pages').append(`<li class='${i-1} page-item'><a class="page-link" href="#">${i}</a></li>`)
+//
+// //
+//
+// }
+// $("#pages li:first").addClass("active")
+
+//carga de total
+//vista
+// $(document).on('click', '#pages li', function(){
+//   $("#pages li").removeClass("active");
+//   $(this).addClass("active")
+//   var where = $(this).attr('class');
+//   var where = parseInt(where)
+//   vista(where*10);
+// });
+// function vista(start){
+//   $.ajax({
+//     url: 'fn/report.php',
+//     type: 'POST',
+//     dataType:'html',
+//     data:{to:'view', start:start}
+//   })
+//   .done(function(vista){
+//     $("#historial").html(vista);
+//   })
+// }
+//vista
+
+
 /*cargar pendients*/
 /*enviar a attend*/
   $(document).on("click", ".atender", function(){
@@ -18,11 +67,11 @@
     //swal
     swal({
     title: "Atender Reporte",
-    text: `Atender reporte con Id ${id}`,
+    text: `Atender reporte con ID ${id}`,
     icon: "info",
     buttons: [
-        'cancelar',
-        'Si!'
+        'Cancelar',
+        'Aceptar'
       ],
     }).then(
        function (yes) {
@@ -43,11 +92,11 @@ $(document).on("click", ".firmar", function(){
   //swal
   swal({
   title: "Firmar Reporte",
-  text: `Firmar reporte con Id ${id}`,
+  text: `Firmar reporte con ID ${id}`,
   icon: "info",
   buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
      function (yes) {
@@ -96,8 +145,8 @@ $(document).on('click', '#btnEdit', function(e){
   })
   if ($(".error:visible").length>0) {
     swal({
-      title:"verifica el formulario por favor",
-      text:"El formulario esta vacío o contiene carácteres no válidos",
+      title:"Verifica el formulario",
+      text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();
@@ -105,12 +154,12 @@ $(document).on('click', '#btnEdit', function(e){
   }
   form = $("form#edit_reporte")
   swal({
-    title: "Editar Reporte",
+    title: "Editar reporte",
     text: `¿Confirmar?`,
     icon: "info",
     buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
     function (valid) {
@@ -163,14 +212,6 @@ function carga(){
     $("#pages li:first").addClass("active")
   })
 }
-
-// <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-//   <div class="btn-group mr-2" role="group" aria-label="First group">
-//     <button type="button" class="btn btn-secondary">1</button>
-//     <button type="button" class="btn btn-secondary">2</button>
-//     <button type="button" class="btn btn-secondary">3</button>
-//     <button type="button" class="btn btn-secondary">4</button>
-//   </div>
 //carga de total
 //vista
 $(document).on('click', '#pages li', function(){

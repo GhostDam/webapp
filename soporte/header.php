@@ -10,11 +10,11 @@
 
   if ('<?php echo $_SESSION['tipo_admin']; ?>' == 'master') {
     $(document).ready(function(){
-      $(".index .admin").show();
+      $(".admin").show();
     })
   }else {
     $(document).ready(function(){
-      $("div .admin").remove();
+      $(".admin").remove();
     })
   }
 //tested

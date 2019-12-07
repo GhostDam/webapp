@@ -109,20 +109,20 @@ $(document).on('click', '#crear_equipo', function(){
   vald()
   if ($(".error:visible").length>0) {
     swal({
-      title:"verifica el formulario por favor",
-      text:"El formulario esta vacío o contiene carácteres no válidos",
+      title:"Verifica el formulario",
+      text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();
     return false;
   }
   swal({
-    title: "Crear Equipo",
+    title: "Crear equipo",
     text: `¿Agregar un nuevo equipo al inventario?`,
     icon: "info",
     buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
     function (valid) {

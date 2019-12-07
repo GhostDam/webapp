@@ -8,21 +8,26 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
   switch ($_POST['to']) {
     case 'vrep': //ver listado de pendientes
             $salida="";
-            $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC  ";
+            $start="1";
+            // $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
+
+            // $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC  "; aact
+            $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC LIMIT $start , 10  ";
+
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
                   $salida.="<table class='table table-hover'>
                               <thead class='thead thead-dark'>
                                 <tr>
+                                <th>ID</th>
                                 <th>Fecha</th>
                                 <th>Hora</th>
                                 <th>Asunto</th>
-                                <th>Id</th>
-                                <th>Area</th>
+                                <th>Área</th>
                                 <th>Reporta</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Actividad</th>
-                                <th>Status</th>
+                                <th>Estado actual</th>
                               </tr>
                               </thead>
                               </tbody>
@@ -31,10 +36,10 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                      $salida.="<tbody>
                                 <tr>
 
+                      <td>".$fila['id_reporte']."</td>
                       <td>".$fila['fecha']."</td>
                       <td>".$fila['hora']."</td>
                       <td>".$fila['asunto']."</td>
-                      <td>".$fila['id_reporte']."</td>
                       <td>".$fila['area']."</td>
                       <td>".$fila['nombre']."</td>
                       <td>".$fila['descripcion']."</td>
@@ -50,7 +55,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                       </table>";
 
                     }else {
-                    $salida.="No Hay reportes pendientes";
+                    $salida.="No hay reportes pendientes";
                   }
                 echo $salida;
       break;
@@ -72,17 +77,17 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            $salida.="<form action='fn/report.php' method='post' id='edit_reporte' class='edicion'>
            <fieldset class='datosr'>
            <legend>Datos del Reporte</legend>
-               <span>ID Reporte: <input name='id' value=".$fila['id_reporte']." readonly></input></span>
+               <span>ID reporte: <input name='id' value=".$fila['id_reporte']." readonly></input></span>
                <span>Fecha: </span>".$fila['fecha']."
                <span>Hora: </span>".$fila['hora']."
                <span>Persona que Reporta: </span>".$fila['nombre']."
                <span>Asunto: </span>".$fila['asunto']."
-               <span>Descripcion: </span>".$fila['descripcion']."
+               <span>Descripción: </span>".$fila['descripcion']."
                <span>Tipo de Reporte: </span>
                      <select name='treporte' class='form-val' required>
                          <option value=''  selected>".$fila['treporte']."</option>
                          <option value='incidencia'>Incidencia</option>
-                         <option value='eventos'>Eventos</option>
+                         <option value='eventos'>Evento</option>
                          <option value='cambio'>Cambio</option>
                      </select>
                <div class='hide'><input name='to' value='save_edit'></div>
@@ -91,12 +96,12 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                          <option value=''  selected>".$fila['tservicio']."</option>
                          <option value='Hardware'>Hardware</option>
                          <option value='software'>Software</option>
-                         <option value='telefonia'>Telefonia</option>
+                         <option value='telefonia'>Telefonía</option>
                       </select>
            </fieldset>
 
            <fieldset class='datosu'>
-           <legend>Datos del Usuario</legend>
+           <legend>Datos del usuario</legend>
            <span>Provedor del Servicio: </span>
                 <select name='provedor' class='form-val'>
                  <option value=''  selected>".$fila['proveedor']."</option>
@@ -104,21 +109,21 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                  <option value='externo'>Externo</option>
                 </select>
              <span>Usuario: </span>".$fila['usuario']."
-             <span>Area: </span>".$fila['area']."
+             <span>Área: </span>".$fila['area']."
              <span>Responsable: </span>".$fila['encargado_area']."
            </fieldset>
 
            <fieldset class='de'>
-               <legend>Datos del Equipo</legend>
+               <legend>Datos del equipo</legend>
                <span>Marca: </span>".$fila['marca']."
                <span>Modelo: </span>".$fila['modelo']."
-               <span>Serie: </span>".$fila['serie']."
+               <span>Número de serie: </span>".$fila['serie']."
                <span>Tipo de equipo: </span>".$fila['id_equipo']."
            </fieldset>
 
            <fieldset class='ac'>
              <legend>Actividades</legend>
-             <span>Actividad: </span><textarea class='form-val' type='textarea' name='actividad' rows='10' cols='50' required>".$fila['actividad']."</textarea>
+             <span>Descripción de la actividad: </span><textarea class='form-val' type='textarea' name='actividad' rows='10' cols='50' required>".$fila['actividad']."</textarea>
            </fieldset>
 
            <fieldset class='fm'>
@@ -127,31 +132,31 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            </fieldset>
 
            <fieldset class='cs'>
-             <legend>Calificacion del Servicio</legend>
+             <legend>Evaluación del servicio</legend>
              <span>calidad: </span>".$fila['calidad']."
-             <span>Atencion: </span>".$fila['atencion']."
+             <span>Atención: </span>".$fila['atencion']."
              <span>Profesional: </span>".$fila['nivel']."
-             <span>Tiempo Respuesta: </span>".$fila['tiempo']."
+             <span>Tiempo de respuesta: </span>".$fila['tiempo']."
            </fieldset>
 
            <fieldset class='cl'>
              <legend>Cierre del reporte</legend>
              <span>Fecha Cierre: </span>".$fila['fecha_cierre']."
              <span>Hora cierre: </span>".$fila['hora_cierre']."
-             <span>Atendio: </span>".$fila['atendio']."
+             <span>Persona que atendió: </span>".$fila['atendio']."
            </fieldset>
 
            <fieldset class='st'>
-               <Legend>Status: </Legend>
+               <Legend>Estado actual: </Legend>
                <span>".$fila['status']."</span>
                </fieldset>
           </form>
-          <button id='btnEdit' type='submit' class='btn btn-primary'>Guardar: </button>
+          <button id='btnEdit' type='submit' class='btn btn-primary'>Guardar </button>
           ";
             }
             echo $salida;
           }else {
-              echo "No Hay Reportes con ese ID";
+              echo "No hay reportes con ese ID";
           }
         break;
     case 'ask'; //detalles
@@ -164,52 +169,52 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                     while ($fila= $resultado->fetch_assoc()) {
                       $salida.="<div action='fn/edit.php' method='post' class='edicion'>
                                  <fieldset class='datosr'>
-                                 <legend>Datos del Reporte</legend>
-                                 <span>ID Reporte: ".$fila['id_reporte']."</span>
+                                 <legend>Datos del reporte</legend>
+                                 <span>ID reporte: ".$fila['id_reporte']."</span>
                                  <span>Fecha: </span>".$fila['fecha']."
                                  <span>Hora: </span>".$fila['hora']."
                                  <span>Persona que Reporta: </span>".$fila['nombre']."
                                  <span>Asunto: </span>".$fila['asunto']."
-                                 <span>Descripcion: </span>".$fila['descripcion']."
-                                 <span>Tipo de Reporte: </span>".$fila['treporte']."
-                                 <span>Tipo de Servicio: </span>".$fila['tservicio']."
+                                 <span>Descripción: </span>".$fila['descripcion']."
+                                 <span>Tipo de reporte: </span>".$fila['treporte']."
+                                 <span>Tipo de servicio: </span>".$fila['tservicio']."
                                  </fieldset>
 
                                  <fieldset class='datosu'>
-                                 <legend>Datos del Usuario</legend>
-                                 <span>Provedor del Servicio: </span>".$fila['proveedor']."
+                                 <legend>Datos del usuario</legend>
+                                 <span>Proveedor del servicio: </span>".$fila['proveedor']."
                                  <span>Usuario: </span>".$fila['usuario']."
-                                 <span>Area: </span>".$fila['area']."
+                                 <span>Área: </span>".$fila['area']."
                                  <span>Responsable: </span>".$fila['encargado_area']."
                                  </fieldset>
 
                                  <fieldset class='de'>
-                                 <legend>Datos del Equipo</legend>
+                                 <legend>Datos del equipo</legend>
                                  <span>Marca: </span>".$fila['marca']."
                                  <span>Modelo: </span>".$fila['modelo']."
-                                 <span>Serie: </span>".$fila['serie']."
+                                 <span>Número de serie: </span>".$fila['serie']."
                                  <span>ID inventario: </span>".$fila['id_equipo']."
                                  </fieldset>
 
                                  <fieldset class='ac'>
                                  <legend>Actividades</legend>
-                                 <span>Solucion: ".$fila['solucion']."</span>
+                                 <span>Solución: ".$fila['solucion']."</span>
                                  <span>Actividad: </span>".$fila['actividad']."
                                  </fieldset>
 
                                  <fieldset class='cs'>
-                                 <legend>Calificacion del Servicio</legend>
-                                 <span>calidad: </span>".$fila['calidad']."
-                                 <span>Atencion: </span>".$fila['atencion']."
+                                 <legend>Evaluación del servicio</legend>
+                                 <span>Calidad: </span>".$fila['calidad']."
+                                 <span>Atención: </span>".$fila['atencion']."
                                  <span>Profesional: </span>".$fila['nivel']."
-                                 <span>Tiempo Respuesta: </span>".$fila['tiempo']."
+                                 <span>Tiempo de respuesta: </span>".$fila['tiempo']."
                                  </fieldset>
 
                                  <fieldset class='cl'>
                                  <legend>Cierre del reporte</legend>
                                  <span>Fecha de cierre: </span>".$fila['fecha_cierre']."
                                  <span>Hora de cierre: </span>".$fila['hora_cierre']."
-                                 <span>Persona que atendio: </span>".$fila['atendio']."
+                                 <span>Persona que atendió: </span>".$fila['atendio']."
                                  </fieldset>
 
                                  <fieldset class='fm'>
@@ -218,13 +223,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  </fieldset>
 
                                  <fieldset class='status'>
-                                  <legend>Status</legend>
+                                  <legend>Estado actual</legend>
                                    ".$fila['status']."
                                  </fieldset>
                                 </div>";
                               }
                       }else {
-                        $salida='no hay historial';
+                        $salida='No hay historial';
                       }
                   echo $salida;
             }
@@ -244,7 +249,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                               <th scope='col'>Persona que reportó</th>
                               <th scope='col'>Área</th>
                               <th scope='col'>Asunto</th>
-                              <th scope='col'>Status</th>
+                              <th scope='col'>Estado actual</th>
                             </tr>
                           </thead>";
            while ($rep = $resultado->fetch_assoc()) {
@@ -255,7 +260,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                               <td scope='row'>".$rep['area']."</td>
                               <td scope='row'>".$rep['asunto']."</td>
                               <td scope='row'>".$rep['status']."</td>
-                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-dark'>detalles</button></td>
+                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-info'>Detalles</button></td>
                           </tr>";
            }
           $paginacion.="</tbody></table>";
@@ -276,7 +281,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
         $ejecutar=mysqli_query($conectar, $sql);
         //verficar ejecucion
         if(!$ejecutar){
-                echo"hubo algun error";
+                echo"Hubo algún error";
                 echo mysqli_error();
           }else{
             echo "Edición guardada correctamente";

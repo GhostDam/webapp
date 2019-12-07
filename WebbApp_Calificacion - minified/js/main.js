@@ -13,6 +13,28 @@ if('serviceWorker' in navigator){
 	console.log('No tienes acceso a los serviceWorker en tu navegador');
 }
 //*Service worker
+//*Evento de Instalador en Desktop
+// let deferredPromt;
+// const addBtn = document.querySelector('.add-Button');
+// addBtn.style.display = 'none';
+// window.addEventListener('beforeinstallprompt', (e) => {
+//     e.preventDefault();
+//     deferredPromt = e;
+//     showInstallPromotion();
+//     addBtn.style.display = 'block';
+//     addBtn.addEventListener('click', (e) => {
+//         addBtn.style.display = 'none';
+//         deferredPromt.prompt();
+//         deferredPromt.userChoice.then((choiceResult) => {
+//             if (choiceResult.outcome === 'accepted') {
+//                 console.log('Se acepto el A2HS prompt');
+//             } else {
+//                 console.log('User')
+//             }
+//             deferredPromt = null;
+//         });
+//     });
+// });
 //consulta
 $(document).ready(function(){
     $("#folio-reporte").on('submit', function(e){
@@ -28,9 +50,9 @@ $(document).ready(function(){
 							.done(function(res){
 								console.log(res)
 										if (res['mensaje']=='Número de reporte inexistente') {
-											console.log(res['mensaje'])
+											swal(res['mensaje'], "","error")
 										}else if(res['firma']!=''){
-											console.log(res['mensaje'] + ' y firmado ' + res['firma'])
+											swal(res['mensaje'], res['firma'] , "error")
 										}else{
 											window.location.href =`php/calificacion.php?reporte=${res['id']}`;
 										}
@@ -104,7 +126,8 @@ $(document).on('submit', "#servicio", function(e){
   // })
   .done(function(respuesta) {
     console.log(respuesta);
-  })
+		
+	})
   .fail(function(data){
     console.log(data)
   })

@@ -50,12 +50,12 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
             <div class="buscador">
-                <label>BUSCAR POR ÁREA O USUARIO</label>
+                <label>Buscar por área o usuario</label>
                 <div class="col-5">
                     <input list="sel" id="selection" class="form-control" type="text" name="" value="">
                 </div>
                   <datalist id="sel" class="areaList">
-                  <option>TODAS LAS ÁREAS</option>
+                  <option>Seleccione una opción</option>
                 </datalist>
               </div><br>
               <div class="respuesta">
@@ -63,69 +63,69 @@
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <form id="agregar_usuario">
-              <label>ÁREA A LA QUE PERTENECE</label>
+              <label>Área a la que pertenece</label>
               <div class="col-5">
                 <select id="adicion" class="form-control areaList">
-                  <option value="" selected>ÁREA</option>
+                  <option value="" selected>Seleccione una opción</option>
                 </select>
               </div>
                <br>
-                <label for="user">ASIGNA NOMBRE DE USUARIO</label>
+                <label for="user">Asigne nombre de usuario</label>
                 <div class="col-5">
                    <input type="text" name="user" class="form-control">
                 </div>
                <br>
-                <label for="person">ASIGNA RESPONSABLE</label>
+                <label for="person">Asigne nombre de responsable</label>
                 <div class="col-5">
                   <input type="text" name="person" class="form-control">
                 </div>
                 <br>
-                 <label for="equipos">ASIGNA EQUIPO</label>
+                 <label for="equipos">Asigne el equipo</label>
                  <div class="col-5">
                     <select id="disponibles" name="equipos" class="form-control">
-                    <option value="" selected>SELECCIONA UN EQUIPO</option>
+                    <option value="" selected>Seleccione una opción</option>
                   </select>
                  </div>
               <br>
               <div class="col-5">
-                <button type="button" class="btn btn-primary" id="crearUsuario">CREAR USUARIO</button>
+                <button type="button" class="btn btn-primary" id="crearUsuario">Crear usuario</button>
               </div>
             </form>
           </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <form id="editar_usuario">
-              <label for="user">EDITAR ID USUARIO</label>
+              <label for="user">Editar ID usuario</label>
               <div class="col-5">
                  <input type="text" class="form-control" id="user_to_edit" name="user">
-                  <button type="button" class="btn btn-primary" id="cargarEdicion">EDITAR</button>
+                  <button type="button" class="btn btn-primary" id="cargarEdicion">Editar</button>
               </div>
                    <br>
-                     <label for="user">NOMBRE: </label>
+                     <label for="user">Nombre: </label>
                      <div class="col-5">
                        <input type="text" class="form-control" name="edicion_nombre" class="form-val">
                      </div>
                         <br>
-                      <label>ÁREA A LA QUE PERTENCE</label>
+                      <label>Área a la que pertenece</label>
                      <div class="col-5">
                        <select id="edicion_area" class="form-control areaList">
-                         <option value="" selected>SELECCIONA UN ÁREA</option>
+                         <option value="" selected>Seleccione una opción</option>
                        </select>
                     </div>
                   <br>
-                    <label for="person">REPSONSABLE ASIGNADO</label>
+                    <label for="person">Responsable asignado</label>
                      <div class="col-5">
                       <input type="text" class="form-control" name="edicion_responsable">
                      </div>
                        <br>
-                        <label for="equipos">EQUIPO ASIGNADO</label>
+                        <label for="equipos">Equipo asignado</label>
                         <div class="col-5">
                           <select id="edicion_equipo" name="equipos" class="form-control">
-                           <option value="">SELCCIONA UN EQUIPO</option>
+                           <option value="">Seleccione una opción</option>
                          </select>
                         </div>
                   <br>
                   <div class="col">
-                    <button type="button" class="btn btn-primary" id="editUser">EDITAR USUARIO</button>
+                    <button type="button" class="btn btn-primary" id="editUser">Editar usuario</button>
                   </div>
             </form>
                 </div>

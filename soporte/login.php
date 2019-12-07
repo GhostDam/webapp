@@ -11,26 +11,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- css -->
      <link rel="stylesheet" href="css/master.css">
-       <title>ATENCIÓN DE REPORTE</title>
+       <title>SOPORTE</title>
 </head>
 <body>
     <header>
-     <h1>SISTEMA DE ATENCIÓN DE REPORTE</h1>
+     <h1>SISTEMA DE ATENCIÓN DE REPORTES</h1>
   </header>
      <div class='contenedor'>
             <div class='form'>
                 <form action="fn/load.php" method="post">
-                     <label for="usuario">USUARIO: </label>
+                     <label for="usuario">Usuario: </label>
                         <div class="col">
                           <input type="text"class="form-control col-5" id="usuario" name="usuario" required>
                             </div>
                             <br>
-                    <label for="contraseña">CONTRASEÑA: </label>
+                    <label for="contraseña">Contraseña: </label>
                   <div class="col align-self-end">
               <input type="password" class="form-control col-5" id="contraseña" name="contraseña" required>
             </div>
             <br>
-      <button type="submit" class="btn btn-primary" value="entrar">ENTRAR</button>
+      <button type="submit" class="btn btn-primary" value="entrar">Entrar</button>
           </form>
           </div>
             </div>      

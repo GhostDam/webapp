@@ -86,18 +86,18 @@ $(document).on('click', '#agregar_personal', function(){
   data += "&action=agregar_usuario";
   vald()
   if ($(".error:visible").length>0) {
-      swal("verifica el formulario por favor",
-           "El formulario esta vacío o contiene carácteres no válidos",
+      swal("Verifica el formulario",
+           "El formulario esta vacío, incompleto o contiene carácteres no válidos",
            "error")
           return false
   }
   swal({
     title: "Personal",
-    text: `¿Agregar Personal?`,
+    text: `¿Agregar personal?`,
     icon: "info",
     buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
     function (valid) {
@@ -143,17 +143,17 @@ $(function(){
     vald();
     if ($(".error:visible").length>0) {
         swal("verifica el formulario por favor",
-             "El formulario esta vacío o contiene carácteres no válidos",
+             "El formulario esta vacío, incompleto o contiene carácteres no válidos",
              "error")
             return false
     }
     swal({
       title: "Personal",
-      text: `¿Editar Personal?`,
+      text: `¿Editar personal?`,
       icon: "info",
       buttons: [
-        'cancelar',
-        'Si!'
+        'Cancelar',
+        'Aceptar'
       ],
     }).then(
       function (valid) {
@@ -179,12 +179,12 @@ $(function(){
 $(document).on("click","button.delete", function(){
   var id = $(this).prop("value")
   swal({
-  title: "Eliminar Usuario",
-  text: `Eliminar Usuario con Id ${id}`,
+  title: "Eliminar usuario",
+  text: `Eliminar usuario con ID ${id}`,
   icon: "warning",
   buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
      function (del) {
@@ -210,11 +210,11 @@ $(document).on('click', '.editar', function(){
 var id_usuario = $(this).attr('value')
 swal({
 title: "Editar Usuario",
-text: `Editar Usuario con Id ${id_usuario}`,
+text: `Editar usuario con ID ${id_usuario}`,
 icon: "info",
 buttons: [
-   'cancelar',
-   'Si!'
+   'Cancelar',
+   'Aceptar'
  ],
 }).then(
   function (del) {

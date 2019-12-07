@@ -98,8 +98,8 @@ $(document).ready(function(){
       vald();
       if ($(".error:visible").length>0) {
         swal({
-          title:"verifica el formulario por favor",
-          text:"El formulario esta vacío o contiene carácteres no válidos",
+          title:"Verifique el formulario",
+          text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
           icon:"error",
         })
         $($(".error:visible")).focus();
@@ -107,12 +107,12 @@ $(document).ready(function(){
       }
       swal({
       title: "¿Crear usuario?",
-      text: `Nombre Usuario ${createuser}
-             Responsable ${createnombre}`,
+      text: `Nombre de usuario: ${createuser}
+             Responsable:  ${createnombre}`,
       icon: "info",
       buttons: [
-          'cancelar',
-          'Si!'
+          'Cancelar',
+          'Aceptar'
         ],
       }).then(
          function (del) {
@@ -136,12 +136,12 @@ $(document).ready(function(){
    $(document).on("click","button.delete", function(){
      var id = $(this).prop("value")
      swal({
-     title: "Eliminar Usuario",
-     text: `Eliminar Usuario con Id ${id}`,
+     title: "Eliminar usuario",
+     text: `Eliminar usuario con ID ${id}`,
      icon: "warning",
      buttons: [
-         'cancelar',
-         'Si!'
+         'Cancelar',
+         'Aceptar'
        ],
      }).then(
         function (del) {
@@ -167,12 +167,12 @@ $(document).ready(function(){
 $(document).on('click', '.editar', function(){
   var id_usuario = $(this).attr('value')
   swal({
-  title: "Editar Usuario",
-  text: `Editar Usuario con Id ${id_usuario}`,
+  title: "Editar usuario",
+  text: `Editar usuario con ID ${id_usuario}`,
   icon: "info",
   buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
      function (del) {
@@ -195,7 +195,7 @@ $(document).on('click', '#cargarEdicion', function(){
   .done(function(respuesta) {
   $("form").find(".error").removeClass("error")
 
-    if (respuesta == 'No Existe el id ingresado') {
+    if (respuesta == 'No existe el ID ingresado') {
       swal(respuesta, '', 'error')
     }else {
     $("input[name='edicion_nombre']").val(respuesta['nombre_usuario'])
@@ -221,8 +221,8 @@ $("#editUser").click(function(){
   vald()
   if ($(".error:visible").length>0) {
     swal({
-      title:"verifica el formulario por favor",
-      text:"El formulario esta vacío o contiene carácteres no válidos",
+      title:"Verifique el formulario",
+      text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();
@@ -232,11 +232,11 @@ $("#editUser").click(function(){
 
   swal({
   title: "¿Guardar cambios?",
-  text: `Se actualizara el Usuario ${id_edicion}`,
+  text: `Se actualizara el usuario: ${id_edicion}`,
   icon: "info",
   buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
      function (edit) {

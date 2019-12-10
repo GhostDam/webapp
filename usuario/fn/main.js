@@ -62,25 +62,23 @@ $(document).on('input', '#area', function(){
   },500);
 });
 /*Select equipos*/
-var inventario, modelo, no_serie, marca ='';
+// var inventario, modelo, no_serie, marca ='';
 function equipos(equip) {
   $.ajax({
     url: 'fn/reporte.php',
     type: 'POST',
-    dataType: 'html',
+    dataType: 'json',
     data: {equip: equip},
   })
   .done(function(pc) {
-    $("#inventario").val(pc.split("/")[0])
-    $("#modelo").val(pc.split("/")[1])
-    $("#no_serie").val(pc.split("/")[2])
-    $("#marca").val(pc.split("/")[3])
-
-    inventario = pc.split("/")[0];
-    modelo = pc.split("/")[1];
-    no_serie = pc.split("/")[2];
-    marca = pc.split("/")[3];
-    console.log(inventario, modelo, no_serie, marca)
+    // console.log(pc)
+    $("#inventario").val(pc[0][0])
+    $("#modelo").val(pc[0][1])
+    $("#no_serie").val(pc[0][2])
+    $("#marca").val(pc[0][3])
+  })
+  .fail(function(res){
+    console.log(res)
   })
 }
 $(document).on('change', '#usuario', function(){

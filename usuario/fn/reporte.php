@@ -63,19 +63,19 @@ if (isset($_POST['usuarios'])) {
 // cargar usuarios de areas
 // carga de equipos
   if (isset($_POST['equip'])) {
-    $salida="";
+    $salida=[];
   $q = $conectar->real_escape_string($_POST['equip']);
-  $query = "SELECT tipo, marca, modelo, num_serie FROM cpu INNER JOIN equipos on cpu.id_equipo = equipos.id_equipo
+  $query = "SELECT nombre_equipo, tipo, marca, modelo, num_serie FROM cpu INNER JOIN equipos on cpu.id_equipo = equipos.id_equipo
                                                            INNER JOIN usuarios on equipos.id_equipo = usuarios.id_equipo
                                                            WHERE usuarios.id_usuario = '$q' ORDER BY marca";
 
   $resultado = $conectar->query($query);
   if ($resultado->num_rows> 0){
-  while ($fila= $resultado->fetch_assoc()) {
-    $salida.=$fila['tipo']."/".$fila['modelo']."/".$fila['num_serie']."/".$fila['marca'];
+  while ($fila= $resultado->fetch_all()) {
+    $salida=$fila;
     }
   }
-  echo $salida;
+  echo json_encode($salida);
   }
 // carga de equipos
 

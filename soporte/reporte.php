@@ -58,6 +58,7 @@
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <div id="edicion" class="">
+                      
                       <label for="buscador">Atender por ID de reporte:</label>
                       <input type="text" class="form-control col-3" id="buscador" name="buscador" placeholder="####">
                       <button id="editar"  class="btn btn-info" name="" value="buscar">Buscar</button>

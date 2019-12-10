@@ -126,7 +126,7 @@ $(document).on('submit', "#servicio", function(e){
   // })
   .done(function(respuesta) {
     console.log(respuesta);
-		
+
 	})
   .fail(function(data){
     console.log(data)

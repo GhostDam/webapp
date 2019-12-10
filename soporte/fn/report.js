@@ -205,7 +205,6 @@ function carga(){
     for (var i = 1; i <= nums; i++) {
       // $('#pages').append(`<li class=${i-1} page-item>${i}</li>`)
       $('#pages').append(`<li class='${i-1} page-item'><a class="page-link" href="#">${i}</a></li>`)
-
 //
 
     }

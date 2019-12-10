@@ -193,7 +193,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  <span>Marca: </span>".$fila['marca']."
                                  <span>Modelo: </span>".$fila['modelo']."
                                  <span>Número de serie: </span>".$fila['serie']."
-                                 <span>ID inventario: </span>".$fila['id_equipo']."
+                                 <span>Nombre del equipo: </span>".$fila['id_equipo']."
                                  </fieldset>
 
                                  <fieldset class='ac'>

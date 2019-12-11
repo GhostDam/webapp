@@ -10,6 +10,9 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
   <script src="fn/person.js"></script>
+  <!--responsive-->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">

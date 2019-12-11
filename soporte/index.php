@@ -10,6 +10,9 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
   <script src="fn/index.js" charset="utf-8"></script>
+  <!--responsive-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- google fonts -->
   <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">
@@ -57,7 +60,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nombre">Usuario: </label>
-                <input name='nombre' list='empleado' class="form-control" placeholder="Seleccion el nombre del empleado"required>
+                <input name='nombre' list='empleado' class="form-control" placeholder="Introduzca el nombre del empleado"required>
                   <datalist id="empleado">
                   </datalist>
               </div>
@@ -74,7 +77,7 @@
               <div class="form-group col-md-6">
                 <label for="treporte">Tipo de reporte: </label>
                   <select name='treporte' class="form-control" required>
-                    <option value="" selected>Selecciona</option>
+                    <option value="" selected>Seleccione una opción</option>
                     <option value="incidencia">Incidencia</option>
                     <option value="eventos">Evento</option>
                     <option value="cambio">Cambio</option>
@@ -135,7 +138,7 @@
               <input type="text"  id="no_serie" name="serie" class="form-control" placeholder="Autollenado" readonly required>
             </div>
             <div class="form-group col-md-6">
-              <label for="inventario">Nombre de equipo: </label>
+              <label for="inventario">Nombre del equipo: </label>
               <input type="text"  id="inventario" name="inventario" class="form-control" placeholder="Autollenado" readonly required>
             </div>
           </div>
@@ -256,7 +259,7 @@
         </form>
       </div>
       <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
-            <fieldset class="">
+            <!--<fieldset class="">
               <legend>Notas</legend>
               <form id="new_note" method="post">
                   <label for="title">Título</label>
@@ -266,7 +269,7 @@
                   <textarea name="contenido" rows="8" cols="80"></textarea> <br>
                   <button type="button" class="btn btn-info" name="button" id="nota">Guardar Nota</button>
               </form>
-            </fieldset>
+            </fieldset>-->
       </div>
     </div>
 <!--  Bootstrap navs -->

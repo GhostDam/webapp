@@ -1,4 +1,8 @@
-<div class="beside">
+<!--responsive-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <div class="beside">
   <nav class="navbar">
     <ul class="list-navbar">
       <li><a href="index.php"><i class="icon icon-menu <?= $li1; ?>"></i><span>Inicio</span></a></li>
@@ -14,7 +18,7 @@
       <li><a href="Personal.php"><i class="icon-torso <?= $li6 ?>"></i><span>Personal</span></a></li>
       <li><a href="signature.php"><i class="icon icon-pen-streamline-1 <?= $li7 ?>"></i><span>Signature</span></a></li>
       <li class='admin'><a href="config.php"><i class="icon icon-settings-streamline-1 <?= $li5 ?>"></i><span>Sistema</span></a></li>
-      <li><a href="estadisticas.php"><i class="icon-caret-right <?= $li8 ?>"></i><span>Estadisticas</span></a></li>
+      <li><a href="estadisticas.php"><i class="icon-caret-right <?= $li8 ?>"></i><span>Estadísticas</span></a></li>
     </ul>
   </nav>
 </div>

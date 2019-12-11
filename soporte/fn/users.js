@@ -99,7 +99,7 @@ $(document).ready(function(){
       if ($(".error:visible").length>0) {
         swal({
           title:"Verifique el formulario",
-          text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
+          text:"El formulario está vacío, incompleto o contiene carácteres no válidos",
           icon:"error",
         })
         $($(".error:visible")).focus();
@@ -222,7 +222,7 @@ $("#editUser").click(function(){
   if ($(".error:visible").length>0) {
     swal({
       title:"Verifique el formulario",
-      text:"El formulario esta vacío, incompleto o contiene carácteres no válidos",
+      text:"El formulario está vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();

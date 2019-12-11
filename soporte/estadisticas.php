@@ -14,6 +14,10 @@
 
   <script src="global.js"></script>
   <script src="fn/stats.js"></script>
+  <!--responsive-->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">
@@ -74,7 +78,7 @@
           </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <select id="areaList" name="">
-              <option value="">Selecciona el área</option>
+              <option value="">Seleccione una opción</option>
             </select>
               <div id="stats_area">
               </div>

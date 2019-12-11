@@ -206,11 +206,11 @@ $("#download").on('click', function(){
   var tmp = $("input[name='tiempo']:checked").val();
   var sol = $("select").val();
   var img = document.getElementById("canvas").toDataURL('image/png');
-  var pat = nombre;
+  // var pat = nombre;
   $.ajax({
   url: 'fn/signature.php',
   type: 'post',
-  data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img, pat:pat}
+  data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img}
   })
   .done(function(respuesta) {
     console.log(respuesta);

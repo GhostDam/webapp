@@ -9,14 +9,17 @@
   <script src="https://code.jquery.com/jquery-3.4.0.js"integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
+
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
-  <!--<link href="https://fonts.googleapis.com/css?family=Abel|Heebo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">-->
+
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!--responsive-->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
   <!-- css  -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -55,10 +58,19 @@
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
             <div id="mostrar">
             </div>
+
+
+            <div class="">
+
+              <div class="col-md-12">
+      					<ul class="pagination justify-content-center" id="paginador"></ul>
+      				</div>
+          </div>
+
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <div id="edicion" class="">
-                      
+
                       <label for="buscador">Atender por ID de reporte:</label>
                       <input type="text" class="form-control col-3" id="buscador" name="buscador" placeholder="####">
                       <button id="editar"  class="btn btn-info" name="" value="buscar">Buscar</button>
@@ -71,23 +83,25 @@
             </div>
 
 
-            <div class="">
+            <!-- <div class="">
               <nav aria-label="Page navigation example">
                 <ul class="paginacion pagination justify-content-center" id='pages'>
 
                 </ul>
               </nav>
-            </div>
+            </div> -->
 
 
 
           </div>
           <div class="tab-pane fade" id="section-4" role="tabpanel" aria-labelledby="index-4">
-            <div class="col-5">
+
+            <div class="col-6">
               <label for="buscador">Buscar en el historial por ID de Reporte:</label>
               <input type="text" class="form-control" id="buscarh" name="buscador" placeholder="####">
               <input type="button" class="btn btn-info" id="verhist" name="" value="buscar">
             </div>
+
             <div id="detalles">
             </div>
           </div>

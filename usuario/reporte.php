@@ -24,14 +24,14 @@
           <div class="row">
             <div class="col-12 d-flex justify-content-around">
               <div class="form-group">
-                <label for="area">Area</label>
-                <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="ingresa aqui tu area" required>
+                <label for="area">Área: </label>
+                <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="Introduzca aqui su área" required>
                 <datalist id="opt">
 
                 </datalist>
               </div>
               <div class="form-group">
-                <label for="encargado">Encargado de area</label>
+                <label for="encargado">Encargado de área: </label>
                 <input class="form-control" type="text" id="encargado" name="encargado" readonly placeholder="Autollenado" required>
               </div>
             </div>
@@ -44,27 +44,27 @@
               </div>
 
               <div class="form-group">
-                <label for="nombre">Usuario</label>
+                <label for="nombre">Usuario: </label>
                 <select class="form-control" type="text" id="usuario" name="usuario" required>
-                  <option value="" selected>Selecciona tu usuario</option>
+                  <option value="" selected>Seleccione una opción</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="nombre">Persona que reporta</label>
-                <input list='opt_nombre' class="form-control" type="text" id="nombre" name="nombre" placeholder="ingresa aqui tu nombre" required>
+                <label for="nombre">Persona que reporta: </label>
+                <input list='opt_nombre' class="form-control" type="text" id="nombre" name="nombre" placeholder="Introduzca aqui su nombre" required>
                 <datalist id="opt_nombre">
 
                 </datalist>
               </div>
               <div class="form-group">
                 <label for="equipo">Asunto</label>
-                <input class="form-control" type="text" id="equipo" name="asunto" placeholder="cual es tu problema" required>
+                <input class="form-control" type="text" id="equipo" name="asunto" placeholder="¿Cuál es el problema?" required>
               </div>
 
             </div>
             <div class="col-12 columna-3">
               <div class="form-group">
-                <label for="textarea">Descripcion del problema</label>
+                <label for="textarea">Descripción del problema</label>
                 <textarea class="form-control" name="descripcion" required></textarea>
               </div>
 

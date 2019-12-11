@@ -5,19 +5,20 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
   include 'connect.php';
 
-  switch ($_POST['to']) {
+  switch ($_POST['action']) {
     case 'vrep': //ver listado de pendientes
             $salida="";
             $start="1";
             // $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
 
             // $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC  "; aact
-            $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC LIMIT $start , 10  ";
+            // $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC LIMIT $start , 10  ";
+            $query = "SELECT * FROM reporte ORDER BY id_reporte DESC LIMIT ".$conectar->real_escape_string($_POST['limit'])." OFFSET ".$conectar->real_escape_string($_POST["offset"]);
 
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
                   $salida.="<table class='table table-hover'>
-                              <thead class='thead thead-dark'>
+                              <thead class='thead thead'>
                                 <tr>
                                 <th>ID</th>
                                 <th>Fecha</th>
@@ -46,8 +47,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                       <td>".$fila['actividad']."</td>
                       <td>".$fila['status']."</td>
                       <td>
-                      <button class='atender btn btn-dark' value ='".$fila['id_reporte']."'>Atender </button>
-                      <button class='firmar btn btn-dark' value ='".$fila['id_reporte']."'>Firmar </button>
+                      <button class='atender btn btn' value ='".$fila['id_reporte']."'>Atender </button>
+                      <button class='firmar btn btn' value ='".$fila['id_reporte']."'>Firmar </button>
                       </td>
                       </tr>";
                       }
@@ -57,7 +58,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                     }else {
                     $salida.="No hay reportes pendientes";
                   }
-                echo $salida;
+                echo json_encode($salida);
       break;
     case 'load'; //conteo de reportes
           $load = "SELECT COUNT(id_reporte) FROM reporte ";
@@ -77,7 +78,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            $salida.="<form action='fn/report.php' method='post' id='edit_reporte' class='edicion'>
            <fieldset class='datosr'>
            <legend>Datos del Reporte</legend>
-               <span>ID reporte: <input name='id' value=".$fila['id_reporte']." readonly></input></span>
+               <span>ID del reporte: <input name='id' value=".$fila['id_reporte']." readonly></input></span>
                <span>Fecha: </span>".$fila['fecha']."
                <span>Hora: </span>".$fila['hora']."
                <span>Persona que Reporta: </span>".$fila['nombre']."
@@ -102,7 +103,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
            <fieldset class='datosu'>
            <legend>Datos del usuario</legend>
-           <span>Provedor del Servicio: </span>
+           <span>Proveedor del servicio: </span>
                 <select name='provedor' class='form-val'>
                  <option value=''  selected>".$fila['proveedor']."</option>
                  <option value='imjuve'>IMJUVE</option>
@@ -118,7 +119,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <span>Marca: </span>".$fila['marca']."
                <span>Modelo: </span>".$fila['modelo']."
                <span>Número de serie: </span>".$fila['serie']."
-               <span>Tipo de equipo: </span>".$fila['id_equipo']."
+               <span>Nombre del equipo: </span>".$fila['id_equipo']."
            </fieldset>
 
            <fieldset class='ac'>

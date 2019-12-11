@@ -51,7 +51,7 @@
                                 <th scope='col'>ID</th>
                                 <th scope='col'>Usuario</th>
                                 <th scope='col'>Responsable</th>
-                                <th scope='col'>Equipo</th>
+                                <th scope='col'>Nombre del equipo</th>
                                 <th scope='col'>Eliminar</th>
                                 <th scope='col' class='Total:'></th>
                               </tr>
@@ -82,7 +82,7 @@
                                                                        WHERE areas.id_area LIKE '$q' ORDER BY nombre_equipo ";
           $resultado = $conectar->query($query);
                 if ($resultado->num_rows> 0){
-                  $equipos.="<option value=''>Selecciona el equipo a asignar</option>";
+                  $equipos.="<option value=''>Seleccione una opción</option>";
                   while ($row2 = $resultado->fetch_assoc()) {
                     $equipos.=
                     "<option value='".$row2['id_equipo']."'>".$row2['nombre_equipo']."</option>";

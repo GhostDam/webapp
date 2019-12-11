@@ -86,8 +86,8 @@ $(document).on('click', '#agregar_personal', function(){
   data += "&action=agregar_usuario";
   vald()
   if ($(".error:visible").length>0) {
-      swal("Verifica el formulario",
-           "El formulario esta vacío, incompleto o contiene carácteres no válidos",
+      swal("Verifique el formulario",
+           "El formulario está vacío, incompleto o contiene carácteres no válidos",
            "error")
           return false
   }
@@ -148,8 +148,8 @@ $(function(){
             return false
     }
     swal({
-      title: "Personal",
-      text: `¿Editar personal?`,
+      title: "¿Editar personal?",
+      text: ``,
       icon: "info",
       buttons: [
         'Cancelar',

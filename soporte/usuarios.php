@@ -11,8 +11,8 @@
   <script src="global.js"></script>
   <script src="fn/users.js"></script>
   <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Abel|Heebo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Abel|Heebo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -70,17 +70,17 @@
                 </select>
               </div>
                <br>
-                <label for="user">Asigne nombre de usuario</label>
+                <label for="user">Asigne nombre de usuario: </label>
                 <div class="col-5">
                    <input type="text" name="user" class="form-control">
                 </div>
                <br>
-                <label for="person">Asigne nombre de responsable</label>
+                <label for="person">Asigne nombre del responsable: </label>
                 <div class="col-5">
                   <input type="text" name="person" class="form-control">
                 </div>
                 <br>
-                 <label for="equipos">Asigne el equipo</label>
+                 <label for="equipos">Asigne el equipo: </label>
                  <div class="col-5">
                     <select id="disponibles" name="equipos" class="form-control">
                     <option value="" selected>Seleccione una opción</option>
@@ -97,7 +97,7 @@
               <label for="user">Editar ID usuario</label>
               <div class="col-5">
                  <input type="text" class="form-control" id="user_to_edit" name="user">
-                  <button type="button" class="btn btn-primary" id="cargarEdicion">Editar</button>
+                  <button type="button" class="btn btn-primary" id="cargarEdicion">Buscar ID</button>
               </div>
                    <br>
                      <label for="user">Nombre: </label>

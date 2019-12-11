@@ -433,6 +433,7 @@ option{
 .btn{
   grid-area: bt;
   padding: 10px;
+  margin: 5px;
 }
 .edicion{
   max-width: 100%;

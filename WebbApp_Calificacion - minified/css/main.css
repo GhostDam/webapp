@@ -47,7 +47,7 @@ h1{
     display: flex;
     background-image: url(../img/imjuve/imjuve.png);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     flex: 1;
     justify-content: center;
@@ -98,7 +98,7 @@ input:not([type="submit"])
 
 
 .button{
-    background-color: #006633;
+    /* background-color: #006633; */
     font-family: 'Poppins', sans-serif;
     color: #fafafa;
     font-weight: 700;
@@ -148,7 +148,7 @@ input:not([type="submit"])
 /*Footer*/
 
 .site-footer{
-    background-color: #006633;
+    background-color: #4267b2;
     padding: 2.5rem ;
     margin-top: 2rem;
     display:flex;

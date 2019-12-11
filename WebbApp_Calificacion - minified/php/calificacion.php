@@ -88,7 +88,7 @@
                             <canvas id="canvas">Canvas is not supported</canvas>
                             <div>
                                 <!-- <input id="btnSubmitSign" type="button" data-inline="true" data-mini="true" data-theme="b" value="Guardar firma"/> -->
-                                <input id="btnClearSign" type="button" data-inline="true" data-mini="true" data-theme="b" value="Resetear" onclick="init_Sign_Canvas()"/>
+                                <input id="btnClearSign" type="button" class="btn btn-primary" data-inline="true" data-mini="true" data-theme="b" value="Resetear" onclick="init_Sign_Canvas()"/>
                             </div>
                         </div>
                     </div>

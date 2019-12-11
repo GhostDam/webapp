@@ -12,6 +12,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
   <script type="text/javascript">
+   
     var session = ("<?php echo $_SESSION["usuario"]; ?>")
   </script>
   <script src="fn/config.js"></script>

@@ -124,8 +124,8 @@ $(document).on('click', "#sbmt", function(){
 
   if ($(".error:visible").length>0) {
     swal({
-      title:"verifica el formulario por favor",
-      text:"El formulario esta vacío o contiene carácteres no válidos",
+      title:"Verifique el formulario",
+      text:"El formulario está vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })
     $($(".error:visible")).focus();
@@ -136,8 +136,8 @@ $(document).on('click', "#sbmt", function(){
     text: `Se enviará el reporte al área de soporte técnico`,
     icon: "info",
     buttons: [
-      'cancelar',
-      'Si!'
+      'Cancelar',
+      'Aceptar'
     ],
   }).then(
     function (valid) {

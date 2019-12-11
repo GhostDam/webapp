@@ -18,6 +18,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -33,7 +34,7 @@
                 <fieldset>
                     <label for="reporte">Por favor ingresa tu número de Reporte:</label>
                      <input type="number" name="reporte" id="reporte" required>
-                     <input type="submit" class="button" value="Continuar">
+                     <button type="submit" class="button btn btn-primary" value="Continuar">Continuar</button>
                 </fieldset>
             </form>
         </div>

@@ -28,7 +28,7 @@ if(isset($_POST['caso'])){// && $_POST['caso']=='loadArea'
       }
     }
     else {
-      $responsable.="El area ingresada es incorrecta";
+      $responsable.="El área ingresada es incorrecta";
     }
   echo $responsable;
 }

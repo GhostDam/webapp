@@ -44,7 +44,7 @@ $sql="INSERT INTO reporte (fecha, hora, nombre, area, encargado_area, usuario, a
 $ejecutar=mysqli_query($conectar, $sql);
 //verficar ejecucion
 if(!$ejecutar){
-        echo"hubo algun error";
+        echo"Hubo algún error";
   }else{
     echo "Reporte enviado correctamente";
 }

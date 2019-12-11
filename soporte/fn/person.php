@@ -85,7 +85,7 @@
               $sql = "UPDATE areas SET responsable_area = '$nombre_empleado' WHERE id_area = $id_area";
               $update= mysqli_query($conectar, $sql);
               if ($update) {
-                $respuesta.=" y se actualizo el responsable.";
+                $respuesta.="Se actualizo el responsable.";
                 // Alexis Antonio Sanchez Solis
               }
             }
@@ -102,7 +102,7 @@
                 }
                 echo json_encode($response);
               }else {
-                echo json_encode("ID de personal no econtrado");
+                echo json_encode("ID de personal no encontrado");
               }
 
         break;
@@ -126,7 +126,7 @@
                 $sql = "UPDATE areas SET responsable_area = '$edit_empleado' WHERE id_area = $id_area";
                 $update= mysqli_query($conectar, $sql);
                 if ($update) {
-                  $respuesta.=" y se actualizo el responsable.";
+                  $respuesta.=" Se actualizo el responsable.";
                 }
               }
              echo $respuesta;

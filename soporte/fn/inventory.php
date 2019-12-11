@@ -32,7 +32,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                         <thead>
                           <tr>
                             <th scope='col'>Área</th>
-                            <th scope='col'>Equipo</th>
+                            <th scope='col'>Nombre del equipo</th>
                             <th scope='col'>Tipo</th>
                             <th scope='col'>Usuarios</th>
                             <th scope='col'>ID equipo</th>
@@ -55,7 +55,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             }
           $usuarios.="</tbody></table";
           }else {
-            $usuarios='sin resultados';
+            $usuarios='Sin resultados';
           }
         echo $usuarios;
       break;
@@ -80,8 +80,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                       $detalles.=
                           "<fieldset class='eq'>
                             <legend>Información del equipo</legend>
-                              <span>ID equipo: </span>".$row2['idEquipo']."
-                            <p>Nombre equipo ".$row2['nombre_equipo']."</p>
+                              <span>ID del equipo: </span>".$row2['idEquipo']."
+                            <p>Nombre del equipo: ".$row2['nombre_equipo']."</p>
                             <p>Caracteristicas: ".$row2['caracteristicas']."</p>
                             <p>Tipo: ".$row2['tipo']."</p>
                             <p>RAM: ".$row2['ram']."</p>

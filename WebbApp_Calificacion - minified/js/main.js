@@ -94,13 +94,13 @@ $(document).ready(function(){
 $(document).on('submit', "#servicio", function(e){
 	e.preventDefault();
 
-	var idreporte = $('input[name="idreporte"]').val(); //id
-	var resolucion = $('select[name="resolucion"]').val(); //solucion
+	var idreporte = $('input[name="idreporte"]').val(); //id **
+	var resolucion = $('select[name="resolucion"]').val(); //solucion **
 
-	var calidad = $('select[name="calidad"]').val(); //calidad
-	var atencion = $('select[name="atencion"]').val(); //atencion
+	var calidad = $('select[name="calidad"]').val(); //calidad **
+	var atencion = $('select[name="atencion"]').val(); //atencion **
 	var nivel = $('select[name="nivel"]').val(); //profesional
-	var respuesta = $('select[name="respuesta"]').val(); //tiempo
+	var respuesta = $('select[name="respuesta"]').val(); //tiempo **
 
 	var img = document.getElementById("canvas").toDataURL('image/png');
 
@@ -126,7 +126,20 @@ $(document).on('submit', "#servicio", function(e){
   // })
   .done(function(respuesta) {
     console.log(respuesta);
+		swal({
+     title: respuesta,
+     text: "La firma se guardo exitosamente.",
+     icon: "success",
+     timer: 1500
+	 	})
+		.then(function(done){
+			// console.log(done)
+			 window.location.href="./../";
 
+		})
+     // function (done) {
+		 //
+		 // },
 	})
   .fail(function(data){
     console.log(data)

@@ -123,7 +123,7 @@ function vald(){
 });
 /*confirmar nuevo reporte*/
 //==================================Crear Reporte====================================
-//==================================Crear Nota====================================
+//==================================cargar usuarios====================================
 /*nueva nota*/
 $(document).on("click", "#nota", function(){
   var title = $("input[name='title']").val()

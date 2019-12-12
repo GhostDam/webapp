@@ -16,14 +16,18 @@
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-  <!--responsive-->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
   <!-- css  -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- <script src="plug/js/datatables.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="plug/css/datatables.min.css"></script> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+
+
   <script src="fn/report.js" charset="utf-8"></script>
+
   <title>SOPORTE</title>
 </head>
 <body>
@@ -56,24 +60,45 @@
         <!--navs -->
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-            <div id="mostrar">
+            <!-- <div id="mostrar">
             </div>
-
-
             <div class="">
-
               <div class="col-md-12">
       					<ul class="pagination justify-content-center" id="paginador"></ul>
       				</div>
-          </div>
+          </div> -->
+
+          <table id="pagina_tabla" width="100%" style="width: 100%!important;">
+            <!-- <thead>
+           <tr>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Office</th>
+               <th>Extn.</th>
+               <th>Start date</th>
+               <th>Salary</th>
+           </tr>
+       </thead>
+       <tfoot>
+           <tr>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Office</th>
+               <th>Extn.</th>
+               <th>Start date</th>
+               <th>Salary</th>
+           </tr>
+       </tfoot> -->
+          </table>
 
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <div id="edicion" class="">
-
-                      <label for="buscador">Atender por ID de reporte:</label>
-                      <input type="text" class="form-control col-3" id="buscador" name="buscador" placeholder="####">
-                      <button id="editar"  class="btn btn-info" name="" value="buscar">Buscar</button>
+                    <label for="buscador">Atender por ID de reporte:</label>
+                      <div class="col">
+                        <input type="text" class="form-control" id="buscador" name="buscador" placeholder="####">
+                      </div>
+                   <button id="editar"  class="btn btn-info" name="" value="buscar">Buscar</button>
             </div>
             <div id="atender" class="">
             </div>
@@ -99,7 +124,7 @@
             <div class="col-6">
               <label for="buscador">Buscar en el historial por ID de Reporte:</label>
               <input type="text" class="form-control" id="buscarh" name="buscador" placeholder="####">
-              <input type="button" class="btn btn-info" id="verhist" name="" value="buscar">
+              <input type="button" class="btn btn-info" id="verhist" name="" value="Buscar">
             </div>
 
             <div id="detalles">
@@ -107,7 +132,7 @@
           </div>
         </div>
     <!--  Bootstrap navs -->
-
 </section>
+</div>
 </body>
 </html>

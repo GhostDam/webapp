@@ -11,14 +11,14 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
   <script src="fn/inventory.js"></script>
- 
- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+   <!--google font-->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!--responsive-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
   <!-- css -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -34,12 +34,12 @@
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
         <a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">
-          <h2>Ver Equipos</h2>
+          <h2>Consultar equipos</h2>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link btn btn-outline-primary" id="index-2" data-toggle="pill" href="#section-2" role="tab" aria-controls="section-2" aria-selected="false">
-          <h2>Ver componentes</h2>
+          <h2>Consultar componentes</h2>
         </a>
       </li>
       <li class="nav-item">
@@ -65,20 +65,20 @@
         </div>
       </div>
       <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
-        <label for="detail">Buscar equipo por ID´para consultar su información</label>
+        <label for="detail">Buscar equipo por ID para consultar su información</label>
         <input type="text" name="detail" id="search">
-        <input type="button" value="Buscar" id="detailed">
+        <input class="btn bnt-primary"  type="button" value="Buscar" id="detailed">
       <div id="componentes">
 
       </div>
 
       </div>
       <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
-        <form class="tarjeta" id="nuevo_equipo">
-          <fieldset class="eq">
+        <form class="tarjeta" id="nuevo_equipo row">
+          <fieldset class="eq col-12 text-center">
           <legend>Formulario para la adición de equipos</legend>
             <label for="area">Área a la que se agregara el equipo</label> <br>
-              <select class="invList"  name="area">
+              <select class="invList my-3"  name="area">
                 <option value="">Seleccione una opción</option>
               </select>
               <br>
@@ -86,137 +86,203 @@
               <input type="text" name="nombre_equipo">
               <br>
           </fieldset>
+          <div class="row mt-3 justify-content-between">
 
-          <fieldset class="cp">
-            <legend>CPU</legend>
-            <label for="caracteristicas">Caracteristicas</label>
-            <input type="text" name="caracteristicas" value="">
-            <br>
-            <label for="tipo_cpu">RAM</label>
-            <input type="text" name="ram" value="">
-            <br>
-            <label for="tipo">Tipo</label>
-            <select name="tipo_cpu">
-                <option selected value="">Seleccione una opción</option>
-                <option value="mpc">mpc - Desktop</option>
-                <option value="ml">ml - Laptop</option>
-                <option value="mao">mao - All In One</option>
-                <option value="mac">Mac</option>
-            </select>
-            <br>
-            <label for="marca_cpu">Marca</label>
-            <input type="text" name="marca_cpu" value="">
-            <br>
-            <label for="modelo_cpu">Modelo</label>
-            <input type="text" name="modelo_cpu" value="">
-            <br>
-            <label for="serie_cpu">Número de serie</label>
-            <input type="text" name="serie_cpu" value="">
-          </fieldset>
+            <fieldset class="col-12 col-lg-5">
+              <legend>CPU</legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="caracteristicas">Caracteristicas</label>
+                  <label class="label-inventario" for="tipo_cpu">RAM</label>
+                  <label class="label-inventario" for="tipo">Tipo</label>
+                  <label class="label-inventario" for="marca_cpu">Marca</label>
+                  <label class="label-inventario" for="modelo_cpu">Modelo</label>
+                  <label class="label-inventario" for="serie_cpu">Número de serie</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" name="caracteristicas" value="">
+                  <input type="text" name="ram" value="">
+                  <select name="tipo_cpu">
+                      <option selected value="">Seleccione una opción</option>
+                      <option value="mpc">mpc - Desktop</option>
+                      <option value="ml">ml - Laptop</option>
+                      <option value="mao">mao - All In One</option>
+                      <option value="mac">Mac</option>
+                  </select>
+                  <input type="text" name="marca_cpu" value="">
+                  <input type="text" name="modelo_cpu" value="">
+                  <input type="text" name="serie_cpu" value="">
+                </div>
+              </div>
+              <!-- <br>
+              <br>
+              <br>
+              <br>
+              <br> -->
+            </fieldset>
 
-          <fieldset disabled class="mn">
-            <legend>Monitor <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <label for="marca_mn">Marca monitor</label>
-            <input type="text" name="marca_mn" value="">
-            <br>
-            <label for="modelo_mn">Modelo monitor</label>
-            <input type="text" name="modelo_mn" value="">
-            <br>
-            <label for="num_serie_mn">Serie monitor</label>
-            <input type="text" name="num_serie_mn" value="">
-            <br>
-          </fieldset>
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>
+                Monitor 
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_mn">Marca monitor</label>
+                  <label class="label-inventario" for="modelo_mn">Modelo monitor</label>
+                  <label class="label-inventario" for="num_serie_mn">Serie monitor</label>
+                  
+                </div>
+                <div class="col-6">
+                  <input type="text" name="marca_mn" value="">
+                  <input type="text" name="modelo_mn" value="">
+                  <input type="text" name="num_serie_mn" value="">
+                </div>
+              </div>
+              <br><!-- 
+              <br>
+              <br> -->
+            </fieldset>
+            
+          </div>
 
-          <fieldset disabled class="m">
-            <legend>Mouse <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <label for="marca_m">Marca mouse</label>
-            <input type="text" name="marca_m" value="">
-            <br>
-            <label for="modelo_m">Modelo mouse</label>
-            <input type="text" name="modelo_m" value="">
-            <br>
-            <label for="num_serie_m">Número de serie mouse</label>
-            <input type="text" name="num_serie_m" value="">
-            <br>
-          </fieldset>
 
-          <fieldset disabled class="b">
-            <legend>Bocinas <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <br>
-            <label for="marca_b">Marca bocina</label>
-            <input type="text" name="marca_b" value="">
-            <br>
-            <label for="modelo_b">Modelo bocina</label>
-            <input type="text" name="modelo_b" value="">
-            <br>
-            <label for="num_serie_b">Número de serie bocina</label>
-            <input type="text" name="num_serie_b" value="">
-          </fieldset>
 
-          <fieldset disabled class="t">
-            <legend>Teclado <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <label for="marca_t">Marca teclado</label>
-            <input type="text" name="marca_t" value="">
-            <br>
-            <label for="modelo_t">Modelo teclado</label>
-            <input type="text" name="modelo_t" value="">
-            <br>
-            <label for="num_serie_t">Número de serie teclado</label>
-            <input type="text" name="num_serie_t" value="">
-            <br>
-          </fieldset>
+          <div class="row mt-3 justify-content-between">
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>Mouse <label class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_m">Marca mouse</label>
+                  <label class="label-inventario" for="modelo_m">Modelo mouse</label>
+                  <label class="label-inventario" for="num_serie_m">Número de serie mouse</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" name="marca_m" value="">
+                  <input type="text" name="modelo_m" value="">
+                  <input type="text" name="num_serie_m" value="">
+                </div>
+              </div>
+              <!-- <br>
+              <br>
+              <br> -->
+            </fieldset>
 
-          <fieldset disabled class="nb">
-            <legend>No Break <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <label for="marca_nb">Marca No break</label>
-            <input type="text" name="marca_nb" value="">
-            <br>
-            <label for="modelo_nb">Modelo No Brake</label>
-            <input type="text" name="modelo_nb" value="">
-            <br>
-            <label for="num_serie_nb">Número de serie No Brake</label>
-            <input type="text" name="num_serie_nb" value="">
-            <br>
-          </fieldset>
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>Bocinas <label class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_b">Marca bocina</label>
+                  <label class="label-inventario" for="modelo_b">Modelo bocina</label>
+                  <label class="label-inventario" for="num_serie_b">Número de serie bocina</label>
+                  
+                </div>
+                <div class="col-6">
+                  <input type="text" name="marca_b" value="">
+                  <input type="text" name="modelo_b" value="">
+                  <input type="text" name="num_serie_b" value="">
+                  
+                </div>
+              </div>
+              <!-- <br> -->
+              <!-- <br>
+              <br> -->
+            </fieldset>
+            
+          </div>
+          <div class="row mt-3 justify-content-between">
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>Teclado <label class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_t">Marca teclado</label>
+                  <label class="label-inventario" for="modelo_t">Modelo teclado</label>
+                  <label class="label-inventario" for="num_serie_t">Número de serie teclado</label>
+                  
+                </div>
+                <div class="col-6">
+                  <input type="text" name="marca_t" value="">
+                  <input type="text" name="modelo_t" value="">
+                  <input type="text" name="num_serie_t" value="">
+                  
+                </div>
+              </div>
+              <!-- <br>
+              <br>
+              <br> -->
+            </fieldset>
 
-          <fieldset disabled class="c">
-            <legend>Cargador <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-            </legend>
-            <label for="marca_c">Marca cargador</label>
-            <input type="text" name="marca_c" value="">
-            <br>
-            <label for="modelo_c">Modelo cargador</label>
-            <input type="text" name="modelo_c" value="">
-            <br>
-            <label for="num_serie_c">Número de serie cargador</label>
-            <input type="text" name="num_serie_c" value="">
-            <br>
-          </fieldset>
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>No Break <label class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_nb">Marca No break</label>
+                  <label class="label-inventario" for="modelo_nb">Modelo No Brake</label>
+                  <label class="label-inventario" for="num_serie_nb">Número de serie No Brake</label>
+                  
+                </div>
+                <div class="col-6">
+                  
+                  <input type="text" name="marca_nb" value="">
+                  <input type="text" name="modelo_nb" value="">
+                  <input type="text" name="num_serie_nb" value="">
+                </div>
+              </div>
+              <!-- <br>
+              <br>
+              <br> -->
+            </fieldset>
+            
+          </div>
 
-          <input id="crear_equipo" type="button" value="Crear">
+          <div class="row mt-3 justify-content-between">
+            
+            <fieldset disabled class="col-12 col-lg-5">
+              <legend>Cargador <label class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+              </legend>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-inventario" for="marca_c">Marca cargador</label>
+                  <label class="label-inventario" for="modelo_c">Modelo cargador</label>
+                  <label class="label-inventario" for="num_serie_c">Número de serie cargador</label>
+                  
+                </div>
+                <div class="col-6">
+                  <input type="text" name="marca_c" value="">
+                  <input type="text" name="modelo_c" value="">
+                  <input type="text" name="num_serie_c" value="">
+                  
+                </div>
+              </div>
+              <!-- <br>
+              <br> -->
+              <!-- <br> -->
+            </fieldset>
+          </div>
+
+          <!-- <input id="crear_equipo" type="button" value="Crear"> -->
         </form>
 
       </div>

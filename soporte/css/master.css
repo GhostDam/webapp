@@ -469,7 +469,10 @@ legend{
   margin-top: 10px;
 }
 /*historial*/
-.eq{
+.label-inventario {
+  display: block !important;
+}
+/*eq{
   grid-area: eq;
 }
 .cp{
@@ -511,7 +514,7 @@ input[type='checkbox']{
 }
 fieldset:disabled label{
   color: gray;
-}
+}*/
 /**/
 /* The switch - the box around the slider */
 .switch {
@@ -621,3 +624,14 @@ canvas {
   cursor:crosshair;
 }
 /*form-control*/
+@media all and (max-width: 575px){
+  .session{
+    font-size: 19px;
+  }
+}
+
+@media all and (max-width: 434px){
+  .session{
+    font-size: 12px;
+  }
+}

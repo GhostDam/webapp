@@ -1,8 +1,4 @@
-<!--responsive-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-        <div class="beside">
+<div class="beside">
   <nav class="navbar">
     <ul class="list-navbar">
       <li><a href="index.php"><i class="icon icon-menu <?= $li1; ?>"></i><span>Inicio</span></a></li>

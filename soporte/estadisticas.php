@@ -14,14 +14,8 @@
 
   <script src="global.js"></script>
   <script src="fn/stats.js"></script>
-  <!--responsive-->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-
   <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alata|Sulphur+Point&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -50,7 +44,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-outline-primary" id="index-3" data-toggle="pill" href="#section-3" role="tab" aria-controls="section-3" aria-selected="false">
-              <h2>Areas</h2>
+              <h2>Áreas</h2>
             </a>
           </li>
           <li class="nav-item">
@@ -66,10 +60,10 @@
             </div>
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
-            <label for="date1">Fecha inicial</label>
+            <label for="date1">Fecha inicial: </label>
             <input type="date" name="init" value="">
             <br>
-            <label for="date2">Fecha Final</label>
+            <label for="date2">Fecha final: </label>
             <input type="date" name="fin" value="">
             <br>
             <input type="button" id="consulta_fecha" value="Buscar rango de fechas">

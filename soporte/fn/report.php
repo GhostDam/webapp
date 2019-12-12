@@ -7,53 +7,52 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
   switch ($_POST['action']) {
     case 'vrep': //ver listado de pendientes
-            $salida="";
+            $salida=array();
             $start="1";
-            // $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
-
-            // $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC  "; aact
-            // $query="SELECT * FROM reporte WHERE status like 'pendiente%' ORDER By id_reporte DESC LIMIT $start , 10  ";
-            $query = "SELECT * FROM reporte ORDER BY id_reporte DESC LIMIT ".$conectar->real_escape_string($_POST['limit'])." OFFSET ".$conectar->real_escape_string($_POST["offset"]);
+            // $query = "SELECT * FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC LIMIT ".$conectar->real_escape_string($_POST['limit'])." OFFSET ".$conectar->real_escape_string($_POST["offset"]);
+            $query = "SELECT id_reporte, fecha, hora, nombre, asunto, descripcion, status FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC ";
 
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
-                  $salida.="<table class='table table-hover'>
-                              <thead class='thead thead'>
-                                <tr>
-                                <th>ID</th>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Asunto</th>
-                                <th>Área</th>
-                                <th>Reporta</th>
-                                <th>Descripción</th>
-                                <th>Actividad</th>
-                                <th>Estado actual</th>
-                              </tr>
-                              </thead>
-                              </tbody>
-                                  ";
-                while ($fila= $resultado->fetch_assoc()) {
-                     $salida.="<tbody>
-                                <tr>
-
-                      <td>".$fila['id_reporte']."</td>
-                      <td>".$fila['fecha']."</td>
-                      <td>".$fila['hora']."</td>
-                      <td>".$fila['asunto']."</td>
-                      <td>".$fila['area']."</td>
-                      <td>".$fila['nombre']."</td>
-                      <td>".$fila['descripcion']."</td>
-                      <td>".$fila['actividad']."</td>
-                      <td>".$fila['status']."</td>
-                      <td>
-                      <button class='atender btn btn' value ='".$fila['id_reporte']."'>Atender </button>
-                      <button class='firmar btn btn' value ='".$fila['id_reporte']."'>Firmar </button>
-                      </td>
-                      </tr>";
+                  // $salida.="<table class='table table-hover'>
+                  //             <thead class='thead thead'>
+                  //               <tr>
+                  //               <th>ID</th>
+                  //               <th>Fecha</th>
+                  //               <th>Hora</th>
+                  //               <th>Asunto</th>
+                  //               <th>Área</th>
+                  //               <th>Reporta</th>
+                  //               <th>Descripción</th>
+                  //               <th>Actividad</th>
+                  //               <th>Estado actual</th>
+                  //             </tr>
+                  //             </thead>
+                  //             </tbody>
+                  //                 ";
+                while ($fila= $resultado->fetch_all()) {
+                  $salida=$fila;
+                     // $salida.="<tbody>
+                     //            <tr>
+                     //
+                     //  <td>".$fila['id_reporte']."</td>
+                     //  <td>".$fila['fecha']."</td>
+                     //  <td>".$fila['hora']."</td>
+                     //  <td>".$fila['asunto']."</td>
+                     //  <td>".$fila['area']."</td>
+                     //  <td>".$fila['nombre']."</td>
+                     //  <td>".$fila['descripcion']."</td>
+                     //  <td>".$fila['actividad']."</td>
+                     //  <td>".$fila['status']."</td>
+                     //  <td>
+                     //  <button class='atender btn btn' value ='".$fila['id_reporte']."'>Atender </button>
+                     //  <button class='firmar btn btn' value ='".$fila['id_reporte']."'>Firmar </button>
+                     //  </td>
+                     //  </tr>";
                       }
-                $salida.="</tbody>
-                      </table>";
+                // $salida.="</tbody>
+                //       </table>";
+
 
                     }else {
                     $salida.="No hay reportes pendientes";
@@ -61,7 +60,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                 echo json_encode($salida);
       break;
     case 'load'; //conteo de reportes
-          $load = "SELECT COUNT(id_reporte) FROM reporte ";
+          $load = "SELECT COUNT(id_reporte) FROM reporte WHERE status like 'pendiente%' ";
           $query = mysqli_query($conectar, $load);
           $resultado = $query->fetch_assoc();
           $reporte=$resultado['COUNT(id_reporte)'];
@@ -208,7 +207,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  <span>Calidad: </span>".$fila['calidad']."
                                  <span>Atención: </span>".$fila['atencion']."
                                  <span>Profesional: </span>".$fila['nivel']."
-                                 <span>Tiempo de respuesta: </span>".$fila['tiempo']."
+                                 <span>Tiempo  de respuesta: </span>".$fila['tiempo']."
                                  </fieldset>
 
                                  <fieldset class='cl'>
@@ -261,7 +260,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                               <td scope='row'>".$rep['area']."</td>
                               <td scope='row'>".$rep['asunto']."</td>
                               <td scope='row'>".$rep['status']."</td>
-                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-info'>Detalles</button></td>
+                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-primary'>Detalles</button></td>
                           </tr>";
            }
           $paginacion.="</tbody></table>";

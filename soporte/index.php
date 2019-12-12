@@ -12,11 +12,8 @@
   <script src="fn/index.js" charset="utf-8"></script>
   <!--responsive-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- google fonts -->
-  <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alata|Sulphur+Point&display=swap&subset=latin-ext" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -40,11 +37,6 @@
           <h2>Crear reporte</h2>
         </a>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link btn btn-outline-primary" id="index-2" data-toggle="pill" href="#section-2" role="tab" aria-controls="section-2" aria-selected="false">
-          <h2>NOTAS</h2>
-        </a>
-      </li>-->
     </ul>
     <!--navs -->
     <div class="tab-content" id="pills-tabContent">
@@ -52,7 +44,13 @@
 
         <div class="form-group alert alert-primary">
             <label for="nombre" class="col-sm-12 col-form-label">Ingrese el usuario que reporta:</label>
-            <input type="text" class="form-control col-12" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
+            <input type="text" list='lista' class="form-control col-12" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
+            <datalist id="lista">
+              <option>SISTEMAS3</option>
+              <option>SISTEMAS2</option>
+              <option>SISTEMAS1</option>
+              <option>AACEVES</option>
+            </datalist>
         </div>
 
         <form action='fn/fnindex.php'  id="n_reporte" autocomplete="off">
@@ -144,132 +142,7 @@
           </div>
             <button type="submit" id="btnSubmit" class="btn btn-primary">Guardar</button>
 
-
-
-
-
-
-
-
-
-
-
-          <!-- <fieldset>
-           <div class="container">
-            <div class="row"> -->
-            <!-- <legend>Datos del Reporte</legend> -->
-            <!-- <label for="nombre">Persona que Reporta: </label>
-            <input name='nombre' list='empleado' class="form-control" placeholder="Seleccion el nombre del empleado"required><br>
-              <datalist id="empleado">
-              </datalist> -->
-            <!-- <label for="asunto">Asunto: </label>
-            <input name='asunto' class="form-control" required> -->
-            <!-- <label for="descripcion">Descripcion: </label>
-            <textarea name='descripcion' class="form-control" required></textarea> -->
-            <!-- <label for="treporte">Tipo de Reporte: </label>
-              <select name='treporte' class="form-control" required>
-                <option value="" selected>Selecciona</option>
-                <option value="incidencia">Incidencia</option>
-                <option value="eventos">Eventos</option>
-                <option value="cambio">Cambio</option>
-              </select>
-              <div class="hide">
-                <input type="text" name="to" value="crear">
-              </div> -->
-            <!-- <label for="tservicio">Tipo de Servicio: </label>
-            <select name='tservicio' class="form-control" required>
-              <option value="" selected>Selecciona</option>
-              <option value="Hardware">Hardware</option>
-              <option value="software">Software</option>
-              <option value="telefonia">Telefonia</option>
-            </select> -->
-            <!-- </div>
-          </fieldset>
-          <br><br>
-
-          <div class="container">
-            <div class="row"> -->
-            <!-- <legend>Datos del Usuario</legend> -->
-            <!-- <label for="provedor">Provedor del Servicio: </label>
-            <select name='provedor' class="form-control" required>
-              <option value="" selected>Selecciona un provedor</option>
-              <option value="imjuve">Imjuve</option>
-              <option value="externo">Externo</option>
-            </select> -->
-
-            <!-- <label for="area">Área</label>
-            <input list="opt" type="text" id="area" name="area" placeholder="Autollenado" class="form-control" readonly required> -->
-              <!-- <datalist id="opt">
-              </datalist> -->
-            <!-- <label for="encargado">Encargado de área</label>
-            <input type="text" id="encargado" name="encargado" readonly placeholder="Autollenado" class="form-control" required> -->
-            <!-- <label for="nombre">Usuario</label>
-            <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Autollenado" readonly required> -->
-
-          <!-- </div>
-      </div>
-
-        <br> -->
-          <!-- <fieldset> -->
-            <!-- -Se agregan las clases de Boostrap -->
-          <!-- <div class="container">
-            <div class="row">
-             <legend>Datos del Equipo</legend> -->
-            <!-- <label for="marca">Marca: </label>
-            <input type="text"  id="marca" name="marca" class="form-control" placeholder="Autollenado" readonly required>
-            <label for="modelo">Modelo: </label>
-            <input type="text"  id="modelo" name="modelo" class="form-control" placeholder="Autollenado" readonly required>
-            <label for="no_serie">Serie: </label>
-            <input type="text"  id="no_serie" name="serie" class="form-control" placeholder="Autollenado" readonly required>
-            <label for="inventario">Nombre del Equipo: </label>
-            <input type="text"  id="inventario" name="inventario" class="form-control" placeholder="Autollenado" readonly required> -->
-            <!-- </div>
-          </div> -->
-         <!--  </fieldset> -->
-          <!-- <fieldset class='ac'>
-            <legend>Actividades</legend>
-            <span>Solucion: <select name='solucion' class="form-val" required>
-                                <option value="" selected>¿Tuvo solución?</option>
-                                <option value='si'>Si</option>
-                                <option value='no'>No</option>
-                              </select>
-            </span>
-            <label for="actividad">Actividad: </label>
-            <textarea type='textarea' name='actividad' class="form-val" required></textarea>
-          </fieldset>
-          <fieldset class='cs'>
-            <legend>Calificacion del Servicio</legend>
-            <span>calidad: </span>
-            <span>Atencion: </span>
-            <span>Profesional: </span>
-            <span>Tiempo Respuesta: </span>
-          </fieldset>
-          <fieldset class='fm'>
-          <legend>Firma </legend>
-          </fieldset>
-          <fieldset class="cl">
-            <legend>Cierre del reporte</legend>
-            <span>Persona que atendio: </span>
-            <span>Fecha de cierre: </span>
-            <span>Hora de cierre: </span>
-          </fieldset> -->
-          <!-- <div>
-            <button type="submit" id="btnSubmit" class="btn btn-primary btn-lg" value="Guardar">Guardar</button>
-          </div> -->
         </form>
-      </div>
-      <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
-            <!--<fieldset class="">
-              <legend>Notas</legend>
-              <form id="new_note" method="post">
-                  <label for="title">Título</label>
-                  <input type="text" name="title" value="">
-                  <br>
-                  <label for="contenido">Contenido</label> <br>
-                  <textarea name="contenido" rows="8" cols="80"></textarea> <br>
-                  <button type="button" class="btn btn-info" name="button" id="nota">Guardar Nota</button>
-              </form>
-            </fieldset>-->
       </div>
     </div>
 <!--  Bootstrap navs -->

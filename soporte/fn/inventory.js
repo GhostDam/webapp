@@ -39,6 +39,7 @@ $(document).on("click", ".detalles", function(){
   $("#search").val(id);
   $("#detailed").trigger("click");
   $("#index-2").trigger("click");
+  $("#pills-tab li:eq(1) > a")[0].click();
 })
 //trigger details
   //detalles de inventario por equipo

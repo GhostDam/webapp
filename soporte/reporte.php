@@ -9,21 +9,17 @@
   <script src="https://code.jquery.com/jquery-3.4.0.js"integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
-
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
-
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- css  -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- <script src="plug/js/datatables.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="plug/css/datatables.min.css"></script> -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
-
+  <!-- Tables -->
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
 
 
   <script src="fn/report.js" charset="utf-8"></script>
@@ -60,37 +56,8 @@
         <!--navs -->
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-            <!-- <div id="mostrar">
-            </div>
-            <div class="">
-              <div class="col-md-12">
-      					<ul class="pagination justify-content-center" id="paginador"></ul>
-      				</div>
-          </div> -->
-
-          <table id="pagina_tabla" width="100%" style="width: 100%!important;">
-            <!-- <thead>
-           <tr>
-               <th>Name</th>
-               <th>Position</th>
-               <th>Office</th>
-               <th>Extn.</th>
-               <th>Start date</th>
-               <th>Salary</th>
-           </tr>
-       </thead>
-       <tfoot>
-           <tr>
-               <th>Name</th>
-               <th>Position</th>
-               <th>Office</th>
-               <th>Extn.</th>
-               <th>Start date</th>
-               <th>Salary</th>
-           </tr>
-       </tfoot> -->
+          <table id="pendientes" width=100%>
           </table>
-
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <div id="edicion" class="">
@@ -104,19 +71,11 @@
             </div>
           </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
-            <div id="historial">
-            </div>
 
-
-            <!-- <div class="">
-              <nav aria-label="Page navigation example">
-                <ul class="paginacion pagination justify-content-center" id='pages'>
-
-                </ul>
-              </nav>
+            <!-- <div id="historial">
             </div> -->
-
-
+            <table id="historial">
+            </table>
 
           </div>
           <div class="tab-pane fade" id="section-4" role="tabpanel" aria-labelledby="index-4">

@@ -8,64 +8,19 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
   switch ($_POST['action']) {
     case 'vrep': //ver listado de pendientes
             $salida=array();
-            $start="1";
-            // $query = "SELECT * FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC LIMIT ".$conectar->real_escape_string($_POST['limit'])." OFFSET ".$conectar->real_escape_string($_POST["offset"]);
             $query = "SELECT id_reporte, fecha, hora, nombre, asunto, descripcion, status FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC ";
-
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
-                  // $salida.="<table class='table table-hover'>
-                  //             <thead class='thead thead'>
-                  //               <tr>
-                  //               <th>ID</th>
-                  //               <th>Fecha</th>
-                  //               <th>Hora</th>
-                  //               <th>Asunto</th>
-                  //               <th>Área</th>
-                  //               <th>Reporta</th>
-                  //               <th>Descripción</th>
-                  //               <th>Actividad</th>
-                  //               <th>Estado actual</th>
-                  //             </tr>
-                  //             </thead>
-                  //             </tbody>
-                  //                 ";
-                while ($fila= $resultado->fetch_all()) {
+                while ($fila= $resultado->fetch_all()) { //regresa un objeto de arrays
                   $salida=$fila;
-                     // $salida.="<tbody>
-                     //            <tr>
-                     //
-                     //  <td>".$fila['id_reporte']."</td>
-                     //  <td>".$fila['fecha']."</td>
-                     //  <td>".$fila['hora']."</td>
-                     //  <td>".$fila['asunto']."</td>
-                     //  <td>".$fila['area']."</td>
-                     //  <td>".$fila['nombre']."</td>
-                     //  <td>".$fila['descripcion']."</td>
-                     //  <td>".$fila['actividad']."</td>
-                     //  <td>".$fila['status']."</td>
-                     //  <td>
                      //  <button class='atender btn btn' value ='".$fila['id_reporte']."'>Atender </button>
                      //  <button class='firmar btn btn' value ='".$fila['id_reporte']."'>Firmar </button>
-                     //  </td>
-                     //  </tr>";
                       }
-                // $salida.="</tbody>
-                //       </table>";
-
-
                     }else {
-                    $salida.="No hay reportes pendientes";
+                    $salida="No hay reportes pendientes";
                   }
                 echo json_encode($salida);
       break;
-    case 'load'; //conteo de reportes
-          $load = "SELECT COUNT(id_reporte) FROM reporte WHERE status like 'pendiente%' ";
-          $query = mysqli_query($conectar, $load);
-          $resultado = $query->fetch_assoc();
-          $reporte=$resultado['COUNT(id_reporte)'];
-          echo $reporte;
-        break;
     case 'edit': //cargar edicion
           $salida='';
           $q = $conectar->real_escape_string($_POST['consulta']);
@@ -234,38 +189,45 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                   echo $salida;
             }
         break;
-    case 'view'; //historial
-         $paginacion='';
-         $start=$_POST['start'];
-         // $start=($start)-1;
-         $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
+    case 'historial'; //historial
+         $historial=array();
+         $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC";
          $resultado = mysqli_query($conectar, $consulta);
          if ($resultado->num_rows>0) {
-           $paginacion.="<table class='table table-hover'>
-                          <thead>
-                            <tr>
-                            <th scope='col'>#</th>
-                            <th scope='col'>Fecha</th>
-                              <th scope='col'>Persona que reportó</th>
-                              <th scope='col'>Área</th>
-                              <th scope='col'>Asunto</th>
-                              <th scope='col'>Estado actual</th>
-                            </tr>
-                          </thead>";
            while ($rep = $resultado->fetch_assoc()) {
-             $paginacion.="<tr>
-                            <td scope='row'>".$rep['id_reporte']."</td>
-                              <td scope='row'>".$rep['fecha']."</td>
-                              <td scope='row'>".$rep['nombre']."</td>
-                              <td scope='row'>".$rep['area']."</td>
-                              <td scope='row'>".$rep['asunto']."</td>
-                              <td scope='row'>".$rep['status']."</td>
-                              <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-primary'>Detalles</button></td>
-                          </tr>";
+             $historial[]=$rep;
            }
-          $paginacion.="</tbody></table>";
          }
-        echo $paginacion;
+
+         // $start=$_POST['start'];
+         // $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
+         // $resultado = mysqli_query($conectar, $consulta);
+         // if ($resultado->num_rows>0) {
+         //   $historial.="<table class='table table-hover'>
+         //                  <thead>
+         //                    <tr>
+         //                    <th scope='col'>#</th>
+         //                    <th scope='col'>Fecha</th>
+         //                      <th scope='col'>Persona que reportó</th>
+         //                      <th scope='col'>Área</th>
+         //                      <th scope='col'>Asunto</th>
+         //                      <th scope='col'>Estado actual</th>
+         //                    </tr>
+         //                  </thead>";
+         //   while ($rep = $resultado->fetch_assoc()) {
+         //     $historial.="<tr>
+         //                    <td scope='row'>".$rep['id_reporte']."</td>
+         //                      <td scope='row'>".$rep['fecha']."</td>
+         //                      <td scope='row'>".$rep['nombre']."</td>
+         //                      <td scope='row'>".$rep['area']."</td>
+         //                      <td scope='row'>".$rep['asunto']."</td>
+         //                      <td scope='row'>".$rep['status']."</td>
+         //                      <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-primary'>Detalles</button></td>
+         //                  </tr>";
+         //   }
+         //  $historial.="</tbody></table>";
+         // }
+        echo json_encode($historial);
         break;
     case 'save_edit': //guardar edicion
         $id = $_POST["id"];

@@ -23,32 +23,3 @@ setInterval(function(){
 },5000);
 /*Actualizacion y notificacion de reportes-document*/
 //==================================Reportes====================================
-
-//==================================Notas====================================
-/*ver notas*/
-verNotas()
-function verNotas(){
-  $.ajax({
-    url:'fn/fnindex.php',
-    type:'POST',
-    dataType:'html',
-    data:{to:'viewnote'}
-  }).done(function(notas){
-    $("#notas").html(notas)
-  })
-}
-//borrar notas
-$(document).on("click", ".delNote", function(){
-  var x = $(this).val()
-  $.ajax({
-    url:'fn/fnindex.php',
-    type:'POST',
-    dataType:'html',
-    data:{to:'deletenote', borrarnota:x}
-  })
-  .done(function(res){
-    verNotas()
-  })
-})
-/*ver notas*/
-//==================================Notas====================================

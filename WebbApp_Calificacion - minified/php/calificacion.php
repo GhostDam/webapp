@@ -28,8 +28,6 @@
               <h2>Por favor, ayúdanos calificando la experiencia de tu servicio.</h2><br>
             </div>
       </div>
-          <!-- <form action="querys.php" method="POST"> -->
-
   <form class="servicio" id="servicio" >
        <div class="row">
           <div class="col-md-4 offset-md-4">
@@ -49,43 +47,71 @@
        </div>
        <div class="row">
           <div class="col-md-4 offset-md-4">
-              <div class="form-group">
+              <div class="form-group-inline">
                   <label class="control-label" for="calidad">Califica como fue tu servicio:</label>
-                  <select class="form-control" name="calidad" id="calidad" required>
+                  <label for="Excelente">Excelente</label>
+                  <input type="radio" name="calidad" id="calidad" value="excelente">
+                  <label for="Bueno">Bueno</label>
+                  <input type="radio" name="calidad" id="calidad" value="bueno">
+                  <label for="Regular">Regular</label>
+                  <input type="radio" name="calidad" id="calidad" value="regular">
+                  <label for="Malo">Malo</label>
+                  <input type="radio" name="calidad" id="calidad" value="malo">
+
+                  <!-- <select class="form-control" name="calidad" id="calidad" required>
                       <option value="" disabled selected>--Selecciona--</option>
                       <option value="excelente" name="excelente">Excelente</option>
                       <option value="bueno" name="bueno">Bueno</option>
                       <option value="regular" name="regular">Regular</option>
                       <option value="malo" name="malo">Malo</option>
-                  </select>
-                  </div>
+                  </select> -->
+                </div>
            </div>
        </div>
       <div class="row">
           <div class="col-md-4 offset-md-4">
               <div class="form-group">
                   <label class="control-label" for="atencion">Nivel de atención otorgado:</label>
-                  <select class="form-control" name="atencion" id="atencion" required>
+                  <label for="Excelente">Excelente</label>
+                  <input type="radio" name="atencion" id="atencion" value="excelente">
+                  <label for="Bueno">Bueno</label>
+                  <input type="radio" name="atencion" id="atencion" value="bueno">
+                  <label for="Regular">Regular</label>
+                  <input type="radio" name="atencion" id="atencion" value="regular">
+                  <label for="Malo">Malo</label>
+                  <input type="radio" name="atencion" id="atencion" value="malo">
+
+
+                  <!-- <select class="form-control" name="atencion" id="atencion" required>
                       <option value="" disabled selected>--Selecciona--</option>
                       <option value="excelente" name="excelente">Excelente</option>
                       <option value="bueno" name="bueno">Bueno</option>
                       <option value="regular" name="regular">Regular</option>
                       <option value="malo" name="malo">Malo</option>
-                  </select>
-                  </div>
+                  </select> -->
+                </div>
            </div>
        </div>
        <div class="row">
           <div class="col-md-4 offset-md-4">
               <div class="form-group">
                   <label class="control-label" for="nivel">El nivel profesional mostrado fue:</label>
-                  <select class="form-control" name="nivel" id="nivel" required>
+                  <label for="Excelente">Excelente</label>
+                  <input type="radio" name="nivel" id="nivel" value="excelente">
+                  <label for="Bueno">Bueno</label>
+                  <input type="radio" name="nivel" id="nivel" value="bueno">
+                  <label for="Regular">Regular</label>
+                  <input type="radio" name="nivel" id="nivel" value="regular">
+                  <label for="Malo">Malo</label>
+                  <input type="radio" name="nivel" id="nivel" value="malo">
+
+                  <!-- <select class="form-control" name="nivel" id="nivel" required>
                       <option value="" disabled selected>--Selecciona--</option>
                       <option value="excelente" name="excelente">Excelente</option>
                       <option value="bueno" name="bueno">Bueno</option>
                       <option value="regular" name="regular">Regular</option>
                       <option value="malo" name="malo">Malo</option>
-                  </select>
+                  </select> -->
               </div>
            </div>
        </div>
@@ -93,13 +119,22 @@
           <div class="col-md-4 offset-md-4">
               <div class="form-group">
                   <label class="control-label" for="respuesta">El tiempo de respuesta a tu problema fue:</label>
-                  <select class="form-control" name="respuesta" id="respuesta" required>
+                    <label for="Excelente">Excelente</label>
+                    <input type="radio" name="respuesta" id="respuesta" value="excelente">
+                    <label for="Bueno">Bueno</label>
+                    <input type="radio" name="respuesta" id="respuesta" value="bueno">
+                    <label for="Regular">Regular</label>
+                    <input type="radio" name="respuesta" id="respuesta" value="regular">
+                    <label for="Malo">Malo</label>
+                    <input type="radio" name="respuesta" id="respuesta" value="malo">
+
+                  <!-- <select class="form-control" name="respuesta" id="respuesta" required>
                       <option value="" disabled selected>--Selecciona--</option>
                       <option value="excelente" name="excelente">Excelente</option>
                       <option value="bueno" name="bueno">Bueno</option>
                       <option value="regular" name="regular">Regular</option>
                       <option value="malo" name="malo">Malo</option>
-                  </select>
+                  </select> -->
               </div>
            </div>
        </div>

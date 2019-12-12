@@ -9,7 +9,7 @@ function load() {
     dataType: 'html',
   })
   .done(function(optarea) {
-    $("#opt").html(optarea)
+    $("#opt").append(optarea)
   })
   .fail(function(res){
     console.log(res)
@@ -30,8 +30,8 @@ function setRs(responsable) {
     area_id = resp.split("-")[1];
   })
 }
-$(document).on('input', '#area', function(){
-  var valor =$("#area").val();
+$(document).on('input', '.areaList', function(){
+  var valor =$("#opt").val();
   if (valor != ""){
     setRs(valor);
   }
@@ -51,7 +51,7 @@ function users(usuarios) {
     $("#opt_nombre").append(use[1])
   })
 }
-$(document).on('input', '#area', function(){
+$(document).on('input', '#opt', function(){
   $("form").find(".error").removeClass("error")
   setTimeout(function(){
     var valor = area_id;

@@ -12,29 +12,6 @@ if('serviceWorker' in navigator){
 }else{
 	console.log('No tienes acceso a los serviceWorker en tu navegador');
 }
-//*Service worker
-//*Evento de Instalador en Desktop
-// let deferredPromt;
-// const addBtn = document.querySelector('.add-Button');
-// addBtn.style.display = 'none';
-// window.addEventListener('beforeinstallprompt', (e) => {
-//     e.preventDefault();
-//     deferredPromt = e;
-//     showInstallPromotion();
-//     addBtn.style.display = 'block';
-//     addBtn.addEventListener('click', (e) => {
-//         addBtn.style.display = 'none';
-//         deferredPromt.prompt();
-//         deferredPromt.userChoice.then((choiceResult) => {
-//             if (choiceResult.outcome === 'accepted') {
-//                 console.log('Se acepto el A2HS prompt');
-//             } else {
-//                 console.log('User')
-//             }
-//             deferredPromt = null;
-//         });
-//     });
-// });
 //consulta
 $(document).ready(function(){
     $("#folio-reporte").on('submit', function(e){
@@ -52,7 +29,7 @@ $(document).ready(function(){
 										if (res['mensaje']=='Número de reporte inexistente') {
 											swal(res['mensaje'], "","error")
 										}else if(res['firma']!=''){
-											swal(res['mensaje'], res['firma'] , "error")
+											swal(res['mensaje'], '' , "error")
 										}else{
 											window.location.href =`php/calificacion.php?reporte=${res['id']}`;
 										}
@@ -65,31 +42,6 @@ $(document).ready(function(){
 })
 //consulta
 //guardado de calificacion
-// $(document).ready(function(){
-// 		$("#servicio").on('submit', function(e){
-// 				e.preventDefault();
-// 				var data = new FormData($("#servicio")[0]);
-// 				$.ajax({
-// 						url: "querys.php", //registro guardado
-// 						method: "POST",
-// 						data: data,
-// 						dataType: "json",
-// 						contentType: false,
-// 						processData: false,
-// 						cache: false,
-// 						success: function(respuesta){
-// 								console.log(respuesta);
-// 								// alert(respuesta.mensaje);
-// 								// window.location.href="../index.php";
-// 						},
-// 						error: function(e){
-// 								console.log(e);
-// 						}
-//
-// 				})
-// 		})
-// })
-//guardado de calificacion
 //*ADDONS*/
 $(document).on('submit', "#servicio", function(e){
 	e.preventDefault();
@@ -97,53 +49,68 @@ $(document).on('submit', "#servicio", function(e){
 	var idreporte = $('input[name="idreporte"]').val(); //id **
 	var resolucion = $('select[name="resolucion"]').val(); //solucion **
 
-	var calidad = $('select[name="calidad"]').val(); //calidad **
-	var atencion = $('select[name="atencion"]').val(); //atencion **
-	var nivel = $('select[name="nivel"]').val(); //profesional
-	var respuesta = $('select[name="respuesta"]').val(); //tiempo **
+	var calidad = $('input[name="calidad"]:checked').val(); //calidad **
+	var atencion = $('input[name="atencion"]:checked').val(); //atencion **
+	var nivel = $('input[name="nivel"]:checked').val(); //profesional
+	var respuesta = $('input[name="respuesta"]:checked').val(); //tiempo **
 
 	var img = document.getElementById("canvas").toDataURL('image/png');
 
+	swal({
+		title: "¿Firmar y cerrar reporte?",
+		text: `Una vez firmado se cerrara por completo el reporte`,
+		icon: "info",
+		buttons: [
+			'Cancelar',
+			'Aceptar'
+		],
+	}).then(
+		function (confirm) {
+			if (confirm) {
 
-	// form = $("#servicio").serialize();
-	// var img = document.getElementById("canvas").toDataURL('image/png');
-	//
-	// form+="&img="+img;
+				$.ajax({
+					url: 'querys.php',
+					type: 'post',
+					data: {idreporte:idreporte, resolucion:resolucion, calidad:calidad, atencion:atencion, nivel:nivel, respuesta:respuesta, img:img}
+				})
+				.done(function(respuesta) {
+					swal({
+						title: respuesta,
+						text: "La firma se guardo exitosamente.",
+						icon: "success",
+						timer: 1500
+					})
+					.then(function(done){
+						window.location.href="./../";
+					})
+				})
+				.fail(function(data){
+					console.log(data)
+				})
 
-	// console.log(img)
-	// console.log(form)
+			}
+})
 
-	console.log(idreporte, resolucion, calidad, atencion, nivel, respuesta, img);
-	$.ajax({
-  url: 'querys.php',
-  type: 'post',
-  data: {idreporte:idreporte, resolucion:resolucion, calidad:calidad, atencion:atencion, nivel:nivel, respuesta:respuesta, img:img}
-  })
-  // $.ajax({
-  // url: 'querys.php',
-  // type: 'post',
-  // data: data
-  // })
-  .done(function(respuesta) {
-    console.log(respuesta);
-		swal({
-     title: respuesta,
-     text: "La firma se guardo exitosamente.",
-     icon: "success",
-     timer: 1500
-	 	})
-		.then(function(done){
-			// console.log(done)
-			 window.location.href="./../";
 
-		})
-     // function (done) {
-		 //
-		 // },
-	})
-  .fail(function(data){
-    console.log(data)
-  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
 //*ADDONS*/
 //*Firma
@@ -151,10 +118,5 @@ $( document ).ready(function() {
 	$("#btnClearSign").on('click', function(){
 		console.log("canvas!!!");
 	});
-	// $("#btnSubmitSign").on('click', function(){
-	// 	var data = document.getElementById("canvas").toDataURL('image/png');
-	// 	$.post('conexion.php',{data: data},function(data){console.log(data);})
-	// 	console.log(data);
-	// })
 })
 //*Firma

@@ -4,19 +4,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
       include 'connect.php';
       switch ($_POST['action']) {
-        case 'guardar_tema': //GUARDAR TEMAS DE USUARIO
-            $id=$_POST['id'];
-            $tema=$_POST['tema'];
-            $sql="UPDATE login SET tema ='$tema' WHERE usuario =('$id')";
-            $ejecutar=mysqli_query($conectar, $sql);
-              if(!$ejecutar){
-                      echo "hubo algun error";
-                }else{
-                  echo "Guardado correctamente";
-                }
-               session_start();
-              $_SESSION['tema'] = $_POST['tema'];
-          break;
         case 'lista_admins': //cargar lista de admins
             $admins = '';
             $query = "SELECT * FROM login";

@@ -116,8 +116,6 @@ function vald(){
             swal(echo)
             $('form#n_reporte')[0].reset();
           })
-          // let formData=new FormData($("form#n_reporte")[0]);
-          // formData.append('key','valor');
         }
   })
 });
@@ -125,39 +123,21 @@ function vald(){
 //==================================Crear Reporte====================================
 //==================================cargar usuarios====================================
 /*nueva nota*/
-$(document).on("click", "#nota", function(){
-  var title = $("input[name='title']").val()
-  var cont = $("textarea[name='contenido']").val()
-  vald();
-  if ($(".error:visible").length>0) {
-    swal({
-      text:"Hay campos vacíos, incompletos o contienen carácteres no válidos",
-      icon:"error",
-    })
-    $($(".error:visible")).focus();
-    return false;
-  }else {
+$(document).ready(function(){
+
       $.ajax({
         url:"fn/fnindex.php",
         type: "POST",
-        data: {to:"newnote", title:title, cont:cont}
+        dataType: 'JSON',
+        data: {to:"cargar_usuarios"}
       })
-      .done(function(echo){
-        swal(echo, "", "success")
-        $('form#new_note')[0].reset()
-        verNotas()
+      .done(function(usuarios){
+        for(var i in usuarios){
+          // console.log(usuarios[i][0])
+          $("#lista").append(`<option>${usuarios[i][0]}</option>`)
+        }
       })
-    }
-  })
-
-function verNotas(){
-  $.ajax({
-    url:'fn/fnindex.php',
-    type:'POST',
-    dataType:'html',
-    data:{to:'viewnote'}
-  }).done(function(notas){
-    $("#notas").html(notas)
-  })
-}
-/*nueva nota*/
+      .fail(function(err){
+        console.log(err)
+      })
+})

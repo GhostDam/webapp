@@ -46,10 +46,10 @@
             <label for="nombre" class="col-sm-12 col-form-label">Ingrese el usuario que reporta:</label>
             <input type="text" list='lista' class="form-control col-12" id="usr" name="nombre" required autocomplete="off" placeholder="Ejemplo: SISTEMAS3">
             <datalist id="lista">
-              <option>SISTEMAS3</option>
+              <!-- <option>SISTEMAS3</option>
               <option>SISTEMAS2</option>
               <option>SISTEMAS1</option>
-              <option>AACEVES</option>
+              <option>AACEVES</option> -->
             </datalist>
         </div>
 

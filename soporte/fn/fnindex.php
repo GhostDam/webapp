@@ -4,8 +4,19 @@
       include 'connect.php';
       $action = $_POST['to'];
       switch ($action) {
+        case 'cargar_usuarios':
+          $usuarios = array();
+          $query_usuarios = "SELECT nombre_usuario FROM usuarios";
+          $consulta = mysqli_query($conectar, $query_usuarios);
+
+          while ($us = $consulta->fetch_all()) {
+              $usuarios=$us;
+          }
+
+        echo json_encode($usuarios);
+          break;
         case 'fill': //cargar datos para el reporte
-          $usr= $_POST['usr'];
+          $usr = $conectar->real_escape_string($_POST['usr']);
           $query = "SELECT nombre_usuario, area, nombre_equipo, tipo, marca, modelo, num_serie, responsable_area FROM usuarios
                                     JOIN  areas on usuarios.id_area = areas.id_area
                                     JOIN equipos on usuarios.id_equipo = equipos.id_equipo
@@ -98,47 +109,6 @@
                   echo "Reporte Agregado con Exito";
                 }
             break;
-
-        /**case 'newnote': //nueva nota
-          $titulo = $_POST['title'];
-          $nota = $_POST['cont'];
-
-          $guardar= "INSERT INTO notas(titulo, nota) VALUES ('$titulo', '$nota')";
-          $guardar =mysqli_query($conectar, $guardar);
-            if (!$guardar) {
-              echo (mysqli_error($conectar));
-              }else {
-              echo "Nota agregada";
-
-            }
-        break;
-        case 'viewnote': //ver notas
-        $stiky='';
-        $select='SELECT * FROM notas ORDER BY id';
-        $ver = mysqli_query($conectar, $select);
-        if ($ver->num_rows>0) {
-          while ($nota=mysqli_fetch_assoc($ver)) {
-            $stiky.="<div class='stick'>
-            <h4>".$nota["titulo"]."</h4>
-            <p>".$nota["nota"]."</p>
-            <button class='delNote'value=".$nota["id"]."><i class='icon-trash-o'></i></button>
-            </div>";
-          }
-          echo  $stiky;
-        }
-        break;
-        case 'deletenote': //borrar notas
-        $q=$_POST['borrarnota'];
-        $delete="DELETE FROM notas WHERE id ='$q'";
-        $borrar = mysqli_query($conectar, $delete);
-        if (!$borrar) {
-          echo var_dump($borrar);
-        }
-        break;
-        break;
-        default:
-          // code...
-          break;**/
       }
       $conectar->close();
 

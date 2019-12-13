@@ -47,11 +47,11 @@
               <h2>Áreas</h2>
             </a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link btn btn-outline-primary" id="index-4" data-toggle="pill" href="#section-4" role="tab" aria-controls="section-4" aria-selected="false">
               <h2>Personalizadas</h2>
             </a>
-          </li>
+          </li>-->
         </ul>
         <!--navs -->
         <div class="tab-content" id="pills-tabContent">
@@ -77,9 +77,10 @@
               <div id="stats_area">
               </div>
           </div>
-          <div class="tab-pane fade" id="section-4" role="tabpanel" aria-labelledby="index-4">
+          <!--sin funcionalidad por el momento-->
+          <!--<div class="tab-pane fade" id="section-4" role="tabpanel" aria-labelledby="index-4">
             cuatlo
-          </div>
+          </div>-->
         </div>
     <!--  Bootstrap navs -->
 </section>

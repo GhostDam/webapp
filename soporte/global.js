@@ -17,7 +17,7 @@ setInterval(function(){
     count2 = $(".vrep").html();
     if (count2>count) {
       $('body').append('<embed src="md/xb.mp3" type="audio/mp3" autostart="true" hidden="true" loop="false">');
-      swal("Nuevo reporte", "", "info")
+      swal("Tienes un nuevo reporte", "", "info")
     }
   });
 },5000);

@@ -36,7 +36,7 @@ if (!empty($_POST)){
                 else {
                   header('Location: ../login.php');
                   @session_start();
-                  $_SESSION["message"]="contraseña incorrecta";
+                  $_SESSION["message"]="Contraseña incorrecta";
                 }
         }
       }else{

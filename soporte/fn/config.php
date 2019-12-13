@@ -23,15 +23,15 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
                   $admins.="<table>
-                                <thead class='table table-hover'>
-                                      <tr>
-                                    <td scope='col'>Admin</td>
-                                    <td scope='col'>Nombre</td>
-                                      <td scope='col'>Tipo</td>
-                                    <td scope='col'>Eliminar</td>
-                                    </tr>
-                                       </thead>
-                                         <tbody>";
+                          <thead class='table table-hover'>
+                                <tr>
+                          <td scope='col'>Admin</td>
+                          <td scope='col'>Nombre</td>
+                          <td scope='col'>Tipo</td>
+                          <td scope='col'>Eliminar</td>
+                                  </tr>
+                                    </thead>
+                                       <tbody>";
                   while ($rest = $resultado->fetch_assoc()) {
                     $admins.= "<tr>
                                 <td scope='row'>".$rest["usuario"]."</td>

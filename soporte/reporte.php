@@ -60,36 +60,8 @@
         <!--navs -->
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-            <!-- <div id="mostrar">
-            </div>
-            <div class="">
-              <div class="col-md-12">
-      					<ul class="pagination justify-content-center" id="paginador"></ul>
-      				</div>
-          </div> -->
-
-          <table id="pagina_tabla" width="100%" style="width: 100%!important;">
-            <!-- <thead>
-           <tr>
-               <th>Name</th>
-               <th>Position</th>
-               <th>Office</th>
-               <th>Extn.</th>
-               <th>Start date</th>
-               <th>Salary</th>
-           </tr>
-       </thead>
-       <tfoot>
-           <tr>
-               <th>Name</th>
-               <th>Position</th>
-               <th>Office</th>
-               <th>Extn.</th>
-               <th>Start date</th>
-               <th>Salary</th>
-           </tr>
-       </tfoot> -->
-          </table>
+            <table id="pendientes" width=100%>
+            </table>
 
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
@@ -104,18 +76,9 @@
             </div>
           </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
-            <div id="historial">
-            </div>
 
-
-            <!-- <div class="">
-              <nav aria-label="Page navigation example">
-                <ul class="paginacion pagination justify-content-center" id='pages'>
-
-                </ul>
-              </nav>
-            </div> -->
-
+            <table id="historial">
+            </table>
 
 
           </div>

@@ -95,8 +95,8 @@ crossorigin="anonymous"></script>
       <!--Canvas-->
         <canvas id="canvas">Su navegador no soporta canvas :( </canvas>
         <div class="buttons">
-          <button id="limpiar" class="btn btn-primary">limpiar canvas</button>
-          <button id="download" type="button" class="btn btn-primary">Guardar Firma</button>
+          <button id="limpiar" class="btn btn-primary">Limpiar firma</button>
+          <button id="download" type="button" class="btn btn-primary">Guardar firma</button>
         </div>
       <!--Canvas-->
     </form>

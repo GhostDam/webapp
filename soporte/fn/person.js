@@ -217,12 +217,11 @@ buttons: [
    'Aceptar'
  ],
 }).then(
-  function (del) {
-    if (del) {
+  function (conf) {
+    if (conf) {
       $('input[name="id_editar"]').val(id_usuario)
       $('#carga_edicion').trigger('click')
-      $('.nft').hide()
-      $('#pan3').show()
+      $('a#index-3').trigger('click')
     }
  })
 })

@@ -4,6 +4,18 @@
       include 'connect.php';
       $action = $_POST['to'];
       switch ($action) {
+        case 'cargar_usuarios':
+          $usuarios = array();
+          $query_usuarios = "SELECT nombre_usuario FROM usuarios";
+          $consulta = mysqli_query($conectar, $query_usuarios);
+
+          while ($us = $consulta->fetch_all()) {
+              $usuarios=$us;
+          }
+
+        echo json_encode($usuarios);
+          break;
+
         case 'fill': //cargar datos para el reporte
           $usr= $_POST['usr'];
           $query = "SELECT nombre_usuario, area, nombre_equipo, tipo, marca, modelo, num_serie, responsable_area FROM usuarios

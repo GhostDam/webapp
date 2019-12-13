@@ -11,10 +11,11 @@
       </li>
       <li><a href="usuarios.php"><i class="icon icon-users <?= $li3 ?>"></i><span>Usuarios</span></a></li>
       <li><a href="Inventarios.php"><i class="icon icon-clipboard-pencil <?= $li4 ?>"></i><span>Inventarios</span></a></li>
-      <li><a href="Personal.php"><i class="icon-torso <?= $li6 ?>"></i><span>Personal</span></a></li>
-      <li><a href="signature.php"><i class="icon icon-pen-streamline-1 <?= $li7 ?>"></i><span>Signature</span></a></li>
+      <li class='admin'><a href="Personal.php"><i class="icon-torso <?= $li6 ?>"></i><span>Personal</span></a></li>
+      <li><a href="signature.php"><i class="icon icon-pen-streamline-1 <?= $li7 ?>"></i><span>Firma</span></a></li>
       <li class='admin'><a href="config.php"><i class="icon icon-settings-streamline-1 <?= $li5 ?>"></i><span>Sistema</span></a></li>
       <li><a href="estadisticas.php"><i class="icon-caret-right <?= $li8 ?>"></i><span>Estadísticas</span></a></li>
+      <li><a href="">
     </ul>
   </nav>
 </div>

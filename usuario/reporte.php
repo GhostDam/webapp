@@ -25,10 +25,14 @@
             <div class="col-12 d-flex justify-content-around">
               <div class="form-group">
                 <label for="area">Área: </label>
-                <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="Introduzca aqui su área" required>
+                <!-- <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="Introduzca aqui su área" required>
                 <datalist id="opt">
 
-                </datalist>
+                </datalist> -->
+                <select class="form-control areaList" id="opt" name="area">
+                  <option value="">Ingrese el área</option>
+                </select>
+
               </div>
               <div class="form-group">
                 <label for="encargado">Encargado de área: </label>

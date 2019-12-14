@@ -9,22 +9,17 @@
   <script src="https://code.jquery.com/jquery-3.4.0.js"integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
-
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
-
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- css  -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- <script src="plug/js/datatables.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="plug/css/datatables.min.css"></script> -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
-
+  <!-- Datatables -->
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
 
   <script src="fn/report.js" charset="utf-8"></script>
 
@@ -60,7 +55,7 @@
         <!--navs -->
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-            <table id="pendientes" width=100%>
+            <table id="pendientes" width=100% class="table">
             </table>
 
           </div>

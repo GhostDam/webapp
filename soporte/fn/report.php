@@ -8,11 +8,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
   switch ($_POST['action']) {
     case 'vrep': //ver listado de pendientes
             $salida=array();
-            $query = "SELECT id_reporte, fecha, hora, nombre, asunto, descripcion, status FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC ";
+            $query = "SELECT * FROM reporte WHERE status like 'pendiente%' ORDER BY id_reporte DESC ";
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
-                while ($fila= $resultado->fetch_all()) { //regresa un objeto de arrays
-                  $salida=$fila;
+                while ($fila= $resultado->fetch_assoc()) { //regresa un objeto de arrays
+                  $salida[]=$fila;
                      //  <button class='atender btn btn' value ='".$fila['id_reporte']."'>Atender </button>
                      //  <button class='firmar btn btn' value ='".$fila['id_reporte']."'>Firmar </button>
                       }

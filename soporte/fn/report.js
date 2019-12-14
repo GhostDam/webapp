@@ -6,7 +6,7 @@ $(document).ready(function(){
       dataType:"json",
       url:"fn/report.php"
     }).done(function(data){
-      console.log(data)
+      console.log(data) //array
       if (data=='No hay reportes pendientes') {
             $("#pendientes").html(data)
             return false;
@@ -15,13 +15,15 @@ $(document).ready(function(){
           data: data,
         order: [[0, 'desc']],
         columns: [
-            { title: "Id" },
-            { title: "Fecha" },
-            { title: "Hora" },
-            { title: "Persona que reporta" },
-            { title: "Asunto" },
-            { title: "Descripción" },
-            { title: "status" },
+            { title: "Id", data:"id_reporte" },
+            { title: "Fecha", data:"fecha" },
+            { title: "Hora", data:"hora" },
+            { title: "Persona que reporta", data:"nombre" },
+            { title: "Asunto", data:"asunto" },
+            { title: "Descripción", data:"descripcion" },
+            { title: "Estado actual", data:"status" },
+            { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-info atender' value="${id}">Atender</button>`}},
+
         ],
         // "language": {
         //       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
@@ -198,19 +200,20 @@ $(document).ready(function(){
       type:'post',
       data:{action:'historial'},
     }).done(function(load){ //load = total registros
-      console.log(load)
-      console.log(load['id_reporte'])
+      console.log(load['id_reporte']) //objeto
+      console.log(load[0].id_reporte) //objeto
 
       $("#historial").DataTable({
           data: load,
         order: [[0, 'desc']],
         columns: [
-          { title: "#", data: "id_reporte" },
+          { title: "#",  data: "id_reporte"  }, //data: "id_reporte"
           { title: "Fecha", data: "fecha" },
           { title: "descripción", data: "descripcion" },
           { title: "Asunto", data: "asunto" },
           { title: "Persona que reportó" , data: "nombre"},
           { title: "Estado actual", data: "status" },
+          { title: "Detalles", data: "id_reporte", render: function(id_reporte){ return `<button class='btn btn-info detalles' value="${id_reporte}">Detalles</button>`} },
         ],
         // "language": {
         //       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
@@ -276,6 +279,5 @@ $(document).on("click", ".detalles", function(){
   $("#buscarh").val(id);
   $("#index-4").trigger('click');
   $("#verhist").trigger('click');
-  $("#pills-tab li:eq(3) > a")[0].click();
 })
 //==================================detalles====================================

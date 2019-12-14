@@ -15,7 +15,6 @@
       <li><a href="signature.php"><i class="icon icon-pen-streamline-1 <?= $li7 ?>"></i><span>Firma</span></a></li>
       <li class='admin'><a href="config.php"><i class="icon icon-settings-streamline-1 <?= $li5 ?>"></i><span>Sistema</span></a></li>
       <li><a href="estadisticas.php"><i class="icon-caret-right <?= $li8 ?>"></i><span>Estadísticas</span></a></li>
-      <li><a href="">
     </ul>
   </nav>
 </div>

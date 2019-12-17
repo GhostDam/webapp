@@ -33,7 +33,7 @@
             <form class="folio-reporte" id="folio-reporte" method="post" action="post.php">
                 <fieldset>
                     <label for="reporte">Por favor ingresa tu número de Reporte:</label>
-                     <input type="number" name="reporte" id="reporte" required>
+                     <input type="number" min='0' name="reporte" id="reporte" required>
                      <button type="submit" class="button btn btn-primary" value="Continuar">Continuar</button>
                 </fieldset>
             </form>

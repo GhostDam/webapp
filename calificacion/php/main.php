@@ -28,10 +28,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
 
         break;
-   case 'rango_fechas';
-     break;
-   case 'area';
-     break;
 
     default:
       // code...

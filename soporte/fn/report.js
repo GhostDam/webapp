@@ -22,7 +22,7 @@ $(document).ready(function(){
             { title: "Asunto", data:"asunto" },
             { title: "Descripción", data:"descripcion" },
             { title: "Estado actual", data:"status" },
-            { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-info atender' value="${id}">Atender</button>`}},
+            { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-primary atender' value="${id}">Atender</button>`}},
 
         ],
         // "language": {
@@ -203,6 +203,11 @@ $(document).ready(function(){
       console.log(load['id_reporte']) //objeto
       console.log(load[0].id_reporte) //objeto
 
+      if (load=='No hay reportes en el historial.') {
+      $("#historial").html(load)
+
+        return false;
+      }
       $("#historial").DataTable({
           data: load,
         order: [[0, 'desc']],
@@ -213,7 +218,7 @@ $(document).ready(function(){
           { title: "Asunto", data: "asunto" },
           { title: "Persona que reportó" , data: "nombre"},
           { title: "Estado actual", data: "status" },
-          { title: "Detalles", data: "id_reporte", render: function(id_reporte){ return `<button class='btn btn-info detalles' value="${id_reporte}">Detalles</button>`} },
+          { title: "Detalles", data: "id_reporte", render: function(id_reporte){ return `<button class='btn btn-primary detalles' value="${id_reporte}">Detalles</button>`} },
         ],
         // "language": {
         //       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"

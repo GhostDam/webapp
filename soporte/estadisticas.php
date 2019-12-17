@@ -52,7 +52,7 @@
           </li>-->
         </ul>
         <!--navs -->
-        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
             <div id="total">
             </div>
@@ -64,7 +64,7 @@
             <label for="date2">Fecha final: </label>
             <input type="date" name="fin" value="">
             <br>
-            <input type="button" id="consulta_fecha" value="Buscar rango de fechas">
+            <input class="btn btn-primary" type="button" id="consulta_fecha" value="Buscar por rango de fechas">
             <div id="rango">
             </div>
           </div>

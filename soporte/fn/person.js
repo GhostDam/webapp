@@ -10,7 +10,8 @@ $(document).ready(function(){
   .done(function(list){
     for (var i = 0; i < list.length; i++) {
       $("#direcciones").append(`<div class='tardir'><div class='direccion' value='${list[i]['id_direccion']}'>${list[i]['direccion']}</div></div>`)
-      $('select[class="dirList"]').append(`<option value='${list[i]['id_direccion']}'>${list[i]['direccion']}</option>`)
+      $('.dirList').append(`<option value='${list[i]['id_direccion']}'>${list[i]['direccion']}</option>`)
+
     }
   })
 })

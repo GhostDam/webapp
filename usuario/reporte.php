@@ -18,13 +18,13 @@
   <body>
     <main>
       <div class="contenedor">
-        <h1>Formulario para reporte de fallos</h1>
+        <h1>Favor de completar este formulario con los datos correspondientes</h1>
         <div class="container-fluid">
           <form id="n_reporte" autocomplete="off">
           <div class="row">
             <div class="col-12 d-flex justify-content-around">
               <div class="form-group">
-                <label for="area">Área: </label>
+                <label for="area">Área </label>
                 <!-- <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="Introduzca aqui su área" required>
                 <datalist id="opt">
 
@@ -35,7 +35,7 @@
 
               </div>
               <div class="form-group">
-                <label for="encargado">Encargado de área: </label>
+                <label for="encargado">Encargado de área </label>
                 <input class="form-control" type="text" id="encargado" name="encargado" readonly placeholder="Autollenado" required>
               </div>
             </div>
@@ -48,13 +48,13 @@
               </div>
 
               <div class="form-group">
-                <label for="nombre">Usuario: </label>
+                <label for="nombre">Usuario </label>
                 <select class="form-control" type="text" id="usuario" name="usuario" required>
                   <option value="" selected>Seleccione una opción</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="nombre">Persona que reporta: </label>
+                <label for="nombre">Persona que reporta </label>
                 <input list='opt_nombre' class="form-control" type="text" id="nombre" name="nombre" placeholder="Introduzca aqui su nombre" required>
                 <datalist id="opt_nombre">
 

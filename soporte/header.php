@@ -1,7 +1,7 @@
 <header>
    <nav class="session">
     <li> Bienvenido: <?php echo $_SESSION["usuario"]; ?>  </li>
-    <a href="fn/close.php">Cerrar Sesión</a> </li> 
+    <a class="btn btn-outline-info" href="fn/close.php">Cerrar Sesión</a> </li> 
 <!--<button type="button" class="btn btn-default" aria-label="Left Align">
   <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> cerrar
 </button>-->

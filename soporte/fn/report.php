@@ -40,7 +40,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <span>Descripción: </span>".$fila['descripcion']."
                <span>Tipo de Reporte: </span>
                      <select name='treporte' class='form-val' required>
-                         <option value=''  selected>".$fila['treporte']."</option>
+                         <option value=''  selected>".'Selecciona una opción'."</option>
                          <option value='incidencia'>Incidencia</option>
                          <option value='eventos'>Evento</option>
                          <option value='cambio'>Cambio</option>
@@ -48,7 +48,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <div class='hide'><input name='to' value='save_edit'></div>
                <span>Tipo de Servicio: </span>
                       <select name='tservicio' class='form-val'>
-                         <option value=''  selected>".$fila['tservicio']."</option>
+                         <option value=''  selected>".'Selecciona una opción'."</option>
                          <option value='Hardware'>Hardware</option>
                          <option value='software'>Software</option>
                          <option value='telefonia'>Telefonía</option>
@@ -59,7 +59,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            <legend>Datos del usuario</legend>
            <span>Proveedor del servicio: </span>
                 <select name='provedor' class='form-val'>
-                 <option value=''  selected>".$fila['proveedor']."</option>
+                 <option value=''  selected>".'Selecciona una opción'."</option>
                  <option value='imjuve'>IMJUVE</option>
                  <option value='externo'>Externo</option>
                 </select>
@@ -81,31 +81,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
              <span>Descripción de la actividad: </span><textarea class='form-val' type='textarea' name='actividad' rows='10' cols='50' required>".$fila['actividad']."</textarea>
            </fieldset>
 
-           <fieldset class='fm'>
-             <legend>Firma:</legend>
-             <img src='".$fila['firma']."'  alt='No se ha recibido la firma'></img>
-           </fieldset>
-
-           <fieldset class='cs'>
-             <legend>Evaluación del servicio</legend>
-             <span>calidad: </span>".$fila['calidad']."
-             <span>Atención: </span>".$fila['atencion']."
-             <span>Profesional: </span>".$fila['nivel']."
-             <span>Tiempo de respuesta: </span>".$fila['tiempo']."
-           </fieldset>
-
-           <fieldset class='cl'>
-             <legend>Cierre del reporte</legend>
-             <span>Fecha Cierre: </span>".$fila['fecha_cierre']."
-             <span>Hora cierre: </span>".$fila['hora_cierre']."
-             <span>Persona que atendió: </span>".$fila['atendio']."
-           </fieldset>
-
-           <fieldset class='st'>
-               <Legend>Estado actual: </Legend>
-               <span>".$fila['status']."</span>
-               </fieldset>
-          </form>
           <button id='btnEdit' type='submit' class='btn btn-primary'>Guardar </button>
           ";
             }
@@ -113,6 +88,32 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
           }else {
               echo "No hay reportes con ese ID";
           }
+           // <fieldset class='cs'>
+           //   <legend>Evaluación del servicio</legend>
+           //   <span>calidad: </span>".$fila['calidad']."
+           //   <span>Atención: </span>".$fila['atencion']."
+           //   <span>Profesional: </span>".$fila['nivel']."
+           //   <span>Tiempo de respuesta: </span>".$fila['tiempo']."
+           // </fieldset>
+
+           // <fieldset class='cl'>
+           //   <legend>Cierre del reporte</legend>
+           //   <span>Fecha Cierre: </span>".$fila['fecha_cierre']."
+           //   <span>Hora cierre: </span>".$fila['hora_cierre']."
+           //   <span>Persona que atendió: </span>".$fila['atendio']."
+           // </fieldset>
+
+           // <fieldset class='fm'>
+           //   <legend>Firma:</legend>
+           //   <img src='".$fila['firma']."'  alt='No se ha recibido la firma'></img>
+           // </fieldset>
+
+          //  <fieldset class='st'>
+          //      <Legend>Estado actual: </Legend>
+          //      <span>".$fila['status']."</span>
+          //      </fieldset>
+          // </form>
+
         break;
     case 'ask'; //detalles
           $salida="";
@@ -197,6 +198,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
            while ($rep = $resultado->fetch_assoc()) {
              $historial[]=$rep;
            }
+         }else{
+          $historial="No hay reportes en el historial.";
          }
 
          // $start=$_POST['start'];

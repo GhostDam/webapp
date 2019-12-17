@@ -57,8 +57,8 @@
             //Status General
             $asunto = $_POST["asunto"];                         //asunto
             $descripcion = $_POST["descripcion"];               //descripcion
-            $trep = $_POST["treporte"];                         //tipo reporte
-            $tser = $_POST["tservicio"];                        //tipo servicio
+            // $trep = $_POST["treporte"];                         //tipo reporte
+            // $tser = $_POST["tservicio"];                        //tipo servicio
             //Datos del Usuario
             $prov = $_POST["provedor"];                         //proveedor servicio
             $usuario = $_POST["usuario"];                                      //usuario
@@ -83,15 +83,13 @@
 
             //hacemos la sentencia de sql, es decir, especificar que se hara con los datos
             //(fecha, hora, nombre, encargado_area, area, asunto, descripcion, treporte, tservicio, proveedor, usuario, marca, modelo, serie, id_equipo, solucion, actividad, status)
-            $sql="INSERT INTO reporte (fecha, hora, nombre, encargado_area, area, asunto, descripcion, treporte, tservicio, proveedor, usuario, marca, modelo, serie, id_equipo, solucion, actividad, status)VALUES('$date',
+            $sql="INSERT INTO reporte (fecha, hora, nombre, encargado_area, area, asunto, descripcion, proveedor, usuario, marca, modelo, serie, id_equipo, solucion, actividad, status)VALUES('$date',
                                                           '$time',
                                                           '$nombre',
                                                           '$encargado',
                                                           '$area',
                                                           '$asunto',
                                                           '$descripcion',
-                                                          '$trep',
-                                                          '$tser',
                                                           '$prov',
                                                           '$usuario',
                                                           '$marca',
@@ -107,7 +105,7 @@
               if(!$ejecutar){
                       echo"hubo algun error";
                 }else{
-                  echo "Reporte Agregado con Exito";
+                  echo "Reporte Agregado con Éxito";
                 }
             break;
 

@@ -22,8 +22,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             $query = "SELECT * FROM login";
             $resultado = $conectar->query($query);
               if ($resultado->num_rows> 0){
-                  $admins.="<table>
-                          <thead class='table table-hover'>
+                  $admins.="<table class='table table-hover'>
+                          <thead>
                                 <tr>
                           <td scope='col'>Admin</td>
                           <td scope='col'>Nombre</td>

@@ -65,7 +65,7 @@
                       <div class="col">
                         <input type="text" class="form-control" id="buscador" name="buscador" placeholder="####">
                       </div>
-                   <button id="editar"  class="btn btn-info" name="" value="buscar">Buscar</button>
+                   <button id="editar"  class="btn btn-primary" name="" value="buscar">Buscar</button>
             </div>
             <div id="atender" class="">
             </div>
@@ -82,7 +82,7 @@
             <div class="col-6">
               <label for="buscador">Buscar en el historial por ID de Reporte:</label>
               <input type="text" class="form-control" id="buscarh" name="buscador" placeholder="####">
-              <input type="button" class="btn btn-info" id="verhist" name="" value="Buscar">
+              <input type="button" class="btn btn-primary" id="verhist" name="" value="Buscar">
             </div>
 
             <div id="detalles">

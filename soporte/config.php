@@ -65,7 +65,7 @@
               <option value="master">Super Admininstrador</option>
               <option value="admin">Admininstrador</option>
             </select><br>
-            <input type="button" class="btn btn-info" id="addmin" value="Guardar"><br>
+            <input type="button" class="btn btn-primary" id="addmin" value="Guardar"><br>
           </div>
         </div>
     <!--  Bootstrap navs -->

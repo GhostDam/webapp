@@ -34,12 +34,12 @@
         <img src="md/imjuve.png" alt="herramientas">
       </div>
       <div class="form">
-         <form class="form-login" action="fn/load.php" method="post">
+         <form class="form-login" action="fn/load.php" method="post" autocomplete='off'>
             <label for="usuario">Usuario: </label>
              <input type="text"class="form-control" id="usuario" name="usuario" required>
              <label for="contraseña">Contraseña: </label>
               <input type="password" class="form-control" id="contraseña" name="contraseña" required>
-          <input type="submit" class="submit" value="entrar">
+          <input type="submit" class="btn btn-primary" value="entrar">
          </form>
        </div>
    </div>

@@ -110,7 +110,7 @@ $(document).on('click', '#crear_equipo', function(){
   vald()
   if ($(".error:visible").length>0) {
     swal({
-      title:"Verifica el formulario",
+      title:"Verifique el formulario",
       text:"El formulario está vacío, incompleto o contiene carácteres no válidos",
       icon:"error",
     })

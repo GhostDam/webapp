@@ -8,8 +8,10 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <script src="global.js"></script>
   <script src="fn/person.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alata&display=swap&subset=latin-ext" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alata|Sulphur+Point&display=swap&subset=latin-ext" rel="stylesheet">
@@ -53,19 +55,25 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <form id="n_personal">
             <label for="dirList">A que dirección se agregará</label>
-              <select class="dirList" name='direccion'>
+              <div class="col-6">
+              <select class="dirList form-control" name='direccion'>
                 <option value="">Seleccione una opción</option>
               </select> <br>
+            </div>
+
               <label for="nuevo_empleado">Nombre del personal</label>
-              <input type="text" name="nuevo_empleado"> <br>
+              <div class="col-6">
+              <input class="form-control" type="text" name="nuevo_empleado"> <br>
+            </div>
               <label for="tipo_empleado">Tipo de personal</label>
-              <select class="tipo_empleado" name="tipo_empleado">
+              <div class="col-6">
+              <select class="tipo_empleado form-control" name="tipo_empleado">
                 <option value="">Seleccione una opción</option>
                 <option value="base">Base</option>
                 <option value="becario">Becario</option>
                 <option value="externo">Externo</option>
                 <option value="encargado">Encargado</option>
-              </select>
+              </select> </div>
               <div class="nuevo_responsable hide">
                 <label for="areas">De que área sera responsable</label>
                 <select class="areaList" name="nuevo_responsable">
@@ -79,11 +87,14 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <form id="edit_personal">
               <label for="id">ID de personal</label>
-              <input type="text" name="id_editar" value=""> <button type="button" id="carga_edicion">Buscar</button> <br>
+              <div class="col-6">
+              <input  class="form-control"type="text" name="id_editar" value=""> <button class="btn btn-primary" type="button" id="carga_edicion">Buscar</button> <br></div>
+
               <label for="dirList">A que dirección se agregará</label>
-                <select class="dirList" name='direccion'>
+                <div class="col-6">
+                <select class="dirList form-control" name='direccion'>
                   <option value="">Seleccione una opción</option>
-                </select> <br>
+                </select> <br></div>
                 <label for="edit_empleado">Nombre del personal</label>
                 <input type="text" name="edit_empleado"> <br>
                 <label for="edit_tipo">Tipo de personal</label>

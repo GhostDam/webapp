@@ -50,7 +50,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                   <td scope='row'>".$row2['GROUP_CONCAT(nombre_usuario separator "<br>")']."</td>
                   <td scope='row' class='items'>".$row2['id_equipo']."</td>
                   <td scope='row'><span>+</span>".$row2['comentarios']."</td>
-                  <td scope='row'><button class='detalles btn btn-primary' value='".$row2['id_equipo']."'>Detalles</button></td>
+              <td scope='row'><button class='detalles btn btn-primary' value='".$row2['id_equipo']."'>Detalles</button></td>
               <tr>";
             }
           $usuarios.="</tbody></table";
@@ -78,12 +78,12 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
         $detalles.="<div class='tarjeta'>";
                     while ($row2 = $resultado->fetch_assoc()) {
                       $detalles.=
-                          "<fieldset class='eq'>
-                            <legend>Información del equipo</legend>
-                              <span>ID del equipo: </span>".$row2['idEquipo']."
-                            <p>Nombre del equipo: ".$row2['nombre_equipo']."</p>
-                            <p>Caracteristicas: ".$row2['caracteristicas']."</p>
-                            <p>Tipo: ".$row2['tipo']."</p>
+              "<fieldset class='eq'>
+                <legend>Información del equipo</legend>
+                  <span>ID del equipo: </span>".$row2['idEquipo']."
+                      <p>Nombre del equipo: ".$row2['nombre_equipo']."</p>
+                        <p>Caracteristicas: ".$row2['caracteristicas']."</p>
+                          <p>Tipo: ".$row2['tipo']."</p>
                             <p>RAM: ".$row2['ram']."</p>
                           </fieldset>
 

@@ -196,28 +196,56 @@ function oMousePos(canvas, evt) {
 // // Eventos pantallas táctiles
 // miCanvas.addEventListener('touchstart', empezarDibujo, false);
 // miCanvas.addEventListener('touchmove', dibujarLinea, false);
+//consulta
+$(document).ready(function(){
+  $("#consulta").on('click', function(e){
+      var data = $("input[name='num']").val();
+      $.ajax({
+              url: "fn/signature.php", // verificar registros existentes
+              method: "POST",
+              dataType:'JSON',
+              data: {data:data, to:'consulta'}
+            })
+            .done(function(res){
+              console.log(res)
+                  if (res['mensaje']=='Número de reporte inexistente') {
+                    swal(res['mensaje'], "","error")
+                  }else if(res['firma']!=''){
+                    swal(res['mensaje'], '' , "error")
+                  }else{
+                    $("form").show();
+                  }
+            })
+            .fail(function(res){
+              console.log(res)
+            })
+
+  })
+})
+//consulta
 
 //*ADDONS*/
 $("#download").on('click', function(){
-  var num = $("input[name='numr']").val();
+  var num = $("input[name='num']").val();
   var cal = $("input[name='calidad']:checked").val();
   var atn = $("input[name='atencion']:checked").val();
   var prf = $("input[name='profesion']:checked").val();
   var tmp = $("input[name='tiempo']:checked").val();
   var sol = $("select").val();
   var img = document.getElementById("canvas").toDataURL('image/png');
+  var to = "guardar_firma";
   // var pat = nombre;
   $.ajax({
   url: 'fn/signature.php',
   type: 'post',
-  data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img}
+  data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img, to:to}
   })
   .done(function(respuesta) {
     console.log(respuesta);
-    console.log(pat);
-
-    alert("firma Guardada en Reporte " + num + "");
-    // window.location.href = "atender.php";
+    swal("Firma guardada", respuesta, "success")
+    .then(function(done){
+      window.location.href = "index.php";
+    })
   })
   .fail(function(){
     console.log(data)

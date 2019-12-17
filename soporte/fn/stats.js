@@ -22,7 +22,7 @@ $(document).ready(function(){
     	exportEnabled: true,
     	animationEnabled: false,
     	title:{
-    		text: "Total historico de reportes por area"
+    		text: "Total histórico de reportes por área"
     	},
     	legend:{
     		cursor: "pointer",

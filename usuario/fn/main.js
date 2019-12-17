@@ -133,7 +133,7 @@ $(document).on('click', "#sbmt", function(){
   }
   swal({
     title: "¿Crear Reporte?",
-    text: `Su reporte se enviara al área de soporte técnico, en breve será atendido.`,
+    text: `Su reporte se enviará al área de soporte técnico, en bréve será atendido.`,
     icon: "info",
     buttons: [
       'Cancelar',
@@ -151,8 +151,14 @@ $(document).on('click', "#sbmt", function(){
           data: data
         })
         .done(function(echo){
-          swal('Listo!', echo, 'success')
           $('form#n_reporte')[0].reset();
+          swal('Listo!', echo, 'success')
+          .then(function(result){
+            if(result){
+              window.location.href = "index.php";
+            }
+
+          })
         })
       }
 })

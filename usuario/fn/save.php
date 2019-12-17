@@ -46,6 +46,8 @@ $ejecutar=mysqli_query($conectar, $sql);
 if(!$ejecutar){
         echo"Hubo algún error";
   }else{
-    echo "Reporte enviado correctamente";
+    $id=$conectar->insert_id;
+
+    echo "Reporte enviado correctamente, tu número de fólio es: ".$id;
 }
  ?>

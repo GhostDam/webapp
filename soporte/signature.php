@@ -22,6 +22,8 @@ crossorigin="anonymous"></script>
 </head>
 <body>
   <?php include "./header.php" ?>
+  <?php $li7='active'; ?>
+
  <?php include "./ul.php" ?>
   <section>
     <!--  Bootstrap navs -->
@@ -35,57 +37,53 @@ crossorigin="anonymous"></script>
     </ul>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-      <form class="">
-        <form>
 
           <div class="input-group mb-3 col-6">
-            <input type="text" class="form-control" placeholder="Número de reporte" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-primary" type="button">Button</button>
-            </div>
-          </div>
+            <input type="text" name='num' class="form-control" placeholder="Número de reporte">
+            <div class="">
+              <button class="btn btn-outline-primary" id='consulta'type="button">Consultar</button>
+            </div>  
+           </div>
 
-              <!-- <label for="numr">Número de Reporte</label>
-              <input type="text" name="numr" id="nreporte"> -->
+       <form class='firmar hide'>
+        <h3>En general,¿Qué tan satisfecho esta usted con el servicio?</h3>
+            <label for="Excelente">Excelente</label>
+            <input type="radio" name="calidad" value="excelente">
+            <label for="Bueno">Bueno</label>
+            <input type="radio" name="calidad" value="bueno">
+            <label for="Regular">Regular</label>
+            <input type="radio" name="calidad" value="regular">
+            <label for="Malo">Malo</label>
+            <input type="radio" name="calidad" value="malo">
+        <h3>¿Cuál fue el nivel de atención del servicio?</h3>
+            <label for="Excelente">Excelente</label>
+            <input type="radio" name="atencion" value="excelente">
+            <label for="Bueno">Bueno</label>
+            <input type="radio" name="atencion" value="bueno">
+            <label for="Regular">Regular</label>
+            <input type="radio" name="atencion" value="regular">
+            <label for="Malo">Malo</label>
+            <input type="radio" name="atencion" value="malo">
+        <h3>¿Cómo calificaría el tiempo de respuesta?</h3>
+            <label for="Excelente">Excelente</label>
+            <input type="radio" name="profesion" value="excelente">
+            <label for="Bueno">Bueno</label>
+            <input type="radio" name="profesion" value="bueno">
+            <label for="Regular">Regular</label>
+            <input type="radio" name="profesion" value="regular">
+            <label for="Malo">Malo</label>
+            <input type="radio" name="profesion" value="malo">
+        <h3>¿Su problema o duda se resolvió?</h3>
+            <label for="Excelente">Excelente</label>
+            <input type="radio" name="tiempo" value="excelente">
+            <label for="Bueno">Bueno</label>
+            <input type="radio" name="tiempo" value="bueno">
+            <label for="Regular">Regular</label>
+            <input type="radio" name="tiempo" value="regular">
+            <label for="Malo">Malo</label>
+            <input type="radio" name="tiempo" value="malo">
 
-        <h3>En general,¿Qué tan satisfecho esta usted con el servicio? // calidad del servicio</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="calidad" id="calidad" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="calidad" id="calidad" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="calidad" id="calidad" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="calidad" id="calidad" value="malo">
-        <h3>¿Cuál fue el nivelde atención del servicio? //nivel de atencion </h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="atencion" id="atencion" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="atencion" id="atencion" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="atencion" id="atencion" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="atencion" id="atencion" value="malo">
-        <h3>¿Cómo calificaria el tiempo de respuesta? //nivel profesional</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="profesion" id="profesion" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="profesion" id="profesion" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="profesion" id="profesion" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="profesion" id="profesion" value="malo">
-        <h3>¿Tu problema o duda se resolvio? //tiempo de respuesta </h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="tiempo" id="tiempo" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="tiempo" id="tiempo" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="tiempo" id="tiempo" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="tiempo" id="tiempo" value="malo">
-
-        <span>¿Tu problema o duda se resolvio?
+        <span>¿Tu problema o duda se resolvió?
           <select name='solucion'>
             <option value='si'>Si</option>
             <option value='no'>No</option>

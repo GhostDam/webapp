@@ -33,9 +33,6 @@ file_put_contents("../../soporte/firmas/"."firma.$id".'.png',base64_decode(explo
    }else{
      $response['error']= $conexion->error;
    }
-   echo json_encode(print_r($resultado));
-
-
-   $response['img'] = $_POST['img'];
+   echo json_encode($response['mensaje']);
 
 ?>

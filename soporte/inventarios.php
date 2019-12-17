@@ -16,9 +16,9 @@
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <!--responsive-->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+  <!-- bootstrap toogle -->
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>  
   <!-- css -->
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -67,7 +67,7 @@
       <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
         <label for="detail">Buscar equipo por ID para consultar su información</label>
         <input type="text" name="detail" id="search">
-        <input class="btn bnt-primary"  type="button" value="Buscar" id="detailed">
+        <input class="btn btn-primary"  type="button" value="Buscar" id="detailed">
       <div id="componentes">
 
       </div>
@@ -92,7 +92,7 @@
               <legend>CPU</legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="caracteristicas">Caracteristicas</label>
+                  <label class="label-inventario" for="caracteristicas">Características</label>
                   <label class="label-inventario" for="tipo_cpu">RAM</label>
                   <label class="label-inventario" for="tipo">Tipo</label>
                   <label class="label-inventario" for="marca_cpu">Marca</label>
@@ -104,9 +104,9 @@
                   <input type="text" name="ram" value="">
                   <select name="tipo_cpu">
                       <option selected value="">Seleccione una opción</option>
-                      <option value="mpc">mpc - Desktop</option>
-                      <option value="ml">ml - Laptop</option>
-                      <option value="mao">mao - All In One</option>
+                      <option value="mpc">Mpc - Desktop</option>
+                      <option value="ml">Ml - Laptop</option>
+                      <option value="mao">Mao - All In One</option>
                       <option value="mac">Mac</option>
                   </select>
                   <input type="text" name="marca_cpu" value="">
@@ -114,14 +114,9 @@
                   <input type="text" name="serie_cpu" value="">
                 </div>
               </div>
-              <!-- <br>
-              <br>
-              <br>
-              <br>
-              <br> -->
             </fieldset>
 
-            <fieldset disabled class="col-12 col-lg-5">
+            <fieldset disabled class="mn col-12 col-lg-5">
               <legend>
                 Monitor 
                 <label class="switch">
@@ -131,9 +126,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_mn">Marca monitor</label>
-                  <label class="label-inventario" for="modelo_mn">Modelo monitor</label>
-                  <label class="label-inventario" for="num_serie_mn">Serie monitor</label>
+                  <label class="label-inventario" for="marca_mn">Marca</label>
+                  <label class="label-inventario" for="modelo_mn">Modelo</label>
+                  <label class="label-inventario" for="num_serie_mn">Número de serie</label>
                   
                 </div>
                 <div class="col-6">
@@ -152,7 +147,7 @@
 
 
           <div class="row mt-3 justify-content-between">
-            <fieldset disabled class="col-12 col-lg-5">
+            <fieldset disabled class="m col-12 col-lg-5">
               <legend>Mouse <label class="switch">
                                   <input type="checkbox">
                                   <span class="slider round"></span>
@@ -160,9 +155,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_m">Marca mouse</label>
-                  <label class="label-inventario" for="modelo_m">Modelo mouse</label>
-                  <label class="label-inventario" for="num_serie_m">Número de serie mouse</label>
+                  <label class="label-inventario" for="marca_m">Marca</label>
+                  <label class="label-inventario" for="modelo_m">Modelo</label>
+                  <label class="label-inventario" for="num_serie_m">Número de serie</label>
                 </div>
                 <div class="col-6">
                   <input type="text" name="marca_m" value="">
@@ -175,7 +170,7 @@
               <br> -->
             </fieldset>
 
-            <fieldset disabled class="col-12 col-lg-5">
+            <fieldset disabled class="b col-12 col-lg-5">
               <legend>Bocinas <label class="switch">
                                   <input type="checkbox">
                                   <span class="slider round"></span>
@@ -183,9 +178,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_b">Marca bocina</label>
-                  <label class="label-inventario" for="modelo_b">Modelo bocina</label>
-                  <label class="label-inventario" for="num_serie_b">Número de serie bocina</label>
+                  <label class="label-inventario" for="marca_b">Marca</label>
+                  <label class="label-inventario" for="modelo_b">Modelo</label>
+                  <label class="label-inventario" for="num_serie_b">Número de serie</label>
                   
                 </div>
                 <div class="col-6">
@@ -210,9 +205,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_t">Marca teclado</label>
-                  <label class="label-inventario" for="modelo_t">Modelo teclado</label>
-                  <label class="label-inventario" for="num_serie_t">Número de serie teclado</label>
+                  <label class="label-inventario" for="marca_t">Marca</label>
+                  <label class="label-inventario" for="modelo_t">Modelo</label>
+                  <label class="label-inventario" for="num_serie_t">Número de serie</label>
                   
                 </div>
                 <div class="col-6">
@@ -227,7 +222,7 @@
               <br> -->
             </fieldset>
 
-            <fieldset disabled class="col-12 col-lg-5">
+            <fieldset disabled class="nb col-12 col-lg-5">
               <legend>No Break <label class="switch">
                                   <input type="checkbox">
                                   <span class="slider round"></span>
@@ -235,9 +230,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_nb">Marca No break</label>
-                  <label class="label-inventario" for="modelo_nb">Modelo No Brake</label>
-                  <label class="label-inventario" for="num_serie_nb">Número de serie No Brake</label>
+                  <label class="label-inventario" for="marca_nb">Marca</label>
+                  <label class="label-inventario" for="modelo_nb">Modelo</label>
+                  <label class="label-inventario" for="num_serie_nb">Número de serie</label>
                   
                 </div>
                 <div class="col-6">
@@ -256,7 +251,7 @@
 
           <div class="row mt-3 justify-content-between">
             
-            <fieldset disabled class="col-12 col-lg-5">
+            <fieldset disabled class="c col-12 col-lg-5">
               <legend>Cargador <label class="switch">
                                   <input type="checkbox">
                                   <span class="slider round"></span>
@@ -264,9 +259,9 @@
               </legend>
               <div class="row">
                 <div class="col-6">
-                  <label class="label-inventario" for="marca_c">Marca cargador</label>
-                  <label class="label-inventario" for="modelo_c">Modelo cargador</label>
-                  <label class="label-inventario" for="num_serie_c">Número de serie cargador</label>
+                  <label class="label-inventario" for="marca_c">Marca</label>
+                  <label class="label-inventario" for="modelo_c">Modelo</label>
+                  <label class="label-inventario" for="num_serie_c">Número de serie</label>
                   
                 </div>
                 <div class="col-6">
@@ -281,10 +276,10 @@
               <!-- <br> -->
             </fieldset>
           </div>
-
-          <!-- <input id="crear_equipo" type="button" value="Crear"> -->
+          
+            <input class="btn btn-primary btn-lg" id="crear_equipo" type="button" value="Crear">
         </form>
-
+        
       </div>
     </div>
 <!--  Bootstrap navs -->

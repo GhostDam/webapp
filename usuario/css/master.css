@@ -25,9 +25,8 @@ img{
 }
 /**/
 a{
-  font-size: 2rem;
+  font-size: 2rem!important;
   color: black  ;
-  background-color: #4D92DF;
   padding: 20px 60px;
   text-decoration: none;
   border-radius: 5px;

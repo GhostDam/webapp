@@ -52,7 +52,7 @@ $(document).ready(function(){
 										if (res['mensaje']=='Número de reporte inexistente') {
 											swal(res['mensaje'], "","error")
 										}else if(res['firma']!=''){
-											swal(res['mensaje'], res['firma'] , "error")
+											swal(res['mensaje'], '' , "error")
 										}else{
 											window.location.href =`php/calificacion.php?reporte=${res['id']}`;
 										}
@@ -104,46 +104,47 @@ $(document).on('submit', "#servicio", function(e){
 
 	var img = document.getElementById("canvas").toDataURL('image/png');
 
-
-	// form = $("#servicio").serialize();
-	// var img = document.getElementById("canvas").toDataURL('image/png');
-	//
-	// form+="&img="+img;
-
-	// console.log(img)
-	// console.log(form)
-
-	console.log(idreporte, resolucion, calidad, atencion, nivel, respuesta, img);
-	$.ajax({
-  url: 'querys.php',
-  type: 'post',
-  data: {idreporte:idreporte, resolucion:resolucion, calidad:calidad, atencion:atencion, nivel:nivel, respuesta:respuesta, img:img}
-  })
-  // $.ajax({
-  // url: 'querys.php',
-  // type: 'post',
-  // data: data
-  // })
-  .done(function(respuesta) {
-    console.log(respuesta);
-		swal({
-     title: respuesta,
-     text: "La firma se guardo exitosamente.",
-     icon: "success",
-     timer: 1500
-	 	})
-		.then(function(done){
-			// console.log(done)
-			 window.location.href="./../";
-
-		})
-     // function (done) {
-		 //
-		 // },
+	swal({
+		title: "¿Firmar reporte?",
+		text: "Una vez firmado este reporte, se dará por concluido",
+		icon: "info",
+		buttons: [
+					'Cancelar',
+					'Aceptar'
+				],
+			})
+	.then(function(confirm){
+		if (confirm) {
+			$.ajax({
+				url: 'querys.php',
+				type: 'post',
+				data: {idreporte:idreporte, resolucion:resolucion, calidad:calidad, atencion:atencion, nivel:nivel, respuesta:respuesta, img:img}
+			  })
+			  .done(function(respuesta) {
+				swal({
+					title: respuesta,
+					text: "La firma se guardo exitosamente.",
+					icon: "success",
+				 })
+				.then(function(done){
+					 window.location.href="./../";
+				})
+			})
+			.fail(function(data){
+				console.log(data)
+			})
+					
+		}
 	})
-  .fail(function(data){
-    console.log(data)
-  })
+
+
+
+
+
+
+
+
+
 })
 //*ADDONS*/
 //*Firma

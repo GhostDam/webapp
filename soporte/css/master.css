@@ -1,6 +1,6 @@
 :root{
   --bgc:#ffffff; /*background*/
-  --head:#4267b2; /*color header*/
+  --head:#9f2141; /*color header*/
   --bsd:#e9ebee; /*beside*/
   /**--img1:url("../md/diagmonds.png");/*imagen header*/
   --texto:black;
@@ -45,17 +45,23 @@ header{
   color: white;
   z-index: 2;
 }
+header h1{
+  margin-top: 2.5vh;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 nav.session{
   list-style:none;
   display: flex;
-  margin: 2 20%;
+  margin: 2 10%;
   justify-content: space-between;
+  align-items: center;
   padding-top: 10px;
 }
 
 header:after{
   content: '';
- /*border-bottom: 3px solid var(--texto);**/
    margin: 0 auto;
   height: 2px;
   width: 80%;
@@ -65,43 +71,24 @@ nav.session a{
   color: white;
   text-decoration: none;
 }
-
 /*header*/
 h2{
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem!important;
 }
-/* h2::after{
-  content: '';
-  border-bottom: 1px solid black;
-  height: 5px;
-  width: 200px;
-  display: block;
-  font-family: 'Rubik', sans-serif;
-} */
-/***barra principal login**/
-h1{
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 1.5em;
-  text-align: center;
-}
-/**login**/
-
 .img img {
   max-width: 100%;
 }
-
-
+/*Login*/
 @media(min-width: 750px) {
   .contenedor{
   height: 100vh;
-  /*background-image: url('../md/imjuve.png');*/
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  margin: 0 10vw;
+  }
   .img {
     flex-basis: 50%;
     flex-grow: 1;
@@ -115,51 +102,10 @@ h1{
   .form-login {
     width: 50%;
     margin: 0;
-  }  
-}
-.contform{
-  margin-top: 10vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 300px;
-  height: 90px;
-  opacity: .8;
-  padding: 10px 60px 60px 60px;
-  border-radius: 15px;
-  border-color: 3px solid white;
-}
-/*.contform img{
-  width: 100%;*/
-}
-.login-form{
-  display: grid;
-  grid-template-columns:repeat(2, 1fr);
-  grid-gap: 10px;
-  max-width: 300px;
- background-color: var(--bsd);
-  padding: 20px;
-  border-radius: 10px;
+  }
 }
 
-/*img {
-  width:100%;
-}
-*/
-
-
-.submit{
-  text-transform: uppercase;
-  background-color: black;
-  border: none;
-  border-radius: 5px;
-  color: white;
-}
-.submit:hover{
-  transition: .5s;
-  color: blue;
-}
-/**/
+/*Login*/
 section{
   padding: 10vh 10vh 0;
   max-width: 100%;
@@ -366,43 +312,6 @@ option{
 }
 /*Form from index*/
 /*Mostrar reportes*/
-.reporte{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  background-color: var(--bsd);
-  color: var(--i);
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-.atnh{
-  display: flex;
-  justify-content: space-between;
-  flex-basis: 100%;
-  margin-bottom: 10px;
-}
-.atn2{
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-  padding: 10px;
-}
-.atn3{
-  display: flex;
-  flex: 2;
-  padding: 10px;
-}
-.atn4{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  flex: 1;
-  padding: 10px;
-}
-.atn4 button{
-  border: 1px solid gray;
-  padding: 5px;
-}
 /*Mostrar reportes*/
 /*edicion*/
 .datosr{
@@ -416,7 +325,6 @@ option{
   grid-area: du;
   padding: 20px;
   border: 1px solid gray;
-  margin: 1.5em;
 }
 .admin{
   display: none
@@ -426,26 +334,25 @@ option{
   grid-area: de;
   border: 1px solid gray;
   padding: 20px;
-  margin:2em;
 }
 .ac{
-  display: none;
+  display: grid;
   grid-area: ac;
   border: 1px solid gray;
   padding: 20px;
 }
 .fm{
-  display: none;
+  display: grid;
   border: 1px solid gray;
 }
 .cs{
-  display: none;
+  display: grid;
   grid-area: cs;
   padding: 20px;
   border: 1px solid gray;
 }
 .cl{
-  display: none;
+  display: grid;
   grid-area: cl;
   padding: 20px;
   border: 1px solid gray;
@@ -462,6 +369,7 @@ option{
   max-width: 100%;
   border-radius: 10px;
   display: grid;
+  grid-gap: 20px;
   grid-template-areas: 'dr du'
                        'dr de'
                        'ac fm'
@@ -541,14 +449,14 @@ fieldset:disabled label{
 /**/
 /* The switch - the box around the slider */
 .switch {
-  position: relative;
-  display: inline;
+  position: relative!important;
+  display: inline!important;
 }
 /* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 20;
-  height: 0;
+  opacity: 0!important;
+  width: 20!important;
+  height: 0!important;
 }
 /* The slider */
 .slider {

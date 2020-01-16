@@ -9,12 +9,14 @@
 </head>
 <body>
   <header>
-    <img src="img/imjuve.png" alt="">
+   <div class="contenedor">
+    <img src="img/imjuve-logo.png" class="img-fluid" alt="Responsive image">
+  </div>
   </header>
   <main>
     <div class="contenedor">
       <div class="uso">
-        <a class='btn btn-outline-info' href="reporte.php">Crear reporte</a>
+        <a class="btn btn-info btn-lg active" role="button" aria-pressed="true" href="reporte.php">Generar reporte</a>
       </div>
     </div>
   </main>

@@ -113,7 +113,7 @@ function vald(){
             data: n_reporte
           })
           .done(function(echo){
-            swal(echo)
+            swal('Reporte agregado', echo, "success")
             $('form#n_reporte')[0].reset();
           })
           // let formData=new FormData($("form#n_reporte")[0]);

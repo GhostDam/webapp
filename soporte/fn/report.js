@@ -4,7 +4,12 @@ $(document).ready(function(){
       data:{"action":"vrep"},
       type:"POST",
       dataType:"json",
-      url:"fn/report.php"
+      url:"fn/report.php",
+
+      onRequest: function() {
+        $("#pendientes").html("loading");
+     }
+
     }).done(function(data){
       console.log(data) //array
       if (data=='No hay reportes pendientes') {
@@ -15,14 +20,14 @@ $(document).ready(function(){
           data: data,
         order: [[0, 'desc']],
         columns: [
-            { title: "Id", data:"id_reporte" },
+            { title: "ID", data:"id_reporte" },
             { title: "Fecha", data:"fecha" },
             { title: "Hora", data:"hora" },
             { title: "Persona que reporta", data:"nombre" },
             { title: "Asunto", data:"asunto" },
             { title: "Descripción", data:"descripcion" },
             { title: "Estado actual", data:"status" },
-            { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-primary atender' value="${id}">Atender</button>`}},
+            { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-danger atender' value="${id}">Atender</button>`}},
 
         ],
         // "language": {
@@ -212,13 +217,13 @@ $(document).ready(function(){
           data: load,
         order: [[0, 'desc']],
         columns: [
-          { title: "#",  data: "id_reporte"  }, //data: "id_reporte"
+          { title: "ID",  data: "id_reporte"  }, //data: "id_reporte"
           { title: "Fecha", data: "fecha" },
-          { title: "descripción", data: "descripcion" },
+          { title: "Descripción", data: "descripcion" },
           { title: "Asunto", data: "asunto" },
           { title: "Persona que reportó" , data: "nombre"},
           { title: "Estado actual", data: "status" },
-          { title: "Detalles", data: "id_reporte", render: function(id_reporte){ return `<button class='btn btn-primary detalles' value="${id_reporte}">Detalles</button>`} },
+          { title: "Detalles", data: "id_reporte", render: function(id_reporte){ return `<button class='btn btn-danger detalles' value="${id_reporte}">Detalles</button>`} },
         ],
         // "language": {
         //       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"

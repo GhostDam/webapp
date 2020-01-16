@@ -61,18 +61,18 @@
           </div>
           <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
             <div id="edicion" class="">
+              <div class="col-6">
                     <label for="buscador">Atender por ID de reporte:</label>
-                      <div class="col">
                         <input type="text" class="form-control" id="buscador" name="buscador" placeholder="####">
+                        <button id="editar"  class="btn btn-danger" name="" value="buscar">Buscar</button>
                       </div>
-                   <button id="editar"  class="btn btn-primary" name="" value="buscar">Buscar</button>
             </div>
             <div id="atender" class="">
             </div>
           </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
 
-            <table id="historial">
+            <table id="historial" style='width : 100%!important'>
             </table>
 
 
@@ -82,7 +82,7 @@
             <div class="col-6">
               <label for="buscador">Buscar en el historial por ID de Reporte:</label>
               <input type="text" class="form-control" id="buscarh" name="buscador" placeholder="####">
-              <input type="button" class="btn btn-primary" id="verhist" name="" value="Buscar">
+              <input type="button" class="btn btn-danger" id="verhist" name="" value="Buscar">
             </div>
 
             <div id="detalles">

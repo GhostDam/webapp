@@ -40,13 +40,13 @@
                       $empleados.="<table class='table table-hover'>
                                       <thead>
                                           <tr>
-                                <td scope='col'>Nombre del personal</td>
-                                <td scope='col'>Tipo</td>
-                                <td scope='col'>ID</td>
-                                <td scope='col'>Borrar</td>
-                                <td scope='col'>Editar</td>
-                                  <tr>
-                                    </thead>
+                                            <th scope='col'>Nombre del personal</th>
+                                            <th scope='col'>Tipo</th>
+                                            <th scope='col'>ID</th>
+                                            <th scope='col'>Borrar</th>
+                                            <th scope='col'>Editar</th>
+                                            <tr>
+                                        </thead>
                                       <tbody>";
                       while ($row=$cargaem->fetch_assoc()) {
                         $empleados.="<tr>

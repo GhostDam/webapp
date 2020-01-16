@@ -30,7 +30,7 @@ crossorigin="anonymous"></script>
 
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">
+        <!--<a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">-->
           <h2>Firma de reportes</h2>
         </a>
       </li>
@@ -38,63 +38,154 @@ crossorigin="anonymous"></script>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
 
+        <div class='form-group alert alert-primary'>
+
+         <!-- <label class="col-sm-12 col-form-label">Número de reporte a firmar.</label>     
           <div class="input-group mb-3 col-6">
             <input type="text" name='num' class="form-control" placeholder="Número de reporte">
             <div class="">
-              <button class="btn btn-outline-primary" id='consulta'type="button">Consultar</button>
+              <button class="btn btn-outline-danger" id='consulta'type="button">Consultar</button>
             </div>  
-           </div>
+           </div> -->
+           <div class="row">
+             <div class="col-sm-10">
+              <div class="input-group mb-0">
+                <label class="col-sm-12 col-form-label">Número de reporte a firmar.</label>     
+                  <input type="text" name='num' class="form-control" placeholder="#0000">
+                  <!-- <div class="input-group-append">
+                    <button class="btn btn-outline-danger" type="button" id="consulta">Consultar</button>
+                  </div> -->
+                </div>
+              </div>
+              <div class="col-sm-2">
+                  <button class="btn btn-outline-danger" type="button" id="consulta">Consultar</button>
+              </div>
+            </div>
 
-       <form class='firmar hide'>
+
+
+
+
+
+
+
+       <form class='firmar text-center hide'>
+        <label>Reporte a firmar</label>
+        <input type="text" id='toSign' readonly>
+
+        <hr>
         <h3>En general,¿Qué tan satisfecho esta usted con el servicio?</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="calidad" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="calidad" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="calidad" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="calidad" value="malo">
-        <h3>¿Cuál fue el nivel de atención del servicio?</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="atencion" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="atencion" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="atencion" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="atencion" value="malo">
-        <h3>¿Cómo calificaría el tiempo de respuesta?</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="profesion" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="profesion" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="profesion" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="profesion" value="malo">
-        <h3>¿Su problema o duda se resolvió?</h3>
-            <label for="Excelente">Excelente</label>
-            <input type="radio" name="tiempo" value="excelente">
-            <label for="Bueno">Bueno</label>
-            <input type="radio" name="tiempo" value="bueno">
-            <label for="Regular">Regular</label>
-            <input type="radio" name="tiempo" value="regular">
-            <label for="Malo">Malo</label>
-            <input type="radio" name="tiempo" value="malo">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="calidad" value="excelente">
+            <label class="form-check-label" for="Excelente">Excelente</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="calidad" value="bueno">
+            <label class="form-check-label" for="Bueno">Bueno</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="calidad" value="regular">
+            <label class="form-check-label" for="Regular">Regular</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="calidad" value="malo">
+            <label class="form-check-label" for="Malo">Malo</label>
+        </div>
 
-        <span>¿Tu problema o duda se resolvió?
-          <select name='solucion'>
+        <hr>
+
+        <h3>¿Cuál fue el nivel de atención del servicio?</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="atencion" value="excelente">
+            <label class="form-check-label" for="Excelente">Excelente</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="atencion" value="bueno">
+            <label class="form-check-label" for="Bueno">Bueno</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="atencion" value="regular">
+            <label class="form-check-label" for="Regular">Regular</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="atencion" value="malo">
+            <label class="form-check-label" for="Malo">Malo</label>
+        </div>
+
+        <hr>
+
+        <h3>¿Cómo calificaría el tiempo de respuesta?</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profesion" value="excelente">
+            <label class="form-check-label" for="Excelente">Excelente</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profesion" value="bueno">
+            <label class="form-check-label" for="Bueno">Bueno</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profesion" value="regular">
+            <label class="form-check-label" for="Regular">Regular</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="profesion" value="malo">
+            <label class="form-check-label" for="Malo">Malo</label>
+            </div>
+
+            <hr>
+
+        <h3>¿Su problema o duda se resolvió?</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tiempo" value="excelente">
+            <label class="form-check-label" for="Excelente">Excelente</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tiempo" value="bueno">
+            <label class="form-check-label" for="Bueno">Bueno</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tiempo" value="regular">
+            <label class="form-check-label" for="Regular">Regular</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tiempo" value="malo">
+            <label class="form-check-label" for="Malo">Malo</label>
+            </div>
+
+        <br>
+        <hr>
+
+        
+        <h3>¿Tu problema o duda se resolvió?</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="solucion" value="si">
+            <label class="form-check-label" for="Regular">Si</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="solucion" value="no">
+            <label class="form-check-label" for="Malo">No</label>
+          </div>
+
+         <!-- <select name='solucion'>
             <option value='si'>Si</option>
             <option value='no'>No</option>
-          </select>
-        </span>
+          </select> -->
 
       <!--Canvas-->
         <canvas id="canvas">Su navegador no soporta canvas :( </canvas>
-        <div class="buttons">
-          <button id="limpiar" class="btn btn-primary">Limpiar firma</button>
-          <button id="download" type="button" class="btn btn-primary">Guardar firma</button>
+        <div class="buttons text-center">
+          <button id="limpiar" type='button' class="btn btn-danger">Limpiar firma</button>
+          <button id="download" type="button" class="btn btn-danger">Guardar firma</button>
         </div>
       <!--Canvas-->
     </form>

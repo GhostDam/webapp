@@ -198,12 +198,11 @@ $(document).on('click', '#cargarEdicion', function(){
     if (respuesta == 'No existe el ID ingresado') {
       swal(respuesta, '', 'error')
     }else {
-    $("input[name='edicion_nombre']").val(respuesta['nombre_usuario'])
-    $(`#edicion_area option[value=${respuesta['id_area']}]`).prop('selected',true)
-    $("input[name='edicion_responsable']").val(respuesta['nombre_responsable'])
-    $("#edicion_equipo").html(`<option value=${respuesta['id_equipo']}>${respuesta['nombre_equipo']}</option>`)
-  }
-    console.log(respuesta);
+      $("input[name='edicion_nombre']").val(respuesta['nombre_usuario'])
+      $(`#edicion_area option[value=${respuesta['id_area']}]`).prop('selected',true)
+      $("input[name='edicion_responsable']").val(respuesta['nombre_responsable'])
+      $("#edicion_equipo").html(`<option value=${respuesta['id_equipo']}>${respuesta['nombre_equipo']}</option>`)
+    }
   })
   .fail(function(data){
     console.log(data)

@@ -105,7 +105,9 @@
               if(!$ejecutar){
                       echo"hubo algun error";
                 }else{
-                  echo "Reporte Agregado con Éxito";
+                  $id=$conectar->insert_id;
+
+                  echo "Id del reporte: ".$id." ";
                 }
             break;
 

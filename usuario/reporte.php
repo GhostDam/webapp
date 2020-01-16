@@ -17,8 +17,11 @@
   </head>
   <body>
     <main>
+      <header>
+          <h1>Creación de reporte</h1>
+      </header>
       <div class="contenedor">
-        <h1>Favor de completar este formulario con los datos correspondientes</h1>
+        <h3>Llene los siguientes campos para su reporte</h3>
         <div class="container-fluid">
           <form id="n_reporte" autocomplete="off">
           <div class="row">
@@ -30,7 +33,7 @@
 
                 </datalist> -->
                 <select class="form-control areaList" id="opt" name="area">
-                  <option value="">Ingrese el área</option>
+                  <option value="">Seleccione una opción</option>
                 </select>
 
               </div>

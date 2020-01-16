@@ -1,7 +1,5 @@
 //*Service worker
 if('serviceWorker' in navigator){
-	console.log('Puedes usar los serviceWorker en tu navegador');
-
 	navigator.serviceWorker.register('./sw.js')
 							.then(res => console.log('serviceWorker cargado correctamente', res))
 							.then(function(reg){
@@ -12,30 +10,7 @@ if('serviceWorker' in navigator){
 }else{
 	console.log('No tienes acceso a los serviceWorker en tu navegador');
 }
-//*Service worker
-//*Evento de Instalador en Desktop
-// let deferredPromt;
-// const addBtn = document.querySelector('.add-Button');
-// addBtn.style.display = 'none';
-// window.addEventListener('beforeinstallprompt', (e) => {
-//     e.preventDefault();
-//     deferredPromt = e;
-//     showInstallPromotion();
-//     addBtn.style.display = 'block';
-//     addBtn.addEventListener('click', (e) => {
-//         addBtn.style.display = 'none';
-//         deferredPromt.prompt();
-//         deferredPromt.userChoice.then((choiceResult) => {
-//             if (choiceResult.outcome === 'accepted') {
-//                 console.log('Se acepto el A2HS prompt');
-//             } else {
-//                 console.log('User')
-//             }
-//             deferredPromt = null;
-//         });
-//     });
-// });
-//consulta
+//consulta reportes
 $(document).ready(function(){
     $("#folio-reporte").on('submit', function(e){
         e.preventDefault();
@@ -44,53 +19,51 @@ $(document).ready(function(){
         $.ajax({
 		            url: "php/main.php", // verificar registros existentes
 		            method: "POST",
-								dataType:'JSON',
+						dataType:'JSON',
 		            data: data
         			})
-							.done(function(res){
-								console.log(res)
-										if (res['mensaje']=='Número de reporte inexistente') {
-											swal(res['mensaje'], "","error")
-										}else if(res['firma']!=''){
-											swal(res['mensaje'], '' , "error")
-										}else{
-											window.location.href =`php/calificacion.php?reporte=${res['id']}`;
-										}
-							})
-							.fail(function(res){
-								console.log(res)
-							})
-
+			.done(function(res){
+				console.log(res)
+						if (res['mensaje']=='Número de reporte inexistente') {
+							swal(res['mensaje'], "","error")
+						}else if(res['firma']!=''){
+							swal(res['mensaje'], '' , "error")
+						}else{
+							window.location.href =`php/calificacion.php?reporte=${res['id']}`;
+						}
+			})
+			.fail(function(res){
+				console.log(res)
+			})
     })
 })
-//consulta
+//consulta reportes
+//consulta de tecnicos
+$(document).ready(function(){
+		 $.ajax({
+					  url: "main.php", // verificar registros existentes
+					  method: "POST",
+					  dataType:'JSON',
+					  data: {action: 'consulta_tecnicos'}
+					 })
+		  .done(function(res){
+			$('#atendio').append(res)
+			console.log(res)
+
+			for (var i = 0; i < res.length; i++) {
+				$("#atendio").append(`<option value='${res[i]}'>${res[i]}</option>`)
+			 }
+		
+			})
+		  .fail(function(res){
+			  console.log(res)
+		  })
+})
+
+
+
 //guardado de calificacion
-// $(document).ready(function(){
-// 		$("#servicio").on('submit', function(e){
-// 				e.preventDefault();
-// 				var data = new FormData($("#servicio")[0]);
-// 				$.ajax({
-// 						url: "querys.php", //registro guardado
-// 						method: "POST",
-// 						data: data,
-// 						dataType: "json",
-// 						contentType: false,
-// 						processData: false,
-// 						cache: false,
-// 						success: function(respuesta){
-// 								console.log(respuesta);
-// 								// alert(respuesta.mensaje);
-// 								// window.location.href="../index.php";
-// 						},
-// 						error: function(e){
-// 								console.log(e);
-// 						}
-//
-// 				})
-// 		})
-// })
-//guardado de calificacion
-//*ADDONS*/
+//*Envio de información*/
 $(document).on('submit', "#servicio", function(e){
 	e.preventDefault();
 
@@ -101,6 +74,7 @@ $(document).on('submit', "#servicio", function(e){
 	var atencion = $('select[name="atencion"]').val(); //atencion **
 	var nivel = $('select[name="nivel"]').val(); //profesional
 	var respuesta = $('select[name="respuesta"]').val(); //tiempo **
+	var atendio =$('select[name="atendio"]').val(); //técnico que atendio
 
 	var img = document.getElementById("canvas").toDataURL('image/png');
 
@@ -118,7 +92,14 @@ $(document).on('submit', "#servicio", function(e){
 			$.ajax({
 				url: 'querys.php',
 				type: 'post',
-				data: {idreporte:idreporte, resolucion:resolucion, calidad:calidad, atencion:atencion, nivel:nivel, respuesta:respuesta, img:img}
+				data: {idreporte:idreporte, 
+						 resolucion:resolucion, 
+						 calidad:calidad, 
+						 atencion:atencion, 
+						 nivel:nivel, 
+						 respuesta:respuesta, 
+						 atendio:atendio, 
+						 img:img}
 			  })
 			  .done(function(respuesta) {
 				swal({
@@ -132,18 +113,9 @@ $(document).on('submit', "#servicio", function(e){
 			})
 			.fail(function(data){
 				console.log(data)
-			})
-					
+			})			
 		}
 	})
-
-
-
-
-
-
-
-
 
 })
 //*ADDONS*/

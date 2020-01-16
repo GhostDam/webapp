@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_GET["reporte"])) header("location: ../index.php");
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,6 +109,24 @@
               </div>
            </div>
        </div>
+       <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="form-group">
+                  <label class="control-label" for="atendio">¿Quien fue el técnico que te atendió?</label>
+                  <select class="form-control" name="atendio" id="atendio" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <!-- <option value="CAREN VERENICE PABLO ROSALES">CAREN VERENICE PABLO ROSALES</option>
+                    <option value="SHAWN ANTHONY ROMERO LOPEZ">SHAWN ANTHONY ROMERO LOPEZ</option>
+                    <option value="JESUS PEREZ PEREZ">JESUS PEREZ PEREZ</option>
+                    <option value="CARLOS ADRIAN GARCÍA GONZÁLEZ">CARLOS ADRIAN GARCÍA GONZÁLEZ</option>
+                    <option value="CÉSAR SALVADOR RODRÍGUEZ MAURICIO">CÉSAR SALVADOR RODRÍGUEZ MAURICIO</option>
+                    <option value="OSCAR URIEL GARCÍA RICO">OSCAR URIEL GARCÍA RICO</option>
+                    <option value="JOSÉ DANIEL ORDAZ HUERTA">JOSÉ DANIEL ORDAZ HUERTA</option>
+                    <option value="LIZETT GOMEZ MOJICA">LIZETT GOMEZ MOJICA</option> -->
+                  </select>
+                </div>
+            </div>
+       </div>
                <h3>Firma de conformidad del usuario</h3>
                 <div data-role="popup" id="divPopUpSignContract" class="contenedor">
                     <div data-role="header" data-theme="b">
@@ -114,21 +138,21 @@
                             <canvas id="canvas">Canvas is not supported</canvas>
                             <div>
                                 <!-- <input id="btnSubmitSign" type="button" data-inline="true" data-mini="true" data-theme="b" value="Guardar firma"/> -->
-                                <input id="btnClearSign" type="button" class="btn btn-primary" data-inline="true" data-mini="true" data-theme="b" value="Resetear" onclick="init_Sign_Canvas()"/>
+                                <input id="btnClearSign" type="button" class="btn btn-primary" data-inline="true" data-mini="true" data-theme="b" value="Firmar" onclick="init_Sign_Canvas()"/>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><br>
                 <div class="enviar">
                     <input type="submit" class="btn btn-primary " value="Enviar">
                 </div>
             </form>
         </div>
-    </div>
-    <footer class="site-footer">
+<!--     </div>
+ -->    <footer class="site-footer">
         <div class="contenedor">
             <h3>Aclaraciones</h3>
-            <p>Si tienes dudas sobre tu reporte, comunicate con el Departamento de Soporte Técnico a la Ext: 1465</p>
+            <p>Si tienes dudas sobre tu reporte, comunícate con el Departamento de Soporte Técnico a la Ext: 1465</p>
         </div>
     </footer>
 </main>

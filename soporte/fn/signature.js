@@ -213,6 +213,7 @@ $(document).ready(function(){
                   }else if(res['firma']!=''){
                     swal(res['mensaje'], '' , "error")
                   }else{
+                    $('#toSign').val(res.id)  
                     $("form").show();
                   }
             })
@@ -226,30 +227,55 @@ $(document).ready(function(){
 
 //*ADDONS*/
 $("#download").on('click', function(){
-  var num = $("input[name='num']").val();
+  var num = $("input[id='toSign']").val();
   var cal = $("input[name='calidad']:checked").val();
   var atn = $("input[name='atencion']:checked").val();
   var prf = $("input[name='profesion']:checked").val();
   var tmp = $("input[name='tiempo']:checked").val();
-  var sol = $("select").val();
+  var sol = $("input[name='solucion']:checked").val();
   var img = document.getElementById("canvas").toDataURL('image/png');
   var to = "guardar_firma";
-  // var pat = nombre;
-  $.ajax({
-  url: 'fn/signature.php',
-  type: 'post',
-  data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img, to:to}
+
+
+
+  swal({
+    title:'¿Guardar firma?',
+    text:'Una vez guardada la firma, se dará por terminado el reporte',
+    icon:'info',
+		buttons: [
+      'Cancelar',
+      'Aceptar'
+    ]
   })
-  .done(function(respuesta) {
-    console.log(respuesta);
-    swal("Firma guardada", respuesta, "success")
-    .then(function(done){
-      window.location.href = "index.php";
-    })
+  .then(function(save){
+    if (save) {
+      console.log('si')
+      // var pat = nombre;
+      $.ajax({
+      url: 'fn/signature.php',
+      type: 'post',
+      data: {num: num, cal: cal, atn: atn, prf: prf, tmp: tmp, sol:sol, img: img, to:to}
+      })
+      .done(function(respuesta) {
+        console.log(respuesta);
+        swal("Firma guardada", respuesta, "success")
+        .then(function(done){
+          window.location.href = "index.php";
+        })
+      })
+      .fail(function(){
+        console.log(data)
+      })
+    }else{
+      console.log('no')
+    }
   })
-  .fail(function(){
-    console.log(data)
-  })
+
+
+
+
+
+
 })
 //*ADDONS*/
 

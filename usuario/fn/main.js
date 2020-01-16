@@ -48,7 +48,7 @@ function users(usuarios) {
   .done(function(use) {
     console.log(use);
     $("#usuario").html(use[0])
-    $("#opt_nombre").append(use[1])
+    $("#opt_nombre").html(use[1])
   })
 }
 $(document).on('input', '#opt', function(){
@@ -133,7 +133,7 @@ $(document).on('click', "#sbmt", function(){
   }
   swal({
     title: "¿Crear Reporte?",
-    text: `Su reporte se enviará al área de soporte técnico, en bréve será atendido.`,
+    text: `Su reporte se enviará al área de soporte técnico.`,
     icon: "info",
     buttons: [
       'Cancelar',

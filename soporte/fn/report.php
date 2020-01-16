@@ -24,7 +24,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
     case 'edit': //cargar edicion
           $salida='';
           $q = $conectar->real_escape_string($_POST['consulta']);
-          $query = "SELECT * FROM reporte WHERE id_reporte LIKE '$q' ";
+          $query = "SELECT * FROM reporte WHERE id_reporte LIKE '$q' and status not like 'completo' ";
           $resultado = $conectar->query($query);
         if ($resultado->num_rows> 0){
          $salida.="";
@@ -40,7 +40,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <span>Descripción: </span>".$fila['descripcion']."
                <span>Tipo de Reporte: </span>
                      <select name='treporte' class='form-val' required>
-                         <option value=''  selected>".'Selecciona una opción'."</option>
+                         <option value=''  selected>".'Seleccione una opción'."</option>
                          <option value='incidencia'>Incidencia</option>
                          <option value='eventos'>Evento</option>
                          <option value='cambio'>Cambio</option>
@@ -48,18 +48,19 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                <div class='hide'><input name='to' value='save_edit'></div>
                <span>Tipo de Servicio: </span>
                       <select name='tservicio' class='form-val'>
-                         <option value=''  selected>".'Selecciona una opción'."</option>
+                         <option value=''  selected>".'Seleccione una opción'."</option>
                          <option value='Hardware'>Hardware</option>
                          <option value='software'>Software</option>
                          <option value='telefonia'>Telefonía</option>
                       </select>
            </fieldset>
+          
 
            <fieldset class='datosu'>
            <legend>Datos del usuario</legend>
            <span>Proveedor del servicio: </span>
                 <select name='provedor' class='form-val'>
-                 <option value=''  selected>".'Selecciona una opción'."</option>
+                 <option value=''  selected>".'Seleccione una opción'."</option>
                  <option value='imjuve'>IMJUVE</option>
                  <option value='externo'>Externo</option>
                 </select>
@@ -81,12 +82,12 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
              <span>Descripción de la actividad: </span><textarea class='form-val' type='textarea' name='actividad' rows='10' cols='50' required>".$fila['actividad']."</textarea>
            </fieldset>
 
-          <button id='btnEdit' type='submit' class='btn btn-primary'>Guardar </button>
+          <button id='btnEdit' type='submit' class='btn btn-danger'>Guardar </button>
           ";
             }
             echo $salida;
           }else {
-              echo "No hay reportes con ese ID";
+              echo "No hay reportes con ese ID o ya se encuentra cerrado.";
           }
            // <fieldset class='cs'>
            //   <legend>Evaluación del servicio</legend>
@@ -175,7 +176,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
                                  <fieldset class='fm'>
                                  <legend>Firma</legend>
-                                 <img src='".$fila['firma']."'  alt='No se ha recibido la firma'></img>
+                                 <img src='".$fila['firma']."' class='img-fluid'  alt='No se ha recibido la firma'></img>
                                  </fieldset>
 
                                  <fieldset class='status'>

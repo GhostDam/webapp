@@ -57,14 +57,18 @@
             <div id="total">
             </div>
           </div>
-          <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
+          <div class="tab-pane fade " id="section-2" role="tabpanel" aria-labelledby="index-2">
             <label for="date1">Fecha inicial: </label>
-            <input type="date" name="init" value="">
+            <div class="col-6">
+            <input class="form-control" type="date" name="init" value="">
+           </div>
             <br>
             <label for="date2">Fecha final: </label>
-            <input type="date" name="fin" value="">
+            <div class="col-6">
+            <input class="form-control" type="date" name="fin" value="">
+            </div>
             <br>
-            <input class="btn btn-primary" type="button" id="consulta_fecha" value="Buscar por rango de fechas">
+            <input class="btn btn-danger" type="button" id="consulta_fecha" value="Buscar por rango de fechas">
             <div id="rango">
             </div>
           </div>

@@ -50,6 +50,9 @@ $(document).ready(function(){
     	}
     	e.chart.render();
     }
+
+  $('#total').find('a.canvasjs-chart-credit').hide();
+
   })
 })
 //===================carga
@@ -102,6 +105,9 @@ console.log(val1, val2)
     }
 
   }
+
+  $('#rango').find('a.canvasjs-chart-credit').hide();
+
 
   })
   .fail(function(response){
@@ -158,6 +164,9 @@ $(document).on('change', "#areaList", function(){
     }
 
   }
+
+  $('#stats_area').find('a.canvasjs-chart-credit').hide();
+
 
   })
   .fail(function(response){

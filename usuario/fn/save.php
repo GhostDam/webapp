@@ -48,6 +48,6 @@ if(!$ejecutar){
   }else{
     $id=$conectar->insert_id;
 
-    echo "Reporte enviado correctamente, tu número de fólio es: ".$id;
+    echo "Reporte enviado correctamente, en bréve será atendido.\n Su número de fólio es: ".$id.".";
 }
  ?>

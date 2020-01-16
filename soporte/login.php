@@ -1,16 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -29,9 +17,10 @@
     <header>
      <h1>SISTEMA DE ATENCIÓN DE REPORTES</h1>
   </header>
+  <div class="form-gr">
     <div class='contenedor'>
       <div class='img'>
-        <img src="md/imjuve.png" alt="herramientas">
+        <img src="md/imjuve-logo.png" class="img-fluid" alt="Responsive image">
       </div>
       <div class="form">
          <form class="form-login" action="fn/load.php" method="post" autocomplete='off'>
@@ -39,7 +28,7 @@
              <input type="text"class="form-control" id="usuario" name="usuario" required>
              <label for="contraseña">Contraseña: </label>
               <input type="password" class="form-control" id="contraseña" name="contraseña" required>
-          <input type="submit" class="btn btn-primary" value="entrar">
+          <input type="submit" class="btn btn-danger" value="Entrar">
          </form>
        </div>
    </div>

@@ -51,30 +51,31 @@
     <!--navs -->
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-        <div class="buscador">
+        <div class='col-6'>
+
           <label>Buscar Equipos por área o tipo</label>
-          <input list="sel" id="selection" type="text" name="" value="">
+          <input class='form-control' list="sel" id="selection" type="text">
           <datalist id="sel" class="invList">
-          </datalist>
+            </datalist>
+          </div>
           <!-- <select id="selection" class="invList">
             <option disabled selected>Selecciona el area</option>
             <option value="%_%">todas las areas</option>
           </select> -->
-        </div>
         <div class="respuesta">
         </div>
       </div>
       <div class="tab-pane fade" id="section-2" role="tabpanel" aria-labelledby="index-2">
         <label for="detail">Buscar equipo por ID para consultar su información</label>
         <input type="text" name="detail" id="search">
-        <input class="btn btn-primary"  type="button" value="Buscar" id="detailed">
+        <input class="btn btn-danger"  type="button" value="Buscar" id="detailed">
       <div id="componentes">
 
       </div>
 
       </div>
       <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
-        <form class="tarjeta" id="nuevo_equipo row">
+        <form class="tarjeta" id="nuevo_equipo">
           <fieldset class="eq col-12 text-center">
           <legend>Formulario para la adición de equipos</legend>
             <label for="area">Área a la que se agregara el equipo</label> <br>
@@ -277,7 +278,7 @@
             </fieldset>
           </div>
           
-            <input class="btn btn-primary btn-lg" id="crear_equipo" type="button" value="Crear">
+            <input class="btn btn-danger btn-lg" id="crear_equipo" type="button" value="Crear">
         </form>
         
       </div>

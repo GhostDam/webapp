@@ -10,8 +10,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
             $sql="UPDATE login SET tema ='$tema' WHERE usuario =('$id')";
             $ejecutar=mysqli_query($conectar, $sql);
               if(!$ejecutar){
-                      echo "hubo algun error";
-                }else{
+                echo "hubo algun error";
+              }else{
                   echo "Guardado correctamente";
                 }
                session_start();
@@ -24,11 +24,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
               if ($resultado->num_rows> 0){
                   $admins.="<table class='table table-hover'>
                           <thead>
-                                <tr>
-                          <td scope='col'>Admin</td>
-                          <td scope='col'>Nombre</td>
-                          <td scope='col'>Tipo</td>
-                          <td scope='col'>Eliminar</td>
+                            <tr>
+                          <th scope='col'>Administrador</th>
+                          <th scope='col'>Nombre</th>
+                          <th scope='col'>Tipo</th>
+                          <th scope='col'>Eliminar</th>
                                   </tr>
                                     </thead>
                                        <tbody>";
@@ -70,7 +70,59 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
               echo "Administrador Eliminado";
             }
           break;
-        default:
+          case 'lista_tecnicos': //cargar lista de tecnicos
+            $admins = '';
+            $query = "SELECT * FROM tecnicos";
+            $resultado = $conectar->query($query);
+              if ($resultado->num_rows> 0){
+                  $admins.="<table class='table table-hover'>
+                          <thead>
+                            <tr>
+                          <th scope='col'>ID</th>
+                          <th scope='col'>Técnico</th>
+                          <th scope='col'>Tipo</th>
+                          <th scope='col'>Eliminar</th>
+                                  </tr>
+                                    </thead>
+                                       <tbody>";
+                  while ($rest = $resultado->fetch_assoc()) {
+                    $admins.= "<tr>
+                                <td scope='row'>".$rest["id_tecnico"]."</td>
+                                <td scope='row'>".$rest["nombre_tecnico"]."</td>
+                                <td scope='row'>".$rest["tipo_tecnico"]."</td>
+                                <td scope='row'><button name='".$rest["id_tecnico"]."' class='borrar_tecnico'><i class='icon-trash-o'></i></button></td>
+                              </tr>
+                    ";
+                    }
+              $admins.="</tbody></table";
+              echo $admins;
+            }
+          break;
+          case 'agregar_tecnico': //agregado de admins
+            $nombreTecnico = $_POST['nombreTecnico'];
+            $tipoTecnico = $_POST['tipoTecnico'];
+
+            $insert = "INSERT INTO tecnicos (nombre_tecnico, tipo_tecnico) VALUES ('$nombreTecnico', '$tipoTecnico')";
+            $ejecutar=mysqli_query($conectar, $insert);
+              if (!$ejecutar) {
+                  echo 'hubo algun error';
+                  print_r($conectar);
+                }else {
+                  echo "Técnico agregado correctamente";
+                }
+          break;
+          case 'borrar_tecnico': //borrado de admin
+            $idTec = $_POST['delete'];
+            $delete = "DELETE FROM tecnicos WHERE id_tecnico = '$idTec'";
+            $ejecutar=mysqli_query($conectar, $delete);
+            if (!$ejecutar) {
+              echo mysqli_error($conectar);
+            }else {
+              echo "Técnico eliminado";
+            }
+          break;
+
+          default:
           // code...
           break;
       }

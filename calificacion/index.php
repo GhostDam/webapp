@@ -27,12 +27,16 @@
             <h1>Bienvenido al  Sistema de Calificación de Reportes</h1>
         </div>
     </header>
+    <!--<div class="container">
+    </div>-->
     <div class="principal">
-        <div class="imagen-imjuve"></div>
+        <div class="container">
+            <img src="img/Imjuve/imjuve-logo.png" class="img-fluid" alt="Responsive image">
+        </div>
         <div class="registro">
             <form class="folio-reporte" id="folio-reporte" method="post" action="post.php">
                 <fieldset>
-                    <label for="reporte">Por favor ingresa tu número de Reporte:</label>
+                    <label for="reporte">Ingrese tu número de Reporte:</label>
                      <input type="number" min='0' name="reporte" id="reporte" required>
                      <button type="submit" class="button btn btn-primary" value="Continuar">Continuar</button>
                 </fieldset>
@@ -43,7 +47,7 @@
     <footer class="site-footer">
         <div class="contenedor">
             <h3>Aclaraciones</h3>
-            <p>Si tienes dudas sobre tu reporte, comunicate con el Departamento de Soporte Técnico a la Ext: 1465</p>
+            <p>Si tienes dudas sobre tu reporte, comunícate con el Departamento de Soporte Técnico a la Ext: 1465</p>
         </div>
     </footer>
     <script src="js/main.js"></script>

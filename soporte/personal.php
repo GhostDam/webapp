@@ -60,7 +60,6 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
                 <option value="">Seleccione una opción</option>
               </select> <br>
             </div>
-
               <label for="nuevo_empleado">Nombre del personal</label>
               <div class="col-6">
               <input class="form-control" type="text" name="nuevo_empleado"> <br>
@@ -79,24 +78,28 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
                 <select class="areaList" name="nuevo_responsable">
                   <option value="">Seleccione una opción</option>
                 </select>
-
               </div>
               <br>
-            <button type="button"  class="btn btn-info" id="agregar_personal">Guardar</button>
-          </form>          </div>
+            <button type="button"  class="btn btn-danger" id="agregar_personal">Guardar</button>
+           </form>          
+          </div>
           <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
             <form id="edit_personal">
               <label for="id">ID de personal</label>
               <div class="col-6">
-              <input  class="form-control"type="text" name="id_editar" value=""> <button class="btn btn-primary" type="button" id="carga_edicion">Buscar</button> <br></div>
-
+                <input  class="form-control" type="text" name="id_editar" value="">
+                <button class="btn btn-danger" type="button" id="carga_edicion">Buscar</button>
+              </div>
               <label for="dirList">A que dirección se agregará</label>
                 <div class="col-6">
-                <select class="dirList form-control" name='direccion'>
-                  <option value="">Seleccione una opción</option>
-                </select> <br></div>
+                  <select class="dirList form-control" name='direccion'>
+                    <option value="">Seleccione una opción</option>
+                  </select>
+                </div>
                 <label for="edit_empleado">Nombre del personal</label>
-                <input type="text" name="edit_empleado"> <br>
+                <div class="col-6">
+                 <input class="form-control" type="text" name="edit_empleado">
+                </div>
                 <label for="edit_tipo">Tipo de personal</label>
                 <select class="tipo_empleado" name="edit_tipo">
                   <option value="">Seleccione una opción</option>
@@ -110,11 +113,11 @@ if(!isset($_SESSION["usuario"])) header("location: login.php");
                         <option value="">Seleccione una opción</option>
                       </select>
                   </div>
-                <br>
-                <button  type="button" class="btn btn-info" id="editar_personal">Editar</button>
+                  <br>
+                <button type="button" class="btn btn-danger" id="editar_personal">Editar</button>
             </form>
-          </div>
-        </div>
+      </div> <!-- cierre bloque -->
+  </div>
     <!--  Bootstrap navs -->
 </section>
 </body>

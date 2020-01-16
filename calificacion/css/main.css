@@ -5,7 +5,6 @@ html{
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
 body{
     background-color: #fafafa;
 }
@@ -17,6 +16,9 @@ h1{
     width: 90%;
     margin: 0px auto;
 }
+.contenedor p {
+    font-size: .8rem !important;
+}
 
 /**Header**/
 
@@ -25,41 +27,43 @@ h1{
     justify-content: center;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
-
+    /* height: 15vh; */
+    width: 100%;
 }
 
 .principal{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0 0 2rem;
+    margin: 0 0;
 }
 
 @media (min-width: 768px) {
     .principal{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem;
+        /*grid-gap: 1.5rem;*/
+        height: auto;
+        margin: 0 10vw;
+    }
+    .header-principal{
+        height: auto;
     }
 }
 
-
+/**
 .imagen-imjuve{
     min-height: 200px;
     display: flex;
-    background-image: url(../img/imjuve/imjuve.png);
-    background-size: cover;
+    /**background-image: url(../img/logo_imjuve.png);**/
+    /**background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
     flex: 1;
     justify-content: center;
-}
+}**/
 
-@media (min-width: 768px) {
-    .imagen-imjuve{
-        min-height: 400px;
-        background-size: cover;
-        background-position: center;
-    }
-}
+
 
 .num-reporte{
     display: flex;
@@ -67,13 +71,13 @@ h1{
 
 .registro{
     width: 100%;
-    padding: 3rem 1rem;
+    /*padding: 3rem 1rem;*/
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 2;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*flex: 2;*/
+    /*justify-content: center;*/
 }
 
 label{
@@ -104,8 +108,7 @@ input:not([type="submit"])
     font-weight: 700;
     text-decoration: none;
     font-size: 1.8rem;
-    padding: 1rem 3rem;
-    margin: 3rem auto 0;
+    margin: 1rem auto 1rem;
     text-align: center;
     border: none;
     border-radius: 1rem;
@@ -116,12 +119,9 @@ input:not([type="submit"])
 @media (min-width: 768px) {
     .button{
         flex: 0 0 auto;
+        padding: 1rem 3rem;
+
     }
-}
-
-.button:hover{
-    background-color: #00562B;
-
 }
 
 .enviar{
@@ -148,18 +148,36 @@ input:not([type="submit"])
 /*Footer*/
 
 .site-footer{
-    background-color: #4267b2;
+    background-color: #9f2141;
     padding: 2.5rem ;
     margin-top: 2rem;
-    display:flex;
+    display:block;
     justify-content: center;
     align-items: flex-end;
+    width: 100%;   
+}
+@media (min-width: 768px) {
+    .imagen-imjuve{
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+    .registro {
+    padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
+    flex: 2;
+    justify-content: center;
+    }
+    .contenedor p {
+        font-size: 1.6rem !important;
+    }
 }
 
 .site-footer h3, p{
     color: #fafafa;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
+    /*font-size: 1.6rem;*/
 }
 
 /**Calificaciones**/
@@ -226,4 +244,4 @@ text-align: center;
 }
 .contenedor{
     justify-content: right;
-}
+};

@@ -4,7 +4,8 @@ $(document).ready(function(){
    if (type == 'master') {
      console.log(type)
      listAd();
-   function listAd(){
+     listTec();
+     function listAd(){
      $.ajax({
        url: 'fn/config.php',
        type: 'POST',
@@ -15,7 +16,22 @@ $(document).ready(function(){
        $("#listaAdmn").html(consAd)
      })
    }
- }
+
+   function listTec(){
+     $.ajax({
+       url: 'fn/config.php',
+       type: 'POST',
+       dataType: 'html',
+       data: {action: 'lista_tecnicos'}
+      })
+      .done(function(tecn) {
+        $("#listTec").html(tecn)
+      })
+    }
+
+
+
+  }
  //ver administradores
  //==================================Agregar Administrador====================================
 /*validacion*/
@@ -102,6 +118,67 @@ $(document).on("click", ".delete", function(){
   })
 })
 //demins
+//tecnicos
 
+//guardado de tecnicos
+$("#agregar_tecnico").click(function(){
+  var nombreTecnico = $("input[name='nombre_tecnico']").val()
+  var tipoTecnico = $("select[name='tipo_tecnico']").val()
+
+  vald();
+  if ($(".error:visible").length>0) {
+    swal({
+      title:"verifica el formulario por favor",
+      text:"El formulario esta vacío o contiene carácteres no válidos",
+      icon:"error",
+    })
+    $($(".error:visible")).focus();
+    return false;
+  }
+
+    swal({
+      title:"Agregar técnico",
+      text: `Nombre: ${nombreTecnico}
+             Tipo: ${tipoTecnico}`,
+      icon:'info',
+      buttons:[
+        'Cancelar',
+        'Confirmar'
+      ],
+    }).then(function(conf){
+      if (conf) {
+        $.post("fn/config.php", {action:'agregar_tecnico', tipoTecnico, nombreTecnico},function(data){
+          swal(data, '', 'success');
+          listTec();
+
+        })
+      }
+    })
+})
+
+//borrado de tecnicos
+$(document).on("click", ".borrar_tecnico", function(){
+  var delid = $(this).attr("name")
+  swal({
+    title: "Borrar",
+    text: `¿Eliminar técnico?`,
+    icon: "warning",
+    buttons: [
+      'cancelar',
+      'Si!'
+    ],
+  }).then(
+    function (valid) {
+      if (valid) {
+        $.post("fn/config.php", {action:'borrar_tecnico', delete:delid},function(data){
+          swal(data, '', 'success')
+          listTec();
+        })
+      }
+  })
+})
+
+
+ //tecnicos
 
 });

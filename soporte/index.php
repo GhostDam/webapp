@@ -10,9 +10,6 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
   <script src="fn/index.js" charset="utf-8"></script>
-  <!--responsive-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <!-- bootstrap -->
@@ -33,7 +30,7 @@
 <!--  Bootstrap navs -->
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">
+        <!--<a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">-->
           <h2>Crear reporte</h2>
         </a>
       </li>
@@ -136,7 +133,7 @@
               <input type="text"  id="inventario" name="inventario" class="form-control" placeholder="Autollenado" readonly required>
             </div>
           </div>
-            <button type="submit" id="btnSubmit" class="btn btn-primary">Guardar</button>
+            <button type="submit" id="btnSubmit" class="btn btn-danger">Guardar</button>
 
         </form>
       </div>

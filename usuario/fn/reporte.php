@@ -46,6 +46,8 @@ if (isset($_POST['usuarios'])) {
         while ($fila= $resultado->fetch_assoc()) {
           $usuarios.="<option name='".$fila['id_equipo']."'>".$fila['nombre_usuario']."</option>";
           }
+        }else{
+          $usuarios.="<option value='' selected required'>No hay usuarios</option>";
         }
 
 

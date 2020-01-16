@@ -50,8 +50,8 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
             <div class="buscador">
-                <label>Buscar por área o usuario</label>
-                <div class="col-5">
+              <div class="col-5">
+                    <label>Buscar por área o usuario</label>
                     <input list="sel" id="selection" class="form-control" type="text" name="" value="">
                 </div>
                   <datalist id="sel" class="areaList">
@@ -88,7 +88,7 @@
                  </div>
               <br>
               <div class="col-5">
-                <button type="button" class="btn btn-primary" id="crearUsuario">Crear usuario</button>
+                <button type="button" class="btn btn-danger" id="crearUsuario">Crear usuario</button>
               </div>
             </form>
           </div>
@@ -97,7 +97,7 @@
               <label for="user">Editar ID usuario</label>
               <div class="col-5">
                  <input type="text" class="form-control" id="user_to_edit" name="user">
-                  <button type="button" class="btn btn-primary" id="cargarEdicion">Buscar ID</button>
+                  <button type="button" class="btn btn-danger" id="cargarEdicion">Buscar ID</button>
               </div>
                    <br>
                      <label for="user">Nombre: </label>
@@ -125,7 +125,7 @@
                         </div>
                   <br>
                   <div class="col">
-                    <button type="button" class="btn btn-primary" id="editUser">Editar usuario</button>
+                    <button type="button" class="btn btn-danger" id="editUser">Editar usuario</button>
                   </div>
             </form>
                 </div>

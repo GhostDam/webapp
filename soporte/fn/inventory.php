@@ -50,7 +50,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                   <td scope='row'>".$row2['GROUP_CONCAT(nombre_usuario separator "<br>")']."</td>
                   <td scope='row' class='items'>".$row2['id_equipo']."</td>
                   <td scope='row'><span>+</span>".$row2['comentarios']."</td>
-              <td scope='row'><button class='detalles btn btn-primary' value='".$row2['id_equipo']."'>Detalles</button></td>
+              <td scope='row'><button class='detalles btn btn-danger' value='".$row2['id_equipo']."'>Detalles</button></td>
               <tr>";
             }
           $usuarios.="</tbody></table";

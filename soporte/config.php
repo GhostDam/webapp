@@ -6,16 +6,11 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=yes">
   <meta charset="utf-8">
-  <script src="https://code.jquery.com/jquery-3.4.0.js"
-  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="global.js"></script>
-  <script type="text/javascript">
-   
-    var session = ("<?php echo $_SESSION["usuario"]; ?>")
-  </script>
-  <script src="fn/config.js"></script>
+
+<script src="fn/config.js"></script>
  <!-- google fonts -->
  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
  <!-- bootstrap -->

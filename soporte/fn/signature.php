@@ -5,7 +5,7 @@
       $action = $_POST['to'];
       switch ($action) {
         case 'consulta';
-        $id_reporte = $_POST['data'];
+        $id_reporte = $conectar->real_escape_string($_POST['data']);
         $response['mensaje'] = '';
         $response['firma'] = '';
 

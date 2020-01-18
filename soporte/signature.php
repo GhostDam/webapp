@@ -51,7 +51,7 @@ crossorigin="anonymous"></script>
              <div class="col-sm-10">
               <div class="input-group mb-0">
                 <label class="col-sm-12 col-form-label">Número de reporte a firmar.</label>     
-                  <input type="text" name='num' class="form-control" placeholder="#0000">
+                  <input type="number" name='num' class="form-control" placeholder="#0000">
                   <!-- <div class="input-group-append">
                     <button class="btn btn-outline-danger" type="button" id="consulta">Consultar</button>
                   </div> -->

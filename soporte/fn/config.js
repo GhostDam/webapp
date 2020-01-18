@@ -1,8 +1,6 @@
+//ver administradores
 $(document).ready(function(){
-  /*Color Sessions*/
-   //ver administradores
    if (type == 'master') {
-     console.log(type)
      listAd();
      listTec();
      function listAd(){

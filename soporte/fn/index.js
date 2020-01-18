@@ -26,7 +26,6 @@ $(document).on("change", "#usr", function(){
             icon: 'error',
           })
         }
-        console.log(response)//datos
         //for (var i = 0; i < response[1].length; i++) {
         for(var i in response[1]){
           $("#empleado").append(`<option value='${response[1][i]}'>${response[1][i]}</option>`)
@@ -106,13 +105,13 @@ function vald(){
           // form.submit();
           let n_reporte=$("form#n_reporte").serialize();
           n_reporte+='&to=crear'
-          console.log(n_reporte);
           $.ajax({
             url:"fn/fnindex.php",
             type: "POST",
             data: n_reporte
           })
           .done(function(echo){
+            console.log(echo)
             swal('Reporte agregado', echo, "success")
             $('form#n_reporte')[0].reset();
           })

@@ -3,20 +3,8 @@ session_start();
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){
 
       include 'connect.php';
+      /*escaparCaracteresSql($_POST,$conexion);*/
       switch ($_POST['action']) {
-        case 'guardar_tema': //GUARDAR TEMAS DE USUARIO
-            $id=$_POST['id'];
-            $tema=$_POST['tema'];
-            $sql="UPDATE login SET tema ='$tema' WHERE usuario =('$id')";
-            $ejecutar=mysqli_query($conectar, $sql);
-              if(!$ejecutar){
-                echo "hubo algun error";
-              }else{
-                  echo "Guardado correctamente";
-                }
-               session_start();
-              $_SESSION['tema'] = $_POST['tema'];
-          break;
         case 'lista_admins': //cargar lista de admins
             $admins = '';
             $query = "SELECT * FROM login";
@@ -121,12 +109,22 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
               echo "Técnico eliminado";
             }
           break;
-
-          default:
-          // code...
-          break;
       }
-      $conectar->close();
+     
+      function escaparCaracteresSql($source,$connection){
+        foreach ($source as $key => $value){
+            if(is_array($source[$key])){
+                foreach ($source[$key] as $key2 => $value2){
+                    $source[$key][$key2]=$connection->real_escape_string ($value2);
+                }
+            }else{
+                $source[$key]=$connection->real_escape_string ($value);
+            }
+        }
+        return $source;
+    }
+     
+    $conectar->close();
 
     }else{
     die('<script>window.location="../index.php";</script>');

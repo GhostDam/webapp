@@ -89,32 +89,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
           }else {
               echo "No hay reportes con ese ID o ya se encuentra cerrado.";
           }
-           // <fieldset class='cs'>
-           //   <legend>Evaluación del servicio</legend>
-           //   <span>calidad: </span>".$fila['calidad']."
-           //   <span>Atención: </span>".$fila['atencion']."
-           //   <span>Profesional: </span>".$fila['nivel']."
-           //   <span>Tiempo de respuesta: </span>".$fila['tiempo']."
-           // </fieldset>
-
-           // <fieldset class='cl'>
-           //   <legend>Cierre del reporte</legend>
-           //   <span>Fecha Cierre: </span>".$fila['fecha_cierre']."
-           //   <span>Hora cierre: </span>".$fila['hora_cierre']."
-           //   <span>Persona que atendió: </span>".$fila['atendio']."
-           // </fieldset>
-
-           // <fieldset class='fm'>
-           //   <legend>Firma:</legend>
-           //   <img src='".$fila['firma']."'  alt='No se ha recibido la firma'></img>
-           // </fieldset>
-
-          //  <fieldset class='st'>
-          //      <Legend>Estado actual: </Legend>
-          //      <span>".$fila['status']."</span>
-          //      </fieldset>
-          // </form>
-
         break;
     case 'ask'; //detalles
           $salida="";
@@ -202,35 +176,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
          }else{
           $historial="No hay reportes en el historial.";
          }
-
-         // $start=$_POST['start'];
-         // $consulta = "SELECT  * FROM reporte ORDER BY id_reporte DESC LIMIT $start , 10 ";
-         // $resultado = mysqli_query($conectar, $consulta);
-         // if ($resultado->num_rows>0) {
-         //   $historial.="<table class='table table-hover'>
-         //                  <thead>
-         //                    <tr>
-         //                    <th scope='col'>#</th>
-         //                    <th scope='col'>Fecha</th>
-         //                      <th scope='col'>Persona que reportó</th>
-         //                      <th scope='col'>Área</th>
-         //                      <th scope='col'>Asunto</th>
-         //                      <th scope='col'>Estado actual</th>
-         //                    </tr>
-         //                  </thead>";
-         //   while ($rep = $resultado->fetch_assoc()) {
-         //     $historial.="<tr>
-         //                    <td scope='row'>".$rep['id_reporte']."</td>
-         //                      <td scope='row'>".$rep['fecha']."</td>
-         //                      <td scope='row'>".$rep['nombre']."</td>
-         //                      <td scope='row'>".$rep['area']."</td>
-         //                      <td scope='row'>".$rep['asunto']."</td>
-         //                      <td scope='row'>".$rep['status']."</td>
-         //                      <td scope='row'><button value='".$rep['id_reporte']."' class='detalles btn btn-primary'>Detalles</button></td>
-         //                  </tr>";
-         //   }
-         //  $historial.="</tbody></table>";
-         // }
         echo json_encode($historial);
         break;
     case 'save_edit': //guardar edicion

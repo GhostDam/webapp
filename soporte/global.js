@@ -1,12 +1,13 @@
 //==================================Reportes====================================
-$( document ).ready(function() {
 /*Ver reportes al cargar-document*/
+$( document ).ready(function() {
   $(document).load("fn/global.php",function(data){
     $(".vrep").html(data);
   });
-/*Ver reportes al cargar-doc*/
-/*Actualizacion y notificacion de reportes-document*/
 })/*document.ready*/
+/*Ver reportes al cargar-doc*/
+
+/*Actualizacion y notificacion de reportes-document*/
 setInterval(function(){
   count = $(".vrep").html();
   $(document).load("fn/global.php",function(data){
@@ -17,38 +18,18 @@ setInterval(function(){
     count2 = $(".vrep").html();
     if (count2>count) {
       $('body').append('<embed src="md/xb.mp3" type="audio/mp3" autostart="true" hidden="true" loop="false">');
-      swal("Tienes un nuevo reporte", "", "info")
+      swal("Tienes un nuevo reporte", "", "info")      
+      // Notification.requestPermission()
+      Push.create("Nuevo reporte", {
+        body: "Tienes un nuevo reporte",
+          //  icon: './md/icon.svg', 
+            onClick: function(){
+            window.focus();
+            this.close();
+          }
+        });
     }
   });
 },5000);
 /*Actualizacion y notificacion de reportes-document*/
 //==================================Reportes====================================
-
-//==================================Notas====================================
-/*ver notas*/
-verNotas()
-function verNotas(){
-  $.ajax({
-    url:'fn/fnindex.php',
-    type:'POST',
-    dataType:'html',
-    data:{to:'viewnote'}
-  }).done(function(notas){
-    $("#notas").html(notas)
-  })
-}
-//borrar notas
-$(document).on("click", ".delNote", function(){
-  var x = $(this).val()
-  $.ajax({
-    url:'fn/fnindex.php',
-    type:'POST',
-    dataType:'html',
-    data:{to:'deletenote', borrarnota:x}
-  })
-  .done(function(res){
-    verNotas()
-  })
-})
-/*ver notas*/
-//==================================Notas====================================

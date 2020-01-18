@@ -5,21 +5,22 @@ include('connect.php');
 // date("Y/m/d")
 date_default_timezone_set("America/Mexico_City");
 //Datos del reporte
+
 $date=date("y-m-d");                                //fecha
 $time=date("H:i:s");                                //hora
-$nombre = $_POST["nombre"];                         //persona que repora
+$nombre = $conectar->real_escape_string($_POST["nombre"]);                         //persona que repora
 //Status General
-$asunto = $_POST["asunto"];                         //asunto
-$descripcion = $_POST["descripcion"];               //descripcion
+$asunto = $conectar->real_escape_string($_POST["asunto"]);                         //asunto
+$descripcion = $conectar->real_escape_string($_POST["descripcion"]);               //descripcion
 //Datos del Usuario
-$usuario = $_POST["usuario"];                       //usuario
-$area = $_POST["area"];                             //area
-$encargado = $_POST["encargado"];                   //encargado
+$usuario = $conectar->real_escape_string($_POST["usuario"]);                       //usuario
+$area = $conectar->real_escape_string($_POST["area"]);                             //area
+$encargado = $conectar->real_escape_string($_POST["encargado"]);                   //encargado
 //Caracteristicas Equipo
-$marca = $_POST["marca"];                                  //marca equipo
-$modelo = $_POST["modelo"];                                //modelo equipo
-$serie = $_POST["serie"];                                  //serie equipo
-$equipo= $_POST["inventario"];                             //inventario = id equipo
+$marca = $conectar->real_escape_string($_POST["marca"]);                                  //marca equipo
+$modelo = $conectar->real_escape_string($_POST["modelo"]);                                //modelo equipo
+$serie = $conectar->real_escape_string($_POST["serie"]);                                  //serie equipo
+$equipo= $conectar->real_escape_string($_POST["inventario"]);                             //inventario = id equipo
 
 $firma="";                                          //tiempo
 $status="pendiente";                                //tiempo
@@ -44,7 +45,8 @@ $sql="INSERT INTO reporte (fecha, hora, nombre, area, encargado_area, usuario, a
 $ejecutar=mysqli_query($conectar, $sql);
 //verficar ejecucion
 if(!$ejecutar){
-        echo"Hubo algún error";
+    echo("Error description: " . $ejecutar->error);
+    // echo print_r($ejecutar);
   }else{
     $id=$conectar->insert_id;
 

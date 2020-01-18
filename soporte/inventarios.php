@@ -77,20 +77,31 @@
       <div class="tab-pane fade" id="section-3" role="tabpanel" aria-labelledby="index-3">
         <form class="tarjeta" id="nuevo_equipo">
           <fieldset class="eq col-12 text-center">
+
           <legend>Formulario para la adición de equipos</legend>
+
             <label for="area">Área a la que se agregara el equipo</label> <br>
-              <select class="invList my-3"  name="area">
+              <select class="invList form-control col-6 mx-auto"  name="area">
                 <option value="">Seleccione una opción</option>
               </select>
               <br>
+
               <label for="nombre_equipo">Nombre del equipo</label>
-              <input type="text" name="nombre_equipo">
+              <input class='form-control col-5 mx-auto' type="text" name="nombre_equipo">
+
               <br>
           </fieldset>
-          <div class="row mt-3 justify-content-between">
 
-            <fieldset class="col-12 col-lg-5">
+
+          <div class="row mt-3 justify-content-between">
+            <fieldset class="col-12 col-lg-6">
               <legend>CPU</legend>
+              <div class="form-group row">
+                <label class="label-inventario col-form-label" for="caracteristicas">Características</label>
+                <div class="col-sm-8">
+                  <input class='form-control' type="text" name="caracteristicas" value="">
+                </div>
+              </div>
               <div class="row">
                 <div class="col-6">
                   <label class="label-inventario" for="caracteristicas">Características</label>
@@ -101,23 +112,23 @@
                   <label class="label-inventario" for="serie_cpu">Número de serie</label>
                 </div>
                 <div class="col-6">
-                  <input type="text" name="caracteristicas" value="">
-                  <input type="text" name="ram" value="">
-                  <select name="tipo_cpu">
+                  <input class='form-control' type="text" name="caracteristicas" value="">
+                  <input class='form-control' type="text" name="ram" value="">
+                  <select class='form-control' name="tipo_cpu">
                       <option selected value="">Seleccione una opción</option>
                       <option value="mpc">Mpc - Desktop</option>
                       <option value="ml">Ml - Laptop</option>
                       <option value="mao">Mao - All In One</option>
                       <option value="mac">Mac</option>
                   </select>
-                  <input type="text" name="marca_cpu" value="">
-                  <input type="text" name="modelo_cpu" value="">
-                  <input type="text" name="serie_cpu" value="">
+                  <input class='form-control' type="text" name="marca_cpu" value="">
+                  <input class='form-control' type="text" name="modelo_cpu" value="">
+                  <input class='form-control' type="text" name="serie_cpu" value="">
                 </div>
               </div>
             </fieldset>
 
-            <fieldset disabled class="mn col-12 col-lg-5">
+            <fieldset disabled class="mn col-12 col-lg-6">
               <legend>
                 Monitor 
                 <label class="switch">
@@ -133,9 +144,9 @@
                   
                 </div>
                 <div class="col-6">
-                  <input type="text" name="marca_mn" value="">
-                  <input type="text" name="modelo_mn" value="">
-                  <input type="text" name="num_serie_mn" value="">
+                  <input class='form-control' type="text" name="marca_mn" value="">
+                  <input class='form-control' type="text" name="modelo_mn" value="">
+                  <input class='form-control' type="text" name="num_serie_mn" value="">
                 </div>
               </div>
               <br><!-- 
@@ -161,9 +172,9 @@
                   <label class="label-inventario" for="num_serie_m">Número de serie</label>
                 </div>
                 <div class="col-6">
-                  <input type="text" name="marca_m" value="">
-                  <input type="text" name="modelo_m" value="">
-                  <input type="text" name="num_serie_m" value="">
+                  <input class='form-control' type="text" name="marca_m" value="">
+                  <input class='form-control' type="text" name="modelo_m" value="">
+                  <input class='form-control' type="text" name="num_serie_m" value="">
                 </div>
               </div>
               <!-- <br>
@@ -185,9 +196,9 @@
                   
                 </div>
                 <div class="col-6">
-                  <input type="text" name="marca_b" value="">
-                  <input type="text" name="modelo_b" value="">
-                  <input type="text" name="num_serie_b" value="">
+                  <input class='form-control' type="text" name="marca_b" value="">
+                  <input class='form-control' type="text" name="modelo_b" value="">
+                  <input class='form-control' type="text" name="num_serie_b" value="">
                   
                 </div>
               </div>
@@ -212,9 +223,9 @@
                   
                 </div>
                 <div class="col-6">
-                  <input type="text" name="marca_t" value="">
-                  <input type="text" name="modelo_t" value="">
-                  <input type="text" name="num_serie_t" value="">
+                  <input class='form-control'  type="text" name="marca_t" value="">
+                  <input class='form-control' type="text" name="modelo_t" value="">
+                  <input class='form-control' type="text" name="num_serie_t" value="">
                   
                 </div>
               </div>
@@ -238,9 +249,9 @@
                 </div>
                 <div class="col-6">
                   
-                  <input type="text" name="marca_nb" value="">
-                  <input type="text" name="modelo_nb" value="">
-                  <input type="text" name="num_serie_nb" value="">
+                  <input class='form-control' type="text" name="marca_nb" value="">
+                  <input class='form-control' type="text" name="modelo_nb" value="">
+                  <input class='form-control' type="text" name="num_serie_nb" value="">
                 </div>
               </div>
               <!-- <br>
@@ -266,15 +277,12 @@
                   
                 </div>
                 <div class="col-6">
-                  <input type="text" name="marca_c" value="">
-                  <input type="text" name="modelo_c" value="">
-                  <input type="text" name="num_serie_c" value="">
+                  <input class='form-control' type="text" name="modelo_c" >
+                  <input class='form-control' type="text" name="num_serie_c" >
+                  <input class='form-control' type="text" name="marca_c" >
                   
                 </div>
               </div>
-              <!-- <br>
-              <br> -->
-              <!-- <br> -->
             </fieldset>
           </div>
           

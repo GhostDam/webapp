@@ -1,9 +1,27 @@
 <?php
   session_start();
   if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){ //if Ajax Request
-      include 'connect.php';
-      $action = $_POST['to'];
+
+    include 'connect.php';
+
+      function escaparCaracteresSql($source,$connection){
+        foreach ($source as $key => $value){
+            if(is_array($source[$key])){
+                foreach ($source[$key] as $key2 => $value2){
+                    $source[$key][$key2]=$connection->real_escape_string ($value2);
+                }
+            }else{
+                $source[$key]=$connection->real_escape_string ($value);
+              }
+        }
+        return $source;
+    }
+    
+    escaparCaracteresSql($_POST,$conectar);
+
+    $action = $_POST['to'];
       switch ($action) {
+
         case 'cargar_usuarios':
           $usuarios = array();
           $query_usuarios = "SELECT nombre_usuario FROM usuarios";
@@ -15,7 +33,6 @@
 
         echo json_encode($usuarios);
           break;
-
         case 'fill': //cargar datos para el reporte
           $usr= $_POST['usr'];
           $query = "SELECT nombre_usuario, area, nombre_equipo, tipo, marca, modelo, num_serie, responsable_area FROM usuarios
@@ -57,8 +74,6 @@
             //Status General
             $asunto = $_POST["asunto"];                         //asunto
             $descripcion = $_POST["descripcion"];               //descripcion
-            // $trep = $_POST["treporte"];                         //tipo reporte
-            // $tser = $_POST["tservicio"];                        //tipo servicio
             //Datos del Usuario
             $prov = $_POST["provedor"];                         //proveedor servicio
             $usuario = $_POST["usuario"];                                      //usuario
@@ -103,55 +118,18 @@
             $ejecutar=mysqli_query($conectar, $sql);
             //verficar ejecucion
               if(!$ejecutar){
-                      echo"hubo algun error";
+                    echo var_dump($ejecutar);
                 }else{
                   $id=$conectar->insert_id;
 
                   echo "Id del reporte: ".$id." ";
                 }
             break;
-
-        /**case 'newnote': //nueva nota
-          $titulo = $_POST['title'];
-          $nota = $_POST['cont'];
-
-          $guardar= "INSERT INTO notas(titulo, nota) VALUES ('$titulo', '$nota')";
-          $guardar =mysqli_query($conectar, $guardar);
-            if (!$guardar) {
-              echo (mysqli_error($conectar));
-              }else {
-              echo "Nota agregada";
-
-            }
-        break;
-        case 'viewnote': //ver notas
-        $stiky='';
-        $select='SELECT * FROM notas ORDER BY id';
-        $ver = mysqli_query($conectar, $select);
-        if ($ver->num_rows>0) {
-          while ($nota=mysqli_fetch_assoc($ver)) {
-            $stiky.="<div class='stick'>
-            <h4>".$nota["titulo"]."</h4>
-            <p>".$nota["nota"]."</p>
-            <button class='delNote'value=".$nota["id"]."><i class='icon-trash-o'></i></button>
-            </div>";
-          }
-          echo  $stiky;
-        }
-        break;
-        case 'deletenote': //borrar notas
-        $q=$_POST['borrarnota'];
-        $delete="DELETE FROM notas WHERE id ='$q'";
-        $borrar = mysqli_query($conectar, $delete);
-        if (!$borrar) {
-          echo var_dump($borrar);
-        }
-        break;
-        break;
-        default:
-          // code...
-          break;**/
       }
+
+      
+
+
       $conectar->close();
 
     }else{

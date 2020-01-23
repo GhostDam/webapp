@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2019 a las 21:35:26
+-- Tiempo de generación: 23-01-2020 a las 21:26:13
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -65,7 +65,7 @@ INSERT INTO `areas` (`id_area`, `id_direccion`, `area`, `responsable_area`) VALU
 (23, 6, 'Subdirección de Estímulos a la Juventud', 'N.D'),
 (24, 6, 'Departamento de Empresas Juveniles', 'Norma Villareal Soriano'),
 (25, 6, 'Departamento de Supervisión', 'N.D'),
-(26, 6, 'Código Joven', 'Jose Luis Ortega '),
+(26, 6, 'Códice Joven', 'Jose Luis Ortega '),
 (27, 7, 'Dirección de Evaluación y Control', 'Adolfo Caballero '),
 (28, 7, 'Subdirección de Seguimiento y Análisis', 'Carlos Manuel Feria Torres '),
 (29, 7, 'Departamento de Seguimiento', 'N.D'),
@@ -98,7 +98,7 @@ INSERT INTO `areas` (`id_area`, `id_direccion`, `area`, `responsable_area`) VALU
 (56, 12, 'Subdirección de Proyectos', 'Edivaldo Cruz Rodriguez '),
 (57, 12, 'Departamento de Vinculación con Organizaciones Juveniles', 'Jesus Alberto Romero Torres '),
 (58, 13, 'Subdirección de Asuntos Internacionales', 'Greissy Esther Lopez Martinez'),
-(59, 14, 'Subdirección de Sistemas', 'Alexis Antonio Sanchez Solis'),
+(59, 14, 'Subdirección de Sistemas', 'Sánchez Solís Alexis Antonio'),
 (60, 14, 'Departamento de Soporte Técnico', 'Jose Daniel Ordaz Huerta '),
 (61, 15, 'Organo Interno de Control', 'Francisco  Dominguez Gutierrez '),
 (62, 15, 'Auditoría Interna', 'Sergio Rafael Oñate Soto '),
@@ -454,9 +454,7 @@ INSERT INTO `bocina` (`id`, `id_equipo`, `marca_b`, `modelo_b`, `num_serie_b`) V
 (329, 350, 'DELL', 'AX210', 'CN0R126K4822023B00WH'),
 (330, 351, 'DELL', 'AX210', 'CN0R126K482209A501CS'),
 (331, 352, 'DELL', 'AX210', 'CN0R126K48220C302WO'),
-(332, 353, 'DELL', 'AX210', 'CN0R126K482209A600B2'),
-(333, 382, 'marca_b', 'modelo_b', 'num_serie_b'),
-(334, 384, 'apple', 'jckiylif', 'fjhukdu');
+(332, 353, 'DELL', 'AX210', 'CN0R126K482209A600B2');
 
 -- --------------------------------------------------------
 
@@ -497,8 +495,7 @@ INSERT INTO `cargador` (`id`, `id_equipo`, `marca_c`, `modelo_c`, `num_serie_c`)
 (18, 322, 'LENOVO', 'ADL135NLC3A', '8SSA10E75790D1SG78F03VC'),
 (19, 323, 'LENOVO', 'ADLX45NCC2A', '8SSA10E75794C1SG78264C1'),
 (20, 378, 'APPLE', 'APPLE', 'C4H80520BL0HG0XAR'),
-(21, 331, 'APPLE', 'APPLE', 'C4H80520BSYHG0XA9'),
-(22, 384, 'chango', 'marango', 'tell');
+(21, 331, 'APPLE', 'APPLE', 'C4H80520BSYHG0XA9');
 
 -- --------------------------------------------------------
 
@@ -900,9 +897,7 @@ INSERT INTO `cpu` (`id`, `id_equipo`, `caracteristicas`, `ram`, `tipo`, `marca`,
 (377, 377, 'Sin datos Caracteristicas', 'Sin datos Ram', 'MAO', 'APPLE', 'iMAC A1419', 'D25W90E9J1GN'),
 (378, 378, 'Sin datos Caracteristicas', 'Sin datos Ram', 'MAB', 'APPLE', 'Macbook Pro', 'C02W90WBHV2R'),
 (379, 331, 'Sin datos Caracteristicas', 'Sin datos Ram', 'MAB', 'APPLE', 'Macbook Pro', 'C02W90WAHV2R'),
-(385, 382, 'caracteristicas', 'ram', 'Selecciona el tipo', 'marca_cpu', 'modelo_cpu', 'serie_cpu'),
-(386, 383, 'ch88i9j9ij', 'jhbnj', 'ml', 'kmkimjkimjki', 'jkmnnionionjiokm', 'kmkompompo'),
-(387, 384, 'bono', '8 gb', 'mpc', 'dell', 'dlmjhfrymry-86579', '1236-5540-933216');
+(395, 394, 'ñ', '4', 'ml', '3', 'dsad', 'sdfsf');
 
 -- --------------------------------------------------------
 
@@ -1332,9 +1327,7 @@ INSERT INTO `equipos` (`id_equipo`, `id_area`, `nombre_equipo`, `comentarios`) V
 (376, 60, 'MAC-SOPORTE', ''),
 (377, 40, 'MAC-MCOMSOC6', ''),
 (378, 59, 'MAC-SISTEMAS', ''),
-(382, 59, 'otro gato', ''),
-(383, 26, 'nuevo equipo', ''),
-(384, 37, 'u2', '');
+(394, 32, 'Prueba', '');
 
 -- --------------------------------------------------------
 
@@ -1347,18 +1340,20 @@ CREATE TABLE `login` (
   `usuario` varchar(20) NOT NULL,
   `pass` varchar(225) NOT NULL,
   `nombre` varchar(225) NOT NULL,
-  `tipo_admin` varchar(225) NOT NULL,
-  `tema` varchar(225) NOT NULL
+  `tipo_admin` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `usuario`, `pass`, `nombre`, `tipo_admin`, `tema`) VALUES
-(12, 'YzakV', '$2y$10$BZMcijWYu34BzarK7wnGweSgWa1NXJX4tfbLr2K6SdPT3QVp9O3ge', 'Isaac Vega', 'master', 'Facebook Colors'),
-(13, 'luis', '$2y$10$uICWPHSDfhLjYnmehWNZuOr7Jfsb9W3sBeZfUfi1fA2ZRlAPYOiAq', 'Luis Ramirez', 'master', 'Oscuro'),
-(17, 'liz', '$2y$10$/NHFRlAhHIAAprtmtLtK4uNRmKqjjrY1Ung9QtH.h0cVrD8kNBi4a', 'liz', 'admin', 'Tulipan');
+INSERT INTO `login` (`id`, `usuario`, `pass`, `nombre`, `tipo_admin`) VALUES
+(25, 'LGOMEZ', '$2y$10$adfAxCWgcQmgfaDkAPpUX.q4/O93T6mOD2JKF/sek1npuffKMyx4u', 'Lizett Gómez Mojica', 'master'),
+(26, 'DORDAZ', '$2y$10$pWKF0fyoD3V8K2.0qYgAXO01DEwr2cc4wVrtDWNqSO/IOQAlHEQ5S', 'José Daniel Ordaz Huerta', 'master'),
+(27, 'PRUEBAS', '$2y$10$zKO.9OGd0xSSq/sEwqi6V.NqkheXCEPV9Z0CXwjeT9pKLSbkek/B2', 'Pruebas', 'master'),
+(28, 'vitas', '$2y$10$yEuxrPBQ6QMVdolVtj2qNOYaCoL4AbJ3ETXZKdQ1Sj3g0tuh3uhyi', 'vitas dei', 'master'),
+(30, 'cpablo', '$2y$10$dkvwXAUljINLMLTio.S7lO5VXRrcb.McYXnSYJDOpgluQd/BkcAsi', 'Caren Verenice Pablo', 'admin'),
+(31, 'cpablo', '$2y$10$cyCuQTRZm3jz/Jy2Bamc7e4mzwxjI/5AxD9/80hDpzrzrwDEVJTyW', 'Caren Verenice Pablo', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1710,8 +1705,7 @@ INSERT INTO `monitor` (`id`, `id_equipo`, `marca_mn`, `modelo_mn`, `num_serie_mn
 (329, 350, 'DELL', 'E2016HV', 'C6QZVG2'),
 (330, 351, 'DELL', 'E2016HV', 'GJQZVG2'),
 (331, 352, 'DELL', 'E2016HV', '94QZVG2'),
-(332, 353, 'DELL', 'E2016HV', '8FQZVG2'),
-(333, 384, 'dell', 'rukruk', 'ujkyuk');
+(332, 353, 'DELL', 'E2016HV', '8FQZVG2');
 
 -- --------------------------------------------------------
 
@@ -2088,8 +2082,7 @@ INSERT INTO `mouse` (`id`, `id_equipo`, `marca_m`, `modelo_m`, `num_serie_m`) VA
 (354, 374, 'APPLE', 'A1657', 'CC2803302K5J2XGAX'),
 (355, 375, 'APPLE', 'A1657', 'CC2803300XEJ2XGAL'),
 (356, 376, 'APPLE', 'A1657', 'CC2803301BWJ2XGAV'),
-(357, 377, 'APPLE', 'A1657', 'CC2803302ENJ2XGAT'),
-(358, 384, 'dell', '9948989', '8949899875');
+(357, 377, 'APPLE', 'A1657', 'CC2803302ENJ2XGAT');
 
 -- --------------------------------------------------------
 
@@ -2466,20 +2459,7 @@ INSERT INTO `nobreake` (`id`, `id_equipo`, `marca_nb`, `modelo_nb`, `num_serie_n
 (354, 374, 'FORZA', 'NT511', '17081250880'),
 (355, 375, 'FORZA', 'NT511', '171012510644'),
 (356, 376, 'FORZA', 'NT511', '171012510670'),
-(357, 377, 'FORZA', 'NT511', '171012510608'),
-(358, 384, 'huron', 'gat', 'tren');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `notas`
---
-
-CREATE TABLE `notas` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `nota` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+(357, 377, 'FORZA', 'NT511', '171012510608');
 
 -- --------------------------------------------------------
 
@@ -2667,7 +2647,6 @@ INSERT INTO `personal` (`id`, `id_direccion`, `nombre_personal`, `correo`, `tipo
 (165, 15, 'OÑATE SOTO SERGIO RAFAEL', '', 'base'),
 (166, 15, 'ANDRADE PEREZ CECILIA', '', 'base'),
 (167, 15, 'QUEVEDO JUNCOS LIZETH KAREN', '', 'base'),
-(168, 14, 'SANCHEZ SOLIS ALEXIS ANTONIO', '', 'base'),
 (169, 14, 'ORDAZ HUERTA JOSE DANIEL', '', 'base'),
 (170, 14, 'GOMEZ MOJICA LIZETT', '', 'base'),
 (171, 14, 'ABUNDIO GUZMAN PAULINA LIZETH', '', 'base'),
@@ -2810,23 +2789,7 @@ INSERT INTO `personal` (`id`, `id_direccion`, `nombre_personal`, `correo`, `tipo
 (308, 2, 'AMARO AVILA MARTHA', '', 'base'),
 (309, 2, 'CAMACHO ERIZA RUBEN', '', 'base'),
 (310, 2, 'OLIVARES CONCHILLOS LEONEL', '', 'base'),
-(313, 14, 'nombre del personal', '', 'Base'),
-(314, 14, 'nombre del personal', '', 'Becario'),
-(315, 14, 'nombre del personal', '', 'Encargado'),
-(316, 14, 'nombre del personal', '', 'Base'),
-(317, 14, 'nombre del personal', '', 'Becario'),
-(318, 14, 'nombre del personal', '', 'Encargado'),
-(319, 14, 'nombre del personal', '', 'Encargado'),
-(320, 14, 'nombre del personal', '', 'Encargado'),
-(321, 14, 'nombre del personal', '', 'Encargado'),
-(322, 14, 'empleado322', '', 'becario'),
-(323, 14, 'fdsafdsa', '', 'Encargado'),
-(324, 14, 'fdasfdas', '', 'Becario'),
-(325, 14, 'fdasfdas', '', 'Encargado'),
-(326, 14, 'fdasfdas', '', 'Encargado'),
-(327, 14, 'fdsafdsa', '', 'Base'),
-(328, 14, 'empleado328', '', 'encargado'),
-(329, 14, 'Alexis Antonio Sanchez Solis', '', 'encargado');
+(311, 14, 'Gabriel García Márquez', '', 'becario');
 
 -- --------------------------------------------------------
 
@@ -2869,7 +2832,23 @@ CREATE TABLE `reporte` (
 --
 
 INSERT INTO `reporte` (`id_reporte`, `fecha`, `hora`, `nombre`, `encargado_area`, `area`, `asunto`, `descripcion`, `treporte`, `tservicio`, `proveedor`, `usuario`, `marca`, `modelo`, `serie`, `id_equipo`, `solucion`, `actividad`, `calidad`, `atencion`, `nivel`, `tiempo`, `firma`, `fecha_cierre`, `hora_cierre`, `atendio`, `status`) VALUES
-(1, '2019-11-21', '19:59:43', 'OÑATE SOTO SERGIO RAFAEL', 'Eusebio Antonio Cortez Mendoza ', 'Responsabilidades y Quejas', 'primer reporte', 'Descripcion', 'incidencia', 'software', 'imjuve', 'ECORTES', 'DELL', 'VOSTRO 3268', 'D1V69M2', 'MPC-ECORTES', 'si', '', 'bueno', 'bueno', 'bueno', 'bueno', 'firmas/firma.1.png', '25-11-19', '14:26:16', 'Luis Ramirez', 'completo');
+(70, '2020-01-22', '11:04:05', 'yolanda garcía', 'Esther Angelica Martinez Sanchez', 'Departamento de Contabilidad', 'cambio de contraseña ', 'ayuda para cambiar la contraseña ', 'Incidencia', 'Software', 'Externo', 'YGARCIA', 'VOSTRO 3268', 'MPC', 'DELL', 'YGARCIA', 'si', 'se cambio la contraseña', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.70.png', '22-01-20', '11:41:14', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(71, '2020-01-22', '11:31:52', 'MORENO RODRIGUEZ MARIA ESTHER', 'Alma Angelica Menddez Gomez', 'Departamento de Nóminas', 'movimiento de equipo ', 'ayuda para mover dos equipos ', 'Cambio', 'Hadware', 'Externo', 'ERODRIGUEZ', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-ERODRIGUEZ', 'si', 'Se movieron dos equipos de lugar.', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.71.png', '22-01-20', '11:41:55', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(72, '2020-01-22', '11:33:00', 'SANCHEZ SANTIAGO JESUS JONATHAN', 'Esther Angelica Martinez Sanchez', 'Departamento de Contabilidad', 'atasco de papel en la impresora ', 'atasco de papel en la impresora ', 'Incidencia', 'Hadware', 'Externo', 'YGARCIA', 'VOSTRO 3268', 'MPC', 'DELL', 'YGARCIA', 'si', 'Se quito hoja de papel atascada en la impresora.', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.72.png', '22-01-20', '11:43:15', 'OSCAR URIEL GARCÍA RICO', 'completo'),
+(73, '2020-01-22', '11:34:19', 'PONCE MORENO JUAN CARLOS', 'Soledad del Pilar Gonzaga  Baez', 'Subdirección de Recursos Materiales', 'no tiene Internet', 'no tiene Internet', 'Incidencia', 'Software', 'Externo', 'ARCHIVOG', 'VOSTRO 3268', 'MPC', 'DELL', 'ARCHIVOG', 'si', 'Se conecto bien el cable de internet.', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.73.png', '22-01-20', '11:43:54', 'CÉSAR SALVADOR RODRÍGUEZ MAURICIO', 'completo'),
+(74, '2020-01-22', '11:37:42', 'LEON ORTA MARIA EUGENIA', 'Soledad del Pilar Gonzaga  Baez', 'Subdirección de Recursos Materiales', 'configuración de impresora ', 'configuración de impresora ', 'Incidencia', 'Software', 'Externo', 'MLEON', 'VOSTRO 3268', 'MPC', 'DELL', 'MLEON', 'si', 'Se configuro impresora.', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.74.png', '22-01-20', '11:44:35', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(75, '2020-01-22', '11:38:42', 'FERIA TORRES CARLOS MANUEL', 'Carlos Manuel Feria Torres ', 'Subdirección de Seguimiento y Análisis', 'ayuda para compartir carpeta ', 'ayuda para compartir carpeta ', 'Incidencia', 'Software', 'Externo', 'CFERIA', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-DOPERACION5', 'si', 'Se compartió carpeta con otros diez usuarios', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.75.png', '22-01-20', '11:45:32', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(76, '2020-01-22', '11:39:46', 'FERIA TORRES CARLOS MANUEL', 'Carlos Manuel Feria Torres ', 'Subdirección de Seguimiento y Análisis', 'no tiene Internet ', 'no tiene Internet ', 'Incidencia', 'Software', 'Externo', 'CFERIA', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-DOPERACION5', 'si', 'Se conecto el cable correctamente.', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.76.png', '22-01-20', '11:46:03', 'OSCAR URIEL GARCÍA RICO', 'completo'),
+(77, '2020-01-22', '12:37:34', 'LIZARDI ORTIZ AMERICA PATRICIA', 'Sánchez Solís Alexis Antonio', 'Subdirección de Sistemas', 'no puede accesar al google drave ', 'no puede accesar al google drave ', 'incidencia', 'Hardware', 'externo', 'ALIZARDI', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-ALIZARDI', 'no', ' se puso en contacto con el proveedor   y la aplicación drave y flies trime  por el momento no se encuentran en el funcionamiento debido al sistema ', 'excelente', 'excelente', 'excelente', 'bueno', 'firmas/firma.77.png', '22-01-20', '13:48:13', 'OSCAR URIEL GARCÍA RICO', 'completo'),
+(78, '2020-01-22', '12:46:42', 'OCHOA GUTIERREZ ROGELIO IVAN', 'Sergio Rafael Oñate Soto ', 'Subdirección de Equidad y Servicios a Jóvenes', 'configurar impresora ', 'configurar impresora ', 'Incidencia', 'Software', 'Externo', 'ROCHOA', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-ROCHOA', 'si', 'Se configuro impresora', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.78.png', '22-01-20', '12:50:09', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(79, '2020-01-22', '13:09:12', 'Edwin', 'Francisco Javier Quintero Flores ', 'Subdirección de Planeación y Medios', 'Inicio de sesión adobe', 'Requiere inicio de sesión de la cuenta de adobe', 'incidencia', 'software', 'imjuve', 'DIRDISEÑO', 'APPLE', 'iMAC A1419', 'D25W90EFJ1GN', 'MAC-DIRDISEÑO', 'si', 'SE INICIÓ SESIÓN DE ADOBE ', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.79.png', '22-01-20', '13:11:46', 'JESUS PEREZ PEREZ', 'completo'),
+(80, '2020-01-22', '17:57:54', 'eduardo', 'Sánchez Solís Alexis Antonio', 'Subdirección de Sistemas', 'Cambio de lugar', 'requieren cambiar equipo de lugar', 'cambio', 'Hardware', 'externo', 'PRODRIGUES', 'DELL', 'VOSTRO 3268', '5M5RWK2', 'MPC-PRODRIGUEZ', 'si', 'se realizó el cambio del equipo', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.80.png', '23-01-20', '10:24:38', 'CARLOS ADRIAN GARCÍA GONZÁLEZ', 'completo'),
+(81, '2020-01-23', '09:18:54', 'GONZALEZ GUZMAN CLAUDIA', 'Gustavo Adolfo Ramirez Morales', 'Dirección de Comunicación Social', 'cambio de contraseña ', 'ayuda para cambiar la contraseña ', 'incidencia', 'Hardware', 'imjuve', 'CLGONZALEZ', 'VOSTRO 3268', 'MPC', 'DELL', 'MPC-CLGONZALEZ', 'si', 'se le cambio la contraseña ', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.81.png', '23-01-20', '10:26:09', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(82, '2020-01-23', '09:28:00', 'MARTINEZ ALMANCE ADRIANA', 'Israel Cruz Avedaño', 'Subdirección de lo Normativo y lo Consultivo', 'no puede imprimir ', 'no puede imprimir por que el toner marca en ceros ', 'incidencia', 'Hardware', 'imjuve', 'AMARTINEZ', 'DELL', 'VOSTRO 3268', 'C30QGM2', 'MPC-AMARTINEZ', 'si', 'se realizo el cambio del toner ', 'bueno', 'bueno', 'bueno', 'bueno', 'firmas/firma.82.png', '23-01-20', '09:34:22', 'SHAWN ANTHONY ROMERO LOPEZ', 'completo'),
+(83, '2020-01-23', '10:54:07', 'CAMACHO TIRADO YESENIA', 'Greissy Esther Lopez Martinez', 'Subdirección de Asuntos Internacionales', 'atasco de papel en la impresora', 'atasco de papel en la impresora', 'incidencia', 'Hardware', 'externo', 'YCAMACHO', 'DELL', 'VOSTRO 3268', 'F9R59M2', 'MPC-YCAMACHO', 'si', 'se quito la hoja atorada en la impresora ', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.83.png', '23-01-20', '10:58:39', 'CÉSAR SALVADOR RODRÍGUEZ MAURICIO', 'completo'),
+(84, '2020-01-23', '11:19:00', 'MARTINEZ ALMANCE ADRIANA', 'Israel Cruz Avedaño', 'Subdirección de lo Normativo y lo Consultivo', 'ayuda con un archivo de excel ', 'ayuda con un archivo de excel ', 'incidencia', 'software', 'externo', 'AMARTINEZ', 'DELL', 'VOSTRO 3268', 'C30QGM2', 'MPC-AMARTINEZ', 'si', 'se le asesoro  con un archivo de excel ', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.84.png', '23-01-20', '11:30:29', 'CÉSAR SALVADOR RODRÍGUEZ MAURICIO', 'completo'),
+(85, '2020-01-23', '13:04:32', 'adriana aceves', 'Octavio Jimenez Hernandez', 'Departamento de Bolsa de Trabajo, Empleo y Capacitación', 'ayuda con un archivo zipeado', 'ayuda con un archivo zipeado', 'incidencia', 'Hardware', 'imjuve', 'AACEVES', 'DELL', 'VOSTRO 3268', 'DPLHGL2', 'MPCAACEVES', 'si', 'se le asesoro como abrir ese archivo ', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.85.png', '23-01-20', '13:08:14', 'JESUS PEREZ PEREZ', 'completo'),
+(86, '2020-01-23', '13:57:35', 'SANCHEZ FABELA ALEJANDRO', 'N.D', 'Dirección de Finanzas', 'manda a imprimir  y no salen la impresiones ', 'manda a imprimir  y no salen la impresiones ', 'incidencia', 'Hardware', 'externo', 'ASANCHEZ', 'DELL', 'VOSTRO 3268', 'DK8RGM2', 'ASANCHEZ', 'si', 'se mando a imprimir desde adobe reader', 'excelente', 'excelente', 'excelente', 'excelente', 'firmas/firma.86.png', '23-01-20', '14:06:05', 'OSCAR URIEL GARCÍA RICO', 'completo');
 
 -- --------------------------------------------------------
 
@@ -3246,8 +3225,34 @@ INSERT INTO `teclado` (`id`, `id_equipo`, `marca_t`, `modelo_t`, `num_serie_t`) 
 (354, 374, 'APPLE', 'A1644', 'F0T750400ANJ3LYA3'),
 (355, 375, 'APPLE', 'A1644', 'F0T7462003XJ3LYA0'),
 (356, 376, 'APPLE', 'A1644', 'F0T7504003JJ3LYA3'),
-(357, 377, 'APPLE', 'A1644', 'F0T746200M5J3LYA6'),
-(358, 384, 'mamut', 'knsy', 'perrito');
+(357, 377, 'APPLE', 'A1644', 'F0T746200M5J3LYA6');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tecnicos`
+--
+
+CREATE TABLE `tecnicos` (
+  `id_tecnico` int(11) NOT NULL,
+  `nombre_tecnico` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `tipo_tecnico` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `estatus_tecnico` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tecnicos`
+--
+
+INSERT INTO `tecnicos` (`id_tecnico`, `nombre_tecnico`, `tipo_tecnico`, `estatus_tecnico`) VALUES
+(1, 'LIZETT GOMEZ MOJICA', 'Imjuve', 'Activo'),
+(2, 'JOSÉ DANIEL ORDAZ HUERTA', 'Imjuve', 'Activo'),
+(3, 'OSCAR URIEL GARCÍA RICO', 'Externo', 'Activo'),
+(4, 'CÉSAR SALVADOR RODRÍGUEZ MAURICIO', 'Externo', 'Activo'),
+(5, 'CARLOS ADRIAN GARCÍA GONZÁLEZ', 'Imjuve', 'Activo'),
+(6, 'JESUS PEREZ PEREZ', 'Imjuve', 'Activo'),
+(7, 'SHAWN ANTHONY ROMERO LOPEZ', 'Imjuve', 'Activo'),
+(8, 'CAREN VERENICE PABLO ROSALES', 'Imjuve', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -3686,7 +3691,8 @@ INSERT INTO `usuarios` (`id_usuario`, `id_area`, `id_equipo`, `nombre_usuario`, 
 (415, 40, 377, 'MCOMSOC6', 'MARISOL GANDARILLA AJA', ''),
 (416, 59, 378, 'SISTEMAS', 'ALEXIS ANTONIO SÁNCHEZ SOLÍS', ''),
 (417, 40, 331, 'COMSOC', 'GUSTAVO ADOLFO RAMÍREZ', ''),
-(418, 59, 6, 'BSISTEMAS2', 'ALEXIS ANTONIO SÁNCHEZ SOLÍS', 'GLORIA CONCEPCION CASIANO MARTINEZ');
+(418, 59, 6, 'BSISTEMAS2', 'ALEXIS ANTONIO SÁNCHEZ SOLÍS', 'GLORIA CONCEPCION CASIANO MARTINEZ'),
+(419, 32, 394, 'Prueba', 'Jhonatan', '');
 
 --
 -- Índices para tablas volcadas
@@ -3762,12 +3768,6 @@ ALTER TABLE `nobreake`
   ADD KEY `id_equipo` (`id_equipo`);
 
 --
--- Indices de la tabla `notas`
---
-ALTER TABLE `notas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `personal`
 --
 ALTER TABLE `personal`
@@ -3786,6 +3786,12 @@ ALTER TABLE `reporte`
 ALTER TABLE `teclado`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_equipo` (`id_equipo`);
+
+--
+-- Indices de la tabla `tecnicos`
+--
+ALTER TABLE `tecnicos`
+  ADD PRIMARY KEY (`id_tecnico`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -3809,19 +3815,19 @@ ALTER TABLE `areas`
 -- AUTO_INCREMENT de la tabla `bocina`
 --
 ALTER TABLE `bocina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=335;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
 
 --
 -- AUTO_INCREMENT de la tabla `cargador`
 --
 ALTER TABLE `cargador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `cpu`
 --
 ALTER TABLE `cpu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=388;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=396;
 
 --
 -- AUTO_INCREMENT de la tabla `direcciones`
@@ -3833,61 +3839,61 @@ ALTER TABLE `direcciones`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=385;
+  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=395;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `monitor`
 --
 ALTER TABLE `monitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
 
 --
 -- AUTO_INCREMENT de la tabla `mouse`
 --
 ALTER TABLE `mouse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
 
 --
 -- AUTO_INCREMENT de la tabla `nobreake`
 --
 ALTER TABLE `nobreake`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
-
---
--- AUTO_INCREMENT de la tabla `notas`
---
-ALTER TABLE `notas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
 
 --
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=330;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT de la tabla `teclado`
 --
 ALTER TABLE `teclado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
+
+--
+-- AUTO_INCREMENT de la tabla `tecnicos`
+--
+ALTER TABLE `tecnicos`
+  MODIFY `id_tecnico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=419;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
 
 --
 -- Restricciones para tablas volcadas
@@ -3903,13 +3909,13 @@ ALTER TABLE `areas`
 -- Filtros para la tabla `bocina`
 --
 ALTER TABLE `bocina`
-  ADD CONSTRAINT `bocina_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `bocina_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `cargador`
 --
 ALTER TABLE `cargador`
-  ADD CONSTRAINT `cargador_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `cargador_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `cpu`
@@ -3927,19 +3933,19 @@ ALTER TABLE `equipos`
 -- Filtros para la tabla `monitor`
 --
 ALTER TABLE `monitor`
-  ADD CONSTRAINT `monitor_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `monitor_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mouse`
 --
 ALTER TABLE `mouse`
-  ADD CONSTRAINT `mouse_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `mouse_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `nobreake`
 --
 ALTER TABLE `nobreake`
-  ADD CONSTRAINT `nobreake_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `nobreake_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `personal`
@@ -3951,7 +3957,7 @@ ALTER TABLE `personal`
 -- Filtros para la tabla `teclado`
 --
 ALTER TABLE `teclado`
-  ADD CONSTRAINT `teclado_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);
+  ADD CONSTRAINT `teclado_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuarios`

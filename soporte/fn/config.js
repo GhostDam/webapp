@@ -67,7 +67,7 @@ $("#addmin").click(function(){
   vald();
   if ($(".error:visible").length>0) {
     swal({
-      title:"verifica el formulario por favor",
+      title:"Verifique el formulario",
       text:"El formulario esta vacío o contiene carácteres no válidos",
       icon:"error",
     })

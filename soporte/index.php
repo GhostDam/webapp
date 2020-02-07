@@ -63,7 +63,7 @@
               <textarea name='descripcion' class="form-control" required></textarea>
             </div>
 
-<!--             <div class="form-row">
+            <!-- <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="treporte">Tipo de reporte: </label>
                   <select name='treporte' class="form-control" required>

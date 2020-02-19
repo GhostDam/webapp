@@ -20,8 +20,9 @@
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>  
   <!-- css -->
-  <link rel="stylesheet" href="css/master.css">
+  
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/master.css">
   <title>Inventarios</title>
 </head>
 <body>
@@ -96,12 +97,12 @@
           <div class="row mt-3 justify-content-between">
             <fieldset class="col-12 col-lg-6">
               <legend>CPU</legend>
-              <div class="form-group row">
+              <!--<div class="form-group row">
                 <label class="label-inventario col-form-label" for="caracteristicas">Características</label>
                 <div class="col-sm-8">
                   <input class='form-control' type="text" name="caracteristicas" value="">
                 </div>
-              </div>
+              </div>-->
               <div class="row">
                 <div class="col-6">
                   <label class="label-inventario" for="caracteristicas">Características</label>

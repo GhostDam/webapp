@@ -1,4 +1,4 @@
-:root {
+ :root {
    --bgc: #ffffff;
    /*background*/
    --head: #9f2141;
@@ -16,7 +16,7 @@
 /***, *:before, *:after {
   box-sizing: inherit;
 }**/
-
+/**CUERPO**/
 body {
    font-family: 'Poppins', sans-serif;
    background: var(--bgc) no-repeat center center fixed;
@@ -510,6 +510,7 @@ legend {
 
 .label-inventario {
    display: block !important;
+   margin-bottom: .9rem !important;
 }
 
 

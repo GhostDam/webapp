@@ -27,11 +27,7 @@
             <h1>Bienvenido al  Sistema de Calificación de Reportes</h1>
         </div>
     </header>
-    <!--<div class="container">
-    </div>-->
     <div class="principal">
-        <div class="container">
-            <img src="img/Imjuve/imjuve-logo.png" class="img-fluid" alt="Responsive image">
         </div>
         <div class="registro">
             <form class="folio-reporte" id="folio-reporte" method="post" action="post.php">

@@ -1,26 +1,27 @@
 <?php
-    if(!isset($_GET["reporte"])) header("location: ../index.php");
+    if(!isset($_GET["reporte"])) header("location: index.php");
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <script src="../js/jquery-3.4.1.js"></script> -->
-    <!-- <script src="../js/sign.js"></script>
-    <script src="../js/main.js"></script>-->
-    <title>Reporte</title>
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/png" href="../img/imjuve/Logo.png">
+    <!-- plugins -->
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- scripts -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/sign.js"></script>
+    <script src="js/main.js"></script>
+
+    <title>Reporte</title>
 </head>
 <body>
 <?php
@@ -115,14 +116,6 @@
                   <label class="control-label" for="atendio">¿Quien fue el técnico que te atendió?</label>
                   <select class="form-control" name="atendio" id="atendio" required>
                     <option value="" disabled selected>Seleccione una opción</option>
-                    <!-- <option value="CAREN VERENICE PABLO ROSALES">CAREN VERENICE PABLO ROSALES</option>
-                    <option value="SHAWN ANTHONY ROMERO LOPEZ">SHAWN ANTHONY ROMERO LOPEZ</option>
-                    <option value="JESUS PEREZ PEREZ">JESUS PEREZ PEREZ</option>
-                    <option value="CARLOS ADRIAN GARCÍA GONZÁLEZ">CARLOS ADRIAN GARCÍA GONZÁLEZ</option>
-                    <option value="CÉSAR SALVADOR RODRÍGUEZ MAURICIO">CÉSAR SALVADOR RODRÍGUEZ MAURICIO</option>
-                    <option value="OSCAR URIEL GARCÍA RICO">OSCAR URIEL GARCÍA RICO</option>
-                    <option value="JOSÉ DANIEL ORDAZ HUERTA">JOSÉ DANIEL ORDAZ HUERTA</option>
-                    <option value="LIZETT GOMEZ MOJICA">LIZETT GOMEZ MOJICA</option> -->
                   </select>
                 </div>
             </div>
@@ -138,7 +131,7 @@
                             <canvas id="canvas">Canvas is not supported</canvas>
                             <div>
                                 <!-- <input id="btnSubmitSign" type="button" data-inline="true" data-mini="true" data-theme="b" value="Guardar firma"/> -->
-                                <input id="btnClearSign" type="button" class="btn btn-primary" data-inline="true" data-mini="true" data-theme="b" value="Firmar" onclick="init_Sign_Canvas()"/>
+                                <input id="btnClearSign" type="button" class="btn btn-primary" data-inline="true" data-mini="true" data-theme="b" value="Limpiar firma" />
                             </div>
                         </div>
                     </div>
@@ -148,8 +141,8 @@
                 </div>
             </form>
         </div>
-<!--     </div>
- -->    <footer class="site-footer">
+
+        <footer class="site-footer">
         <div class="contenedor">
             <h3>Aclaraciones</h3>
             <p>Si tienes dudas sobre tu reporte, comunícate con el Departamento de Soporte Técnico a la Ext: 1465</p>
@@ -159,8 +152,3 @@
 
 </body>
 </html>
-<!-- <script src="../jquery/jquery.min.js"></script>
-<script src="../js/sign.js"></script> -->
-<script src="../js/jquery-3.4.1.js"></script>
-<script src="../js/sign.js"></script>
-<script src="../js/main.js"></script>

@@ -1,7 +1,7 @@
 <div class="beside">
   <nav class="navbar">
     <ul class="list-navbar">
-      <li><a href="index.php"><i class="icon icon-menu <?= $li1; ?>"></i><span>Inicio</span></a></li>
+      <li><a href="index.php"><i class="icon icon-menu <?= $li1; ?>"></i><span>Crear reporte</span></a></li>
       <li>
         <a class="item-report" href="reporte.php">
           <i class="icon-design-graphic-tablet-streamline-tablet <?= $li2 ?>"></i>

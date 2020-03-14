@@ -2,7 +2,6 @@
  include 'connect.php';
 
  $count='';
- // $ask=$_POST['ask'];
  $query='SELECT COUNT(*) FROM reporte WHERE status ="pendiente" ';
  $response=mysqli_query($conectar, $query);
  if ($response->num_rows>0) {

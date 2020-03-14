@@ -1,7 +1,11 @@
- :root {
+/* **, *:before, *:after {
+  box-sizing: inherit;
+}* */
+
+:root {
    --bgc: #ffffff;
    /*background*/
-   --head: #9f2141;
+   --head: #3e5569;
    /*color header*/
    --bsd: #e9ebee;
    /*beside*/
@@ -12,10 +16,6 @@
    /* #ea8b04 */
 }
 
-
-/***, *:before, *:after {
-  box-sizing: inherit;
-}**/
 /**CUERPO**/
 body {
    font-family: 'Poppins', sans-serif;
@@ -95,14 +95,7 @@ h2 {
    font-family: 'Poppins', sans-serif;
    font-size: 1.5rem!important;
 }
-
-.img img {
-   max-width: 100%;
-}
-
-
 /*Login*/
-
 @media(min-width: 750px) {
    .contenedor {
       height: 100vh;
@@ -117,13 +110,12 @@ h2 {
    }
    .form {
       flex-basis: 50%;
-      flex-grow: 1;
       display: flex;
       justify-content: center;
    }
    .form-login {
       width: 50%;
-      margin: 0;
+      margin: 5rem;
    }
 }
 
@@ -720,4 +712,13 @@ canvas {
 
 .busqueda {
    background-color: rgb(204, 229, 255);
+}
+
+
+input[type="search"] {
+   -webkit-appearance: searchfield;
+  }
+
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: searchfield-cancel-button;
 }

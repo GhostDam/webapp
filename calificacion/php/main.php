@@ -5,14 +5,14 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
 
   // print_r($_POST);
 
-  include 'conexion.php';
+  include '../../conn/connect.php';
   switch ($_POST['action']) {
    case 'consulta';
           $id_reporte = $_POST['reporte'];
           $response['mensaje'] = '';
           $response['firma'] = '';
           $sql="SELECT firma FROM reporte  WHERE id_reporte = $id_reporte";
-          $resultado=$conexion->query($sql);
+          $resultado=$conectar->query($sql);
           if($resultado->num_rows > 0){
               $response['mensaje'] = "Reporte ya firmado";
               $response['id'] = $id_reporte;
@@ -25,16 +25,15 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
           echo json_encode($response);
       break;
    case 'consulta_tecnicos';   
-
         $response=[];
         $sql="SELECT nombre_tecnico FROM tecnicos";
-        $resultado=$conexion->query($sql);
+        $resultado=$conectar->query($sql);
         if($resultado->num_rows > 0){
             while ($fila=$resultado->fetch_all()){
                   $response = $fila;
               }
         }else{
-          $response['mensaje'] = "Número de reporte inexistente";
+          $response['mensaje'] = "Técnicos inexistentes";
         }
         echo json_encode($response);
     break;
@@ -43,7 +42,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
       // code...
       break;
   }
-  $conexion->close();
+  $conectar->close();
 
 }else{
 die('<script>window.location="../index.php";</script>');

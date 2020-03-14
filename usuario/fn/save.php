@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+require('../../conn/connect.php');
 
 //recepcion de datos y almacenar en variables
 // date("Y/m/d")

@@ -173,7 +173,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                         VALUES('$id_equipo', '$caracteristicas', '$ram', '$tipo_cpu', '$marca_cpu', '$modelo_cpu', '$serie_cpu')";
         $nuevo_cpu=mysqli_query($conectar, $sql_cpu);
         if ($nuevo_cpu) {
-          echo "CPU agregado <br>";
+          echo "CPU agregado \n";
         }else {
           echo mysqli_error($conectar);
         }
@@ -186,7 +186,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                    VALUES('$id_equipo', '$marca_b', '$modelo_b', '$numserie_b')";
             $nueva_bocina=mysqli_query($conectar, $sql_bocina);
               if ($nueva_bocina) {
-                echo "Bocina agregada <br>";
+                echo "Bocina agregada \n";
               }else {
                 echo mysqli_error($conectar);
               }
@@ -200,7 +200,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_m', '$modelo_m', '$numserie_m')";
           $nueva_mouse=mysqli_query($conectar, $sql_mouse);
             if ($nueva_mouse) {
-              echo "Mouse agregado <br>";
+              echo "Mouse agregado \n";
             }else {
               echo mysqli_error($conectar);
             }
@@ -214,7 +214,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_mn', '$modelo_mn', '$numserie_mn')";
           $nueva_monitor=mysqli_query($conectar, $sql_monitor);
             if ($nueva_monitor) {
-              echo "Monitor agregado <br>";
+              echo "Monitor agregado \n";
             }else {
               echo mysqli_error($conectar);
             }
@@ -228,7 +228,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                VALUES('$id_equipo', '$marca_t', '$modelo_t', '$numserie_t')";
         $nueva_teclado=mysqli_query($conectar, $sql_teclado);
           if ($nueva_teclado) {
-            echo "Teclado agregado <br>";
+            echo "Teclado agregado \n";
           }else {
             echo mysqli_error($conectar);
           }
@@ -242,7 +242,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                VALUES('$id_equipo', '$marca_nb', '$modelo_nb', '$numserie_nb')";
         $nueva_nobreake=mysqli_query($conectar, $sql_nobreake);
           if ($nueva_nobreake) {
-            echo "No Break agregado <br>";
+            echo "No Break agregado \n";
           }else {
             echo mysqli_error($conectar);
           }
@@ -257,7 +257,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
                                  VALUES('$id_equipo', '$marca_c', '$modelo_c', '$numserie_c')";
           $nueva_cargador=mysqli_query($conectar, $sql_cargador);
             if ($nueva_cargador) {
-              echo "Cargador agregado <br>";
+              echo "Cargador agregado \n";
             }else {
               echo mysqli_error($conectar);
             }

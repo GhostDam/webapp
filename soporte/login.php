@@ -1,14 +1,12 @@
-
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
   <!-- bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- css -->
      <link rel="stylesheet" href="css/master.css">
        <title>SOPORTE</title>
@@ -19,10 +17,7 @@
   </header>
   <div class="form-gr">
     <div class='contenedor'>
-      <div class='img'>
-        <img src="md/imjuve-logo.png" class="img-fluid" alt="Responsive image">
-      </div>
-      <div class="form">
+      <div class="form shadow">
          <form class="form-login" action="fn/load.php" method="post" autocomplete='off'>
             <label for="usuario">Usuario: </label>
              <input type="text"class="form-control" id="usuario" name="usuario" required>

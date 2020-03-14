@@ -1,33 +1,10 @@
-<?php
-    @session_start();
-    if(!isset($_SESSION["usuario"])) header("location: login.php");
-?>
-<html lang="es" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=yes">
-  <script src="https://code.jquery.com/jquery-3.4.0.js"integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="global.js"></script>
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <!-- css  -->
-  <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Datatables -->
-  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
-
-  <script src="fn/report.js" charset="utf-8"></script>
-
-  <title>SOPORTE</title>
-</head>
-<body>
-  <?php include "./header.php"; $li2 = "active"; ?>
-  <?php include "./ul.php" ?>
+<?php include "./header.php"; $li2 = "active"; ?>
+<?php include "./ul.php" ?>
+  <!-- page scripts -->
+ <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
+ <script src="fn/report.js" charset="utf-8"></script>
+ 
   <section>
     <!--  Bootstrap navs -->
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

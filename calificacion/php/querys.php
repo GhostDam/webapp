@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+require('../../conn/connect.php');
 // echo "<PRE>".print_r($_POST,1)."</PRE>"; die();
 date_default_timezone_set("America/Mexico_City");
 $id = $_POST['idreporte']; //id
@@ -27,11 +27,11 @@ file_put_contents("../../soporte/firmas/"."firma.$id".'.png',base64_decode(explo
 //
    $sql="UPDATE reporte SET solucion ='$resolucion', calidad = '$calificacion', atencion='$atencion', nivel='$profesional', tiempo ='$respuesta',
                                 firma='$direccion', fecha_cierre='$fecha', hora_cierre='$hora', atendio='$atendio', status='$status' WHERE id_reporte ='$id' ";
-   $resultado=$conexion->query($sql);
+   $resultado=$conectar->query($sql);
    if ($resultado) {
      $response['mensaje']='Se guardo Correctamente';
    }else{
-     $response['error']= $conexion->error;
+     $response['error']= $conectar->error;
    }
    echo json_encode($response['mensaje']);
 

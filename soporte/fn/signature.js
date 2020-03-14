@@ -2,11 +2,10 @@ $(document).ready(function() {
 
 var limpiar = document.getElementById("limpiar");
 var canvas = document.getElementById("canvas");
+
 var ctx = canvas.getContext("2d");
-var cw = canvas.width = 300,
-    cx = cw / 2;
-var ch = canvas.height = 300,
-    cy = ch / 2;
+var cw = canvas.width = 300
+var ch = canvas.height = 300
 
 var dibujar = false;
 var factorDeAlisamiento = 1;
@@ -17,14 +16,15 @@ ctx.lineJoin = "round";
 ctx.lineWidth = 1;
 ctx.strokeStyle = 'black';  //color red***
 ctx.fillStyle = 'white';
+
 // ctx.fillRect(0, 0, 300, 300);/*canvas background, conflicto con redibujar*/
-/**/
 // if(ctx)
 // {
-//     ctx.fillStyle = "white";
-//     ctx.fillRect(0,0,0,200);
-//     ctx.fillStyle = "#000";
-//     ctx.fillText("x",40,155);
+//   ctx.fillStyle = "white";
+//   ctx.fillRect(0,0,300,300);
+
+//   ctx.fillStyle = "#000";
+//   ctx.fillText("x",40,155);
 // }
 /**/
 limpiar.addEventListener('click', function(evt) {
@@ -106,96 +106,6 @@ function oMousePos(canvas, evt) {
   }
 }
 
-//======================================================================
-/*CANVAS 1*/
-// FUNCIONES
-//======================================================================
-//
-// let miCanvas = document.querySelector('#pizarra');
-// let lineas = [];
-// let correccionX = 0;
-// let correccionY = 0;
-// let pintarLinea = false;
-//
-// let posicion = miCanvas.getBoundingClientRect()
-// correccionX = posicion.x;
-// correccionY = posicion.y;
-//
-// miCanvas.width = 300;
-// miCanvas.height = 300;
-//
-// //======================================================================
-// // FUNCIONES
-// //======================================================================
-//
-// /**
-//  * Funcion que empieza a dibujar la linea
-//  */
-// function empezarDibujo () {
-//     pintarLinea = true;
-//     lineas.push([]);
-// };
-//
-// /**
-//  * Funcion dibuja la linea
-//  */
-// function dibujarLinea (event) {
-//     event.preventDefault();
-//     if (pintarLinea) {
-//         let ctx = miCanvas.getContext('2d')
-//         // Estilos de linea
-//         ctx.lineJoin = ctx.lineCap = 'round';
-//         ctx.lineWidth = 5;
-//         // Color de la linea
-//         ctx.strokeStyle = 'red';
-//         // Marca el nuevo punto
-//         let nuevaPosicionX = 0;
-//         let nuevaPosicionY = 0;
-//         if (event.changedTouches == undefined) {
-//             // Versión ratón
-//             nuevaPosicionX = event.layerX;
-//             nuevaPosicionY = event.layerY;
-//         } else {
-//             // Versión touch, pantalla tactil
-//             nuevaPosicionX = event.changedTouches[0].pageX - correccionX;
-//             nuevaPosicionY = event.changedTouches[0].pageY - correccionY;
-//         }
-//         // Guarda la linea
-//         lineas[lineas.length - 1].push({
-//             x: nuevaPosicionX,
-//             y: nuevaPosicionY
-//         });
-//         // Redibuja todas las lineas guardadas
-//         ctx.beginPath();
-//         lineas.forEach(function (segmento) {
-//             ctx.moveTo(segmento[0].x, segmento[0].y);
-//             segmento.forEach(function (punto, index) {
-//                 ctx.lineTo(punto.x, punto.y);
-//             });
-//         });
-//         ctx.stroke();
-//     }
-// }
-//
-// /**
-//  * Funcion que deja de dibujar la linea
-//  */
-// function pararDibujar () {
-//     pintarLinea = false;
-// }
-//
-// //======================================================================
-// // EVENTOS
-// //======================================================================
-//
-// // Eventos raton
-// miCanvas.addEventListener('mousedown', empezarDibujo, false);
-// miCanvas.addEventListener('mousemove', dibujarLinea, false);
-// miCanvas.addEventListener('mouseup', pararDibujar, false);
-//
-// // Eventos pantallas táctiles
-// miCanvas.addEventListener('touchstart', empezarDibujo, false);
-// miCanvas.addEventListener('touchmove', dibujarLinea, false);
 //consulta
 $(document).ready(function(){
   $("#consulta").on('click', function(e){

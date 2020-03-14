@@ -17,31 +17,31 @@ $(document).ready(function(){
         var data = $("#folio-reporte").serialize();
 				data +="&action=consulta";
         $.ajax({
-		            url: "php/main.php", // verificar registros existentes
-		            method: "POST",
-						dataType:'JSON',
-		            data: data
-        			})
-			.done(function(res){
-				console.log(res)
-						if (res['mensaje']=='Número de reporte inexistente') {
-							swal(res['mensaje'], "","error")
-						}else if(res['firma']!=''){
-							swal(res['mensaje'], '' , "error")
-						}else{
-							window.location.href =`php/calificacion.php?reporte=${res['id']}`;
-						}
+				url: "php/main.php", // verificar registros existentes
+				method: "POST",
+				dataType:'JSON',
+				data: data
 			})
-			.fail(function(res){
-				console.log(res)
-			})
+		.done(function(res){
+			console.log(res)
+					if (res['mensaje']=='Número de reporte inexistente') {
+						swal(res['mensaje'], "","error")
+					}else if(res['firma']!=''){
+						swal(res['mensaje'], '' , "error")
+					}else{
+						window.location.href =`calificacion.php?reporte=${res['id']}`;
+					}
+		})
+		.fail(function(res){
+			console.log(res)
+		})
     })
 })
 //consulta reportes
 //consulta de tecnicos
 $(document).ready(function(){
 		 $.ajax({
-					  url: "main.php", // verificar registros existentes
+					  url: "php/main.php", // verificar registros existentes
 					  method: "POST",
 					  dataType:'JSON',
 					  data: {action: 'consulta_tecnicos'}
@@ -90,7 +90,7 @@ $(document).on('submit', "#servicio", function(e){
 	.then(function(confirm){
 		if (confirm) {
 			$.ajax({
-				url: 'querys.php',
+				url: 'php/querys.php',
 				type: 'post',
 				data: {idreporte:idreporte, 
 						 resolucion:resolucion, 
@@ -108,7 +108,7 @@ $(document).on('submit', "#servicio", function(e){
 					icon: "success",
 				 })
 				.then(function(done){
-					 window.location.href="./../";
+					//  window.location.href="./../";
 				})
 			})
 			.fail(function(data){
@@ -121,13 +121,10 @@ $(document).on('submit', "#servicio", function(e){
 //*ADDONS*/
 //*Firma
 $( document ).ready(function() {
+	init_Sign_Canvas()
+
 	$("#btnClearSign").on('click', function(){
-		console.log("canvas!!!");
+		init_Sign_Canvas()
 	});
-	// $("#btnSubmitSign").on('click', function(){
-	// 	var data = document.getElementById("canvas").toDataURL('image/png');
-	// 	$.post('conexion.php',{data: data},function(data){console.log(data);})
-	// 	console.log(data);
-	// })
 })
 //*Firma

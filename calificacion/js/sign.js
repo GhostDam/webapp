@@ -1,39 +1,40 @@
 function init_Sign_Canvas() {
     isSign = false;
     leftMButtonDown = false;
+
+
+    $("#canvas").css("border","1px solid #000");
+    //canvas
+    var canvas = $("#canvas").get(0);
+    
+    //context
+    canvasContext = canvas.getContext('2d');
     //Tamaño del Canvas
-    var sizedWindowWidth =$('#div_signcontract').width();
-    if(sizedWindowWidth > 700)
-        sizedWindowWidth = $(window).width() / 1.32;
-    else if(sizedWindowWidth > 400)
-        sizedWindowWidth = sizedWindowWidth - 50;
-    else if (sizedWindowWidth > 200)
-        sizedWindowWidth = sizedWindowWidth - 35
-    else
-        sizedWindowWidth = sizedWindowWidth - 20;
-     $("#canvas").width(sizedWindowWidth);
-     $("#canvas").height(220);
-     $("#canvas").css("border","1px solid #000");
-
-     var canvas = $("#canvas").get(0);
-
-     canvasContext = canvas.getContext('2d');
-
+    CW = 270
+    CH = 270
      if(canvasContext)
      {
-         canvasContext.canvas.width  = sizedWindowWidth;
-         canvasContext.canvas.height = 200;
+        //tamaño del area de dibujo
+         canvasContext.canvas.width  = CW;
+         canvasContext.canvas.height = CH;
 
+        //lenado color, espacio (xi, yi, xf, yf)
          canvasContext.fillStyle = "#fff";
-         canvasContext.fillRect(0,0,sizedWindowWidth,200);
-
-         canvasContext.moveTo(50,150);
-         canvasContext.lineTo(sizedWindowWidth-50,150);
+         canvasContext.fillRect(0,0,CW,CH);
+         
+         //confg de llenado ------
+        //inicia en
+         canvasContext.moveTo(20,250);
+        //termina en
+         canvasContext.lineTo(250,250);
+        //tipo de llenado linea()
          canvasContext.stroke();
 
+         //confg de llenado X
          canvasContext.fillStyle = "#000";
          canvasContext.font="20px Arial";
-         canvasContext.fillText("x",40,155);
+        //                  "texto", x, y
+         canvasContext.fillText("x",20,250);
      }
      // Eventos del mouse
      $(canvas).on('mousedown', function (e) {

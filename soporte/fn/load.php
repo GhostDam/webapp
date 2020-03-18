@@ -1,5 +1,5 @@
 <?php
-  include 'connect.php';
+  include '../../conn/connect.php';
 if (!empty($_POST)){
   $user = $_POST["usuario"];
   $pass = $_POST["contraseña"];

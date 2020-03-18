@@ -1,15 +1,10 @@
 //==================================Pendientes====================================
 $(document).ready(function(){
-    $.ajax({
+  $.ajax({
       data:{"action":"vrep"},
       type:"POST",
       dataType:"json",
-      url:"fn/report.php",
-
-      onRequest: function() {
-        $("#pendientes").html("loading");
-     }
-
+      url:"fn/report.php"
     }).done(function(data){
       console.log(data) //array
       if (data=='No hay reportes pendientes') {
@@ -30,42 +25,15 @@ $(document).ready(function(){
             { title: "Atender", data: "id_reporte", render: function(id){ return `<button class='btn btn-danger atender' value="${id}">Atender</button>`}},
 
         ],
-        // "language": {
-        //       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-        //   }
-        language: {
-                    "sProcessing":     "Procesando...",
-                    "sLengthMenu":     "Mostrar _MENU_ registros",
-                    "sZeroRecords":    "No se encontraron resultados",
-                    "sEmptyTable":     "Ningún dato disponible en esta tabla =(",
-                    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-                    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-                    "sInfoPostFix":    "",
-                    "sSearch":         "Buscar:",
-                    "sUrl":            "",
-                    "sInfoThousands":  ",",
-                    "sLoadingRecords": "Cargando...",
-                    "oPaginate": {
-                      "sFirst":    "Primero",
-                      "sLast":     "Último",
-                      "sNext":     "Siguiente",
-                      "sPrevious": "Anterior"
-                    },
-                    "oAria": {
-                      "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                    },
-                    "buttons": {
-                      "copy": "Copiar",
-                      "colvis": "Visibilidad"
-                    }
-                  }
+        "language": {
+              "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+          }
         })
     })
     .fail(function(err){
       console.log(err);
     });
+
 })
 /*cargar pendients*/
 /*enviar a attend*/
@@ -86,35 +54,11 @@ $(document).ready(function(){
            $('#buscador').val(id)
            $('#editar').trigger('click')
            $("#index-2").trigger('click')
-           // $("#pills-tab li:eq(1) > a")[0].click();
          }
       })
       //swal
   })
 /*enviar a attend*/
-/*Enviar a firma reportes por firmar*/
-$(document).on("click", ".firmar", function(){
-  var url = 'http://localhost/JCF/imjuve/sistema%20soporte/soporte/signature.php'
-  var id = $(this).prop('value');
-  var redir = `${url}#${id}`
-  //swal
-  swal({
-  title: "Firmar reporte",
-  text: `Firmar reporte con ID ${id}`,
-  icon: "info",
-  buttons: [
-      'Cancelar',
-      'Aceptar'
-    ],
-  }).then(
-     function (yes) {
-       if (yes) {
-         window.location.href=redir
-       }
-    })
-    //swal
-})
-/*Enviar a firma reportes por firmar*/
 //==================================Pendientes====================================
 //==================================Atender====================================
 /*Edicion de Reportes-consulta*/
@@ -185,7 +129,7 @@ $(document).on('click', '#btnEdit', function(e){
         })
         .done(function(respuesta) {
           $('form#edit_reporte')[0].reset()
-          swal(respuesta);
+          swal("Hecho!" , respuesta, "success");
         })
         .fail(function(){
           console.log("error")

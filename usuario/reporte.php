@@ -21,17 +21,16 @@
           <h1>Creación de reporte</h1>
       </header>
       <div class="contenedor">
-        <h3>Llene los siguientes campos para su reporte</h3>
-        <div class="container-fluid">
+      <div class="card">
+        <h5 class="card-header">
+          Llene los siguientes campos para su reporte  
+        </h5>
+
           <form id="n_reporte" autocomplete="off">
           <div class="row">
             <div class="col-12 d-flex justify-content-around">
               <div class="form-group">
                 <label for="area">Área </label>
-                <!-- <input class="form-control" list="opt" type="text" id="area" name="area" placeholder="Introduzca aqui su área" required>
-                <datalist id="opt">
-
-                </datalist> -->
                 <select class="form-control areaList" id="opt" name="area">
                   <option value="">Seleccione una opción</option>
                 </select>
@@ -81,10 +80,11 @@
 
             </div>
 
-              </form>
-          </div>
+
         </div>
+
       </div><!--contenedor-->
+              </form>
     </main>
   </body>
 </html>

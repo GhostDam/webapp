@@ -1,5 +1,5 @@
 <?php
- include 'connect.php';
+ include '../../conn/connect.php';
 
  $count='';
  $query='SELECT COUNT(*) FROM reporte WHERE status ="pendiente" ';

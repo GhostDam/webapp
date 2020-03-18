@@ -8,11 +8,6 @@
   <title>Sistema de reportes IMJUVE</title>
 </head>
 <body>
-  <header>
-   <div class="contenedor">
-    <img src="img/imjuve-logo.png" class="img-fluid" alt="Responsive image">
-  </div>
-  </header>
   <main>
     <div class="contenedor">
       <div class="uso">

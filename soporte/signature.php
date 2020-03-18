@@ -3,43 +3,29 @@
 <?php include "./ul.php" ?>
 
   <script src="fn/signature.js"></script>
+
   <section>
-    <!--  Bootstrap navs -->
 
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <!--<a class="nav-link btn btn-outline-primary active" id="index-1" data-toggle="pill" href="#section-1" role="tab" aria-controls="section-1" aria-selected="true">-->
-          <h2>Firma de reportes</h2>
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="section-1" role="tabpanel" aria-labelledby="index-1">
-
-        <div class='form-group alert alert-primary'>
-
-         <!-- <label class="col-sm-12 col-form-label">Número de reporte a firmar.</label>     
-          <div class="input-group mb-3 col-6">
-            <input type="text" name='num' class="form-control" placeholder="Número de reporte">
-            <div class="">
-              <button class="btn btn-outline-danger" id='consulta'type="button">Consultar</button>
-            </div>  
-           </div> -->
-           <div class="row">
-             <div class="col-sm-10">
-              <div class="input-group mb-0">
-                <label class="col-sm-12 col-form-label">Número de reporte a firmar.</label>     
-                  <input type="number" name='num' class="form-control" placeholder="#0000">
-                  <!-- <div class="input-group-append">
-                    <button class="btn btn-outline-danger" type="button" id="consulta">Consultar</button>
-                  </div> -->
+    <div class='card'>
+        <h5 class="card-header">
+            Firmar reporte
+        </h5>
+            <div class="row mb-3 align-items-center">
+                <div class="col-lg-2 col-md-12 text-right">
+                    <span>Id del reporte</span>
                 </div>
-              </div>
-              <div class="col-sm-2">
-                  <button class="btn btn-outline-danger" type="button" id="consulta">Consultar</button>
-              </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="input-group">
+                        <input name="num" class="form-control" placeholder="Área o usuario" aria-label="Usuario" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button id="consulta" class='input-group-text btn-small btn-outline-secondary'>
+                                Consult
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+    </div>
 
 
 
@@ -49,7 +35,7 @@
 
        <form class='firmar text-center hide'>
         <label>Reporte a firmar</label>
-        <input type="text" id='toSign' readonly>
+        <input type="text" id='toSign' readonly>  
 
         <hr>
         <h3>En general,¿Qué tan satisfecho esta usted con el servicio?</h3>
@@ -154,11 +140,6 @@
             <label class="form-check-label" for="Malo">No</label>
           </div>
 
-         <!-- <select name='solucion'>
-            <option value='si'>Si</option>
-            <option value='no'>No</option>
-          </select> -->
-
       <!--Canvas-->
         <canvas id="canvas">Su navegador no soporta canvas :( </canvas>
         <div class="buttons text-center">
@@ -168,8 +149,6 @@
       <!--Canvas-->
     </form>
 
-      </div>
-    </div>
 </section>
 
 </body>

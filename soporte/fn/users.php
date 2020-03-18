@@ -2,8 +2,8 @@
   session_start();
   if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){
 
-    include 'connect.php';
-      //
+    include '../../conn/connect.php';
+    //
       // $quien = $_SESSION["nombre"];
       // $hora = '';
       // function record($quien, $accion, $detalle, $hora){

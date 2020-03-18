@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){
 
-      include 'connect.php';
+ include '../../conn/connect.php';
       /*escaparCaracteresSql($_POST,$conexion);*/
       switch ($_POST['action']) {
         case 'lista_admins': //cargar lista de admins

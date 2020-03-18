@@ -2,7 +2,7 @@
   session_start();
   if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest' && $_SESSION['usuario']!=''){ //if Ajax Request
 
-    include 'connect.php';
+    include '../../conn/connect.php';
 
       function escaparCaracteresSql($source,$connection){
         foreach ($source as $key => $value){

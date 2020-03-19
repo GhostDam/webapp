@@ -147,7 +147,6 @@ $("#download").on('click', function(){
   var to = "guardar_firma";
 
 
-
   swal({
     title:'¿Guardar firma?',
     text:'Una vez guardada la firma, se dará por terminado el reporte',
@@ -161,6 +160,7 @@ $("#download").on('click', function(){
     if (save) {
       console.log('si')
       // var pat = nombre;
+
       $.ajax({
       url: 'fn/signature.php',
       type: 'post',
